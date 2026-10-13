@@ -142,6 +142,23 @@ section .intro b{font-weight:500;color:var(--ink)}
 .tbl td.q{font-size:12.5px;color:var(--ink3)}
 .scroll{overflow-x:auto}
 
+/* ── 합계 ── */
+.sums{margin-top:26px;display:grid;gap:12px}
+@media(min-width:700px){.sums{grid-template-columns:repeat(3,1fr)}}
+.sums > div{background:var(--card);border:1px solid var(--line);
+  border-radius:3px;padding:18px 18px 19px}
+.sums b{display:block;font-size:15px;font-weight:500;letter-spacing:.06em}
+.sums span{display:block;margin-top:9px;font-family:var(--mono);font-size:11.5px;
+  line-height:1.75;color:var(--ink3);font-variant-numeric:tabular-nums;
+  word-break:break-word}
+.sums i{display:block;font-style:normal;margin-top:12px;padding-top:11px;
+  border-top:1px solid var(--line2);font-size:23px;font-weight:500;
+  font-variant-numeric:tabular-nums;letter-spacing:-.015em;line-height:1}
+.sums i em{font-style:normal;font-size:12px;font-weight:400;color:var(--ink3);
+  margin-left:3px}
+.sums u{display:block;text-decoration:none;margin-top:9px;font-size:12px;
+  line-height:1.6;color:var(--seal)}
+
 /* ── 실물 ── */
 .ways{margin-top:28px;display:grid;gap:13px}
 @media(min-width:700px){.ways{grid-template-columns:1fr 1fr 1fr}}
@@ -319,11 +336,49 @@ footer{margin-top:54px;padding:22px 0 40px;border-top:1px solid var(--line);
 
   <div class="scroll">
   <table class="tbl">
-    <caption>단품 · 추가</caption>
+    <caption>품목 단가 — 이 값을 더해 패키지가 나옵니다</caption>
+    <thead><tr><th>품목</th><th>하는 일</th><th>단가</th></tr></thead>
     <tbody>
-      <tr><td class="n">작품별 음성 해설</td><td>원고 집필 + 음성 제작 · 표준 이상</td><td class="p">120,000원</td></tr>
-      <tr><td class="n">영문 안내 페이지</td><td>작가노트 · 작품 정보 번역 · 표준 이상</td><td class="p">150,000원</td></tr>
-      <tr><td class="n">포트폴리오 PDF</td><td>가로·세로 두 가지 · 16쪽 내외 · 단독 가능</td><td class="p">150,000원</td></tr>
+      <tr class="grp"><td colspan="3">모든 작업의 바탕</td></tr>
+      <tr><td class="n">작품 정보 정리 · 사진 보정</td><td>접수 양식 검수, 제목·한자·크기 대조, 작품 사진 보정과 자르기</td><td class="p">50,000원</td></tr>
+      <tr class="grp"><td colspan="3">전시장 인쇄물</td></tr>
+      <tr><td class="n">작품 이름표</td><td>작품 수만큼 · A4 한 장에 앉혀 재단선까지</td><td class="p">45,000원</td></tr>
+      <tr><td class="n">전시장 안내판 A2</td><td>전시 제목 · 작가의 글 · 작품 목록</td><td class="p">35,000원</td></tr>
+      <tr><td class="n">작가 프로필 A4</td><td>이력 정리와 조판</td><td class="p">20,000원</td></tr>
+      <tr><td class="n">작가 안내 QR A4</td><td>입구에 세울 한 장</td><td class="p">15,000원</td></tr>
+      <tr><td class="n">입구 영문 안내 A4</td><td>전시장 밖에 둘 영문 안내</td><td class="p">25,000원</td></tr>
+      <tr><td class="n">리플렛 3단 접지</td><td>양면 여섯 면 · 작가의 글과 작품 전부</td><td class="p">80,000원</td></tr>
+      <tr class="grp"><td colspan="3">온라인</td></tr>
+      <tr><td class="n">전시 홈페이지</td><td>작품마다 한 쪽 · 이름표와 안내판의 QR 연결 포함</td><td class="p">180,000원</td></tr>
+      <tr><td class="n">카톡 공유 카드</td><td>주소를 보낼 때 뜨는 그림과 글</td><td class="p">10,000원</td></tr>
+      <tr><td class="n">영문 안내 페이지</td><td>작가노트 · 작품 정보 · 설명 번역</td><td class="p">150,000원</td></tr>
+      <tr class="grp"><td colspan="3">음성 해설</td></tr>
+      <tr><td class="n">도슨트 원고</td><td>전시 소개 한 편 + 작품마다 한 편</td><td class="p">70,000원</td></tr>
+      <tr><td class="n">음성 제작 · 연결</td><td>같은 수 · 홈페이지에서 바로 재생</td><td class="p">50,000원</td></tr>
+      <tr class="grp"><td colspan="3">작가 자료</td></tr>
+      <tr><td class="n">포트폴리오 PDF</td><td>가로 · 세로 두 가지 · 16쪽 내외</td><td class="p">150,000원</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="sums">
+    <div><b>기본</b><span>50,000 + 45,000 + 35,000 + 20,000</span>
+      <i>150,000<em>원</em></i><u>따로 사도 같은 값</u></div>
+    <div><b>표준</b><span>기본 150,000 + 15,000 + 80,000 + 180,000 + 10,000</span>
+      <i>390,000<em>원</em></i><u>따로 사면 435,000 · 45,000원 덜 받습니다</u></div>
+    <div><b>전체</b><span>표준 435,000 + 25,000 + 150,000 + 120,000 + 150,000</span>
+      <i>690,000<em>원</em></i><u>따로 사면 880,000 · 190,000원 덜 받습니다</u></div>
+  </div>
+  <div class="notes" style="margin-top:20px;grid-template-columns:1fr"><p>묶을수록 덜 받는 이유는 작품 정보를
+    한 번만 정리하면 이름표에도, 홈페이지에도, 포트폴리오에도 그대로 쓰이기
+    때문입니다. 아낀 품만큼 돌려드리는 것이 맞다고 보았습니다. 표준부터는
+    이름표와 안내판의 QR이 값 없이 들어갑니다 — 홈페이지가 있어야 QR이
+    의미가 있기 때문입니다.</p></div>
+
+  <div class="scroll">
+  <table class="tbl">
+    <caption>그 밖의 추가</caption>
+    <tbody>
       <tr><td class="n">작품 추가</td><td>12점을 넘는 작품</td><td class="p">점당 10,000원</td></tr>
       <tr><td class="n">수정 추가</td><td>포함된 2회를 넘는 수정</td><td class="p">건당 30,000원</td></tr>
       <tr><td class="n">급행 진행</td><td>전시 2주 이내 접수</td><td class="p">30% 할증</td></tr>
