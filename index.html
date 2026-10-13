@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>소릿결 전시 지원</title>
-<meta name="description" content="전시장 이름표부터 전시 홈페이지와 음성 해설까지. 작가 한 사람의 전시를 한 번에 준비해 드립니다.">
+<meta name="description" content="전시장 이름표부터 전시 홈페이지와 음성 해설까지. 작품 20점까지 240,000원부터.">
 <meta property="og:title" content="소릿결 전시 지원">
 <meta property="og:description" content="이름표·안내판·홈페이지·음성 해설. 작품 20점까지 240,000원부터.">
 <meta property="og:type" content="website">
@@ -38,194 +38,167 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-text-size-adjust:100%}
 body{background:var(--paper);color:var(--ink);font-family:var(--serif);
-  line-height:1.75;word-break:keep-all;padding-inline:20px}
-.wrap{max-width:760px;margin:0 auto}
-.eye{font-family:var(--mono);font-size:10px;letter-spacing:.26em;
-  color:var(--faint);text-transform:uppercase}
+  line-height:1.7;word-break:keep-all;padding-inline:20px}
+.wrap{max-width:720px;margin:0 auto}
 h1,h2,h3{font-weight:500;letter-spacing:-.01em;text-wrap:balance}
 a{color:inherit}
-a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--seal);
-  outline-offset:3px;border-radius:2px}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{
+  outline:2px solid var(--seal);outline-offset:3px;border-radius:2px}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 
-header{padding:34px 0 0;display:flex;align-items:baseline;
-  justify-content:space-between;gap:16px}
+header{padding:32px 0 0;display:flex;align-items:baseline;
+  justify-content:space-between;gap:14px}
 .mark{display:flex;align-items:baseline;gap:9px}
-.mark .nm{font-size:21px;font-weight:500;letter-spacing:.14em}
-.mark .sub{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;
+.mark .nm{font-size:20px;font-weight:500;letter-spacing:.14em}
+.mark .sub2{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;
   color:var(--faint)}
-header .biz{font-size:12px;color:var(--ink3);text-align:right;line-height:1.6}
+header .biz{font-size:12px;color:var(--ink3);text-align:right}
 
-.hero{padding:52px 0 44px;border-bottom:1px solid var(--line)}
-.hero h1{font-size:clamp(28px,7.4vw,42px);line-height:1.34;font-weight:500}
-.hero h1 em{font-style:normal;color:var(--ink3)}
-.hero .lead{margin-top:22px;font-size:16px;line-height:1.95;color:var(--ink2);
+.hero{padding:44px 0 36px}
+.hero h1{font-size:clamp(25px,6.4vw,34px);line-height:1.4}
+.hero p{margin-top:16px;font-size:15.5px;line-height:1.9;color:var(--ink2);
+  max-width:32em}
+.hero p b{font-weight:500;color:var(--ink)}
+
+section{padding:36px 0;border-top:1px solid var(--line)}
+h2{font-size:19px;line-height:1.4}
+.sub{margin-top:7px;font-size:13.5px;line-height:1.75;color:var(--ink3);
   max-width:34em}
-.hero .lead b{font-weight:500;color:var(--ink)}
-.from{margin-top:28px;display:inline-flex;align-items:baseline;gap:8px;
-  padding:9px 15px;border:1px solid var(--line);border-radius:2px;
-  background:var(--card);box-shadow:var(--shadow)}
-.from span{font-size:12px;color:var(--ink3)}
-.from b{font-size:17px;font-weight:500;font-variant-numeric:tabular-nums}
+.sub b{font-weight:500;color:var(--ink2)}
 
-section{padding:46px 0;border-bottom:1px solid var(--line)}
-section > .eye{display:block;margin-bottom:14px}
-section h2{font-size:clamp(21px,5vw,26px);line-height:1.4}
-section .intro{margin-top:16px;font-size:15px;line-height:1.9;color:var(--ink2);
-  max-width:34em}
-section .intro b{font-weight:500;color:var(--ink)}
-
-.why{display:grid;gap:1px;background:var(--line2);margin-top:28px;
-  border:1px solid var(--line2);border-radius:3px;overflow:hidden}
-@media(min-width:620px){.why{grid-template-columns:1fr 1fr}}
-.why div{background:var(--paper);padding:20px 19px}
-.why b{display:block;font-size:15px;font-weight:500;margin-bottom:7px}
-.why p{font-size:13.5px;line-height:1.8;color:var(--ink3)}
-
-.pks{margin-top:30px;display:grid;gap:14px}
-@media(min-width:700px){.pks{grid-template-columns:repeat(3,1fr);align-items:start}}
+.pks{margin-top:22px;display:grid;gap:12px}
+@media(min-width:680px){.pks{grid-template-columns:repeat(3,1fr);align-items:start}}
 .pk{background:var(--card);border:1px solid var(--line);border-radius:3px;
-  padding:22px 20px 24px;box-shadow:var(--shadow)}
+  padding:18px 17px 20px;box-shadow:var(--shadow)}
 .pk.hi{border-color:var(--ink3);border-width:1.5px}
-.pk .nm{font-size:17px;font-weight:500;letter-spacing:.06em}
-.pk .tag{font-size:11.5px;color:var(--ink3);margin-top:5px;line-height:1.5}
-.pk .pr{margin-top:16px;font-size:26px;font-weight:500;
+.pk .nm{font-size:16px;font-weight:500;letter-spacing:.06em}
+.pk .tag{font-size:11.5px;color:var(--ink3);margin-top:4px;line-height:1.5}
+.pk .pr{margin-top:13px;font-size:24px;font-weight:500;
   font-variant-numeric:tabular-nums;letter-spacing:-.015em;line-height:1}
-.pk .pr em{font-style:normal;font-size:13px;font-weight:400;color:var(--ink3);
+.pk .pr em{font-style:normal;font-size:12px;font-weight:400;color:var(--ink3);
   margin-left:3px}
-.pk ul{list-style:none;margin-top:17px;padding-top:15px;
+.pk ul{list-style:none;margin-top:14px;padding-top:12px;
   border-top:1px solid var(--line2)}
-.pk li{font-size:13.5px;line-height:1.72;color:var(--ink2);
-  padding-left:14px;position:relative;margin-bottom:7px}
+.pk li{font-size:13px;line-height:1.65;color:var(--ink2);padding-left:13px;
+  position:relative;margin-bottom:5px}
 .pk li:last-child{margin-bottom:0}
-.pk li::before{content:"";position:absolute;left:0;top:.68em;width:5px;height:5px;
+.pk li::before{content:"";position:absolute;left:0;top:.66em;width:4px;height:4px;
   border-radius:50%;background:var(--faint)}
+.pk li b{font-weight:500;color:var(--ink)}
 
-/* ── 계산기 ── */
-.calc{margin-top:28px;display:grid;gap:16px}
-@media(min-width:760px){.calc{grid-template-columns:1fr 250px;align-items:start}}
+.calc{margin-top:22px;display:grid;gap:14px}
+@media(min-width:760px){.calc{grid-template-columns:1fr 238px;align-items:start}}
+@media(max-width:759px){
+  .calc{display:flex;flex-direction:column}
+  .out{order:-1;z-index:5}
+}
 .panel{background:var(--card);border:1px solid var(--line);border-radius:3px;
-  padding:20px 19px 22px;box-shadow:var(--shadow)}
-.qty label{display:block;font-size:14px;font-weight:500;margin-bottom:4px}
-.qty .hint{font-size:12.5px;color:var(--ink3);line-height:1.65}
-.qtyrow{margin-top:14px;display:flex;align-items:center;gap:14px}
+  padding:18px 17px 20px;box-shadow:var(--shadow)}
+.qty label{display:block;font-size:13.5px;font-weight:500}
+.qty .hint{margin-top:3px;font-size:12px;line-height:1.6;color:var(--ink3)}
+.qtyrow{margin-top:12px;display:flex;align-items:center;gap:13px}
 .qtyrow input[type=range]{flex:1;accent-color:var(--seal);min-width:0}
-.qtybox{font-family:var(--mono);font-size:19px;font-variant-numeric:tabular-nums;
+.qtybox{font-family:var(--mono);font-size:18px;font-variant-numeric:tabular-nums;
   background:var(--wash);border:1px solid var(--line);border-radius:2px;
-  padding:5px 10px;min-width:62px;text-align:center}
-.qtybox span{font-size:12px;color:var(--ink3);margin-left:2px}
+  padding:4px 9px;min-width:58px;text-align:center}
+.qtybox span{font-size:11px;color:var(--ink3);margin-left:2px}
 
-.grp{margin-top:22px}
-.grp > .gl{font-family:var(--sans);font-size:10.5px;font-weight:700;
-  letter-spacing:.12em;color:var(--ink3);display:block;margin-bottom:10px}
-.opt{display:flex;align-items:flex-start;gap:11px;padding:9px 0;
+.grp{margin-top:18px}
+.grp > .gl{font-family:var(--sans);font-size:10px;font-weight:700;
+  letter-spacing:.12em;color:var(--ink3);display:block;margin-bottom:8px}
+.opt{display:flex;align-items:flex-start;gap:10px;padding:8px 0;
   border-top:1px solid var(--line2);cursor:pointer}
 .opt:first-of-type{border-top:none}
-.opt input{margin-top:5px;width:16px;height:16px;flex:0 0 auto;
+.opt input{margin-top:4px;width:15px;height:15px;flex:0 0 auto;
   accent-color:var(--seal)}
 .opt .t{flex:1;min-width:0}
-.opt .t b{display:block;font-size:14px;font-weight:400;line-height:1.5}
-.opt .t i{display:block;font-style:normal;font-size:12px;color:var(--ink3);
-  line-height:1.55;margin-top:2px}
-.opt .v{font-size:13.5px;font-variant-numeric:tabular-nums;color:var(--ink2);
-  white-space:nowrap;padding-top:1px}
+.opt .t b{display:block;font-size:13.5px;font-weight:400;line-height:1.45}
+.opt .t i{display:block;font-style:normal;font-size:11.5px;color:var(--ink3);
+  line-height:1.5;margin-top:1px}
+.opt .v{font-size:13px;font-variant-numeric:tabular-nums;color:var(--ink2);
+  white-space:nowrap}
 .opt.locked{cursor:not-allowed}
 .opt.locked .t b,.opt.locked .v{color:var(--faint)}
 .opt.locked .t i{color:var(--seal)}
 .opt.fixed{cursor:default}
-.opt.fixed .t i{color:var(--ink3)}
 
-.out{position:sticky;top:16px}
-@media(max-width:759px){
-  .calc{display:flex;flex-direction:column}
-  .out{order:-1;z-index:5;background:var(--card)}
-  .out dl{max-height:none}
-}
-.out .ol{font-family:var(--mono);font-size:10px;letter-spacing:.22em;
+.out{position:sticky;top:14px;background:var(--card);border:1px solid var(--line);
+  border-radius:3px;padding:17px 16px 19px;box-shadow:var(--shadow)}
+.out .ol{font-family:var(--mono);font-size:9.5px;letter-spacing:.22em;
   color:var(--faint)}
-.out dl{margin-top:14px;display:grid;grid-template-columns:1fr auto;
-  gap:7px 12px;align-items:baseline}
-.out dt{font-size:13px;color:var(--ink2)}
-.out dd{font-size:13px;color:var(--ink2);text-align:right;
+.out dl{margin-top:12px;display:grid;grid-template-columns:1fr auto;
+  gap:6px 10px;align-items:baseline}
+.out dt{font-size:12.5px;color:var(--ink2)}
+.out dd{font-size:12.5px;color:var(--ink2);text-align:right;
   font-variant-numeric:tabular-nums;white-space:nowrap}
 .out dt.cut,.out dd.cut{color:var(--seal)}
-.out .total{margin-top:14px;padding-top:13px;border-top:1px solid var(--line)}
-.out .total b{display:block;font-size:30px;font-weight:500;line-height:1;
+.out .total{margin-top:13px;padding-top:12px;border-top:1px solid var(--line)}
+.out .total b{display:block;font-size:28px;font-weight:500;line-height:1;
   font-variant-numeric:tabular-nums;letter-spacing:-.02em}
-.out .total b em{font-style:normal;font-size:14px;font-weight:400;
+.out .total b em{font-style:normal;font-size:13px;font-weight:400;
   color:var(--ink3);margin-left:3px}
-.out .total span{display:block;margin-top:9px;font-size:12px;color:var(--ink3);
-  line-height:1.6}
-.out .same{margin-top:12px;font-size:12.5px;line-height:1.6;color:var(--seal)}
-.out .ask2{display:block;margin-top:16px;text-align:center;font-size:13.5px;
-  text-decoration:none;padding:10px;border:1px solid var(--line);
+.out .total span{display:block;margin-top:8px;font-size:11.5px;color:var(--ink3);
+  line-height:1.55}
+.out .same{margin-top:10px;font-size:12px;line-height:1.55;color:var(--seal)}
+.out .ask2{display:block;margin-top:14px;text-align:center;font-size:13px;
+  text-decoration:none;padding:9px;border:1px solid var(--line);
   border-radius:2px;background:var(--wash)}
 
-.tbl{margin-top:26px;width:100%;border-collapse:collapse}
-.tbl caption{text-align:left;font-family:var(--mono);font-size:10px;
-  letter-spacing:.2em;color:var(--faint);padding-bottom:11px}
-.tbl th{text-align:left;font-family:var(--sans);font-size:10.5px;font-weight:700;
-  letter-spacing:.12em;color:var(--ink3);padding:0 10px 9px 0;
-  border-bottom:1px solid var(--line)}
-.tbl th:last-child,.tbl td:last-child{padding-right:0;text-align:right}
-.tbl td{font-size:14px;padding:11px 10px 11px 0;
+.tbl{margin-top:18px;width:100%;border-collapse:collapse}
+.tbl td{font-size:13.5px;padding:9px 10px 9px 0;
   border-bottom:1px solid var(--line2);vertical-align:top;color:var(--ink2)}
-.tbl td.n{color:var(--ink);font-weight:500;width:38%}
-.tbl td.p{white-space:nowrap;font-variant-numeric:tabular-nums;color:var(--ink)}
-.tbl tr.g td{font-family:var(--sans);font-size:10.5px;font-weight:700;
-  letter-spacing:.12em;color:var(--ink3);padding:22px 0 7px;border-bottom:none;
+.tbl td:last-child{padding-right:0;text-align:right;white-space:nowrap;
+  font-variant-numeric:tabular-nums;color:var(--ink)}
+.tbl td.n{color:var(--ink);font-weight:500;width:40%}
+.tbl tr.g td{font-family:var(--sans);font-size:10px;font-weight:700;
+  letter-spacing:.12em;color:var(--ink3);padding:18px 0 6px;border-bottom:none;
   text-align:left}
+.tbl tr:first-child.g td{padding-top:2px}
 .scroll{overflow-x:auto}
 
-.ways{margin-top:28px;display:grid;gap:13px}
-@media(min-width:700px){.ways{grid-template-columns:1fr 1fr 1fr}}
+.ways{margin-top:20px;display:grid;gap:11px}
+@media(min-width:680px){.ways{grid-template-columns:repeat(3,1fr)}}
 .way{background:var(--card);border:1px solid var(--line);border-radius:3px;
-  padding:20px 19px}
-.way .lbl{font-family:var(--mono);font-size:10px;letter-spacing:.2em;
-  color:var(--faint)}
-.way b{display:block;font-size:15.5px;font-weight:500;margin:7px 0 10px}
-.way p{font-size:13.5px;line-height:1.82;color:var(--ink3)}
-.way p + p{margin-top:9px}
-.way p b{display:inline;margin:0;font-size:inherit;color:var(--ink);font-weight:500}
+  padding:16px 16px 18px}
+.way b{display:block;font-size:14.5px;font-weight:500;margin-bottom:7px}
+.way p{font-size:13px;line-height:1.75;color:var(--ink3)}
+.way p b{display:inline;font-size:inherit;color:var(--ink);font-weight:500}
 
-.steps{margin-top:28px;counter-reset:s;list-style:none}
-.steps li{counter-increment:s;padding:17px 0 17px 44px;position:relative;
-  border-bottom:1px solid var(--line2)}
-.steps li:last-child{border-bottom:none;padding-bottom:0}
-.steps li::before{content:counter(s,decimal-leading-zero);position:absolute;
-  left:0;top:19px;font-family:var(--mono);font-size:11px;color:var(--faint)}
-.steps b{display:block;font-size:15.5px;font-weight:500;margin-bottom:5px}
-.steps p{font-size:13.5px;line-height:1.82;color:var(--ink3)}
+.steps{margin-top:18px;display:grid;gap:12px 28px}
+@media(min-width:620px){.steps{grid-template-columns:1fr 1fr}}
+.steps div{font-size:13px;line-height:1.72;color:var(--ink3)}
+.steps b{display:block;font-size:14px;color:var(--ink);font-weight:500;
+  margin-bottom:3px}
 
-.case{margin-top:26px;background:var(--card);border:1px solid var(--line);
-  border-radius:3px;padding:24px 22px;box-shadow:var(--shadow)}
-.case .ttl{font-size:19px;font-weight:500;line-height:1.5}
-.case .ttl em{font-style:normal;display:block;font-size:13px;color:var(--ink3);
-  margin-top:6px}
-.case dl{margin-top:18px;padding-top:16px;border-top:1px solid var(--line2);
-  display:grid;grid-template-columns:auto 1fr;gap:8px 16px}
-.case dt{font-family:var(--sans);font-size:11px;font-weight:700;
-  letter-spacing:.1em;color:var(--ink3);padding-top:3px;white-space:nowrap}
-.case dd{font-size:13.5px;line-height:1.72;color:var(--ink2)}
-.case .go{display:inline-block;margin-top:20px;font-size:14px;
+details{border-top:1px solid var(--line2)}
+details:first-of-type{border-top:none}
+summary{list-style:none;cursor:pointer;padding:13px 0;font-size:14.5px;
+  display:flex;justify-content:space-between;align-items:center;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--mono);color:var(--faint);
+  font-size:15px;flex:0 0 auto}
+details[open] summary::after{content:"−"}
+details .body{padding:0 0 15px;font-size:13px;line-height:1.8;color:var(--ink3);
+  max-width:40em}
+details .body p + p{margin-top:9px}
+details .body b{font-weight:500;color:var(--ink2)}
+.acc{margin-top:14px}
+
+.case{margin-top:18px;font-size:13.5px;line-height:1.8;color:var(--ink2)}
+.case b{display:block;font-size:16px;font-weight:500;color:var(--ink);
+  margin-bottom:5px}
+.case a{display:inline-block;margin-top:11px;font-size:13.5px;
   text-decoration:none;border-bottom:1px solid var(--faint);padding-bottom:2px}
-.case .go::after{content:" →";color:var(--ink3)}
+.case a::after{content:" →";color:var(--ink3)}
 
-.notes{margin-top:26px;display:grid;gap:20px 32px}
-@media(min-width:620px){.notes{grid-template-columns:1fr 1fr}}
-.notes b{display:block;font-size:14px;font-weight:500;margin-bottom:5px}
-.notes p{font-size:13px;line-height:1.8;color:var(--ink3)}
-
-.ask{padding:50px 0 0;text-align:center}
-.ask .eye{margin-bottom:16px;display:block}
-.ask h2{font-size:clamp(21px,5vw,27px);line-height:1.5}
-.ask .mail{display:inline-block;margin-top:22px;font-size:19px;
-  font-family:var(--mono);text-decoration:none;border-bottom:1.5px solid var(--seal);
-  padding-bottom:3px;word-break:break-all}
-.ask p{margin-top:20px;font-size:13.5px;line-height:1.85;color:var(--ink3);
-  max-width:28em;margin-inline:auto}
-footer{margin-top:54px;padding:22px 0 40px;border-top:1px solid var(--line);
-  display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:space-between;
+.ask{padding:40px 0 0;border-top:1px solid var(--line);text-align:center}
+.ask .mail{display:inline-block;margin-top:12px;font-size:18px;
+  font-family:var(--mono);text-decoration:none;
+  border-bottom:1.5px solid var(--seal);padding-bottom:3px;word-break:break-all}
+.ask p{margin-top:14px;font-size:13px;line-height:1.75;color:var(--ink3);
+  max-width:26em;margin-inline:auto}
+footer{margin-top:40px;padding:18px 0 36px;border-top:1px solid var(--line);
+  display:flex;flex-wrap:wrap;gap:5px 16px;justify-content:space-between;
   font-size:11.5px;color:var(--faint)}
 </style>
 </head>
@@ -233,84 +206,55 @@ footer{margin-top:54px;padding:22px 0 40px;border-top:1px solid var(--line);
 <div class="wrap">
 
 <header>
-  <div class="mark"><span class="nm">소릿결</span><span class="sub">SORITGYEOL</span></div>
-  <div class="biz">전시 지원<br>인쇄물 · 홈페이지 · 음성 해설</div>
+  <div class="mark"><span class="nm">소릿결</span><span class="sub2">SORITGYEOL</span></div>
+  <div class="biz">전시 지원</div>
 </header>
 
 <div class="hero">
-  <h1>작품은 다 걸렸는데,<br><em>이름표가 없습니다.</em></h1>
-  <div class="lead">
-    전시 2주 전. 작품은 끝났고 도록은 예산이 없고, 이름표는 워드로 만들어
-    붙입니다. <b>그림에 쓸 시간을 종이에 씁니다.</b><br>
-    이름표부터 홈페이지와 음성 해설까지 한 군데서 만듭니다. 작품 정보는
-    <b>한 번만</b> 주시면 됩니다.
-  </div>
-  <div class="from"><span>작품 20점까지</span><b>240,000원</b><span>부터</span></div>
+  <h1>이름표부터 홈페이지와<br>음성 해설까지 한 군데서</h1>
+  <p>작품 옆 이름표의 QR을 찍으면 그 작품 페이지가 열리고 음성 해설이
+    나옵니다. 작품 정보는 <b>한 번만</b> 주시면 됩니다.<br>
+    작품 20점까지 <b>240,000원부터</b>. 디자인과 제작 값이며 인쇄는 따로입니다.</p>
 </div>
 
 <section>
-  <span class="eye">Why</span>
-  <h2>전시가 끝나면 아무것도 남지 않습니다</h2>
-  <div class="intro">엿새 동안 백 명이 보고 갑니다. 그중 작품 제목을 기억하는
-    사람은 몇 명일까요. 종이 한 장과 주소 하나가 그 엿새를 남깁니다.</div>
-  <div class="why">
-    <div><b>QR 하나로 해설이 끝납니다</b>
-      <p>이름표의 QR을 찍으면 그 작품 페이지가 열리고 음성 해설이 나옵니다.
-        도슨트가 없는 전시의 도슨트입니다.</p></div>
-    <div><b>이름표가 전시의 얼굴입니다</b>
-      <p>관람객이 작품 다음으로 보는 것이 이름표입니다. 제목·한자·재료·크기를
-        제대로 앉히면 전시장 전체의 격이 달라집니다.</p></div>
-    <div><b>주소는 전시 뒤에도 남습니다</b>
-      <p>전시가 끝나도 홈페이지는 그대로입니다. 공모에 넣을 때, 갤러리에 보낼 때
-        주소 한 줄이면 됩니다. 유지비도 없습니다.</p></div>
-    <div><b>외국인 관람객에게도 보입니다</b>
-      <p>인사동·북촌이라면 외국인이 들어옵니다. 영문 안내 한 쪽과 입구 안내
-        한 장으로 문턱이 낮아집니다.</p></div>
-  </div>
-</section>
-
-<section>
-  <span class="eye">Packages</span>
-  <h2>세 가지 중에 고르시면 됩니다</h2>
-  <div class="intro">작품 <b>20점까지</b> 기준입니다. 아래는 모두 <b>디자인과 제작의 값</b>입니다.
-    종이와 인쇄는 들어 있지 않고, 인쇄용 파일(PDF)로 드립니다. 지금은 사업자등록 전이라 금액에 부가세가 붙지 않습니다. <b>영문 안내는 전시 장소에 따라 쓸모가 갈려 단품으로 두었습니다.</b></div>
+  <h2>패키지</h2>
+  <div class="sub">세 가지 중에 고르시거나, 아래에서 필요한 것만 골라 보세요.</div>
   <div class="pks">
     <div class="pk">
       <div class="nm">기본</div><div class="tag">이름표 · 홈페이지 · QR</div>
       <div class="pr">240,000<em>원</em></div>
-      <ul><li>작품 이름표 + QR</li><li>전시장 안내판 A2 + QR</li>
-        <li>전시 홈페이지 · 작품마다 한 쪽</li><li>작가 프로필 A4</li>
-        <li>카톡 공유 카드</li><li>작가 안내 QR A4</li><li>작품 사진 보정</li></ul>
+      <ul><li>작품 이름표 디자인 + QR</li><li>전시장 안내판 디자인 + QR</li>
+        <li>전시 홈페이지 제작</li><li>작가 프로필 · 작가 안내 디자인</li>
+        <li>카톡 공유 카드 · 사진 보정</li></ul>
     </div>
     <div class="pk hi">
       <div class="nm">표준</div><div class="tag">QR을 찍으면 음성이 나옵니다</div>
       <div class="pr">290,000<em>원</em></div>
-      <ul><li>기본에 더하여</li><li>짧은 해설 · 전시 소개 + 대표작 다섯 점</li>
-        <li>음성이 없는 작품도 QR을 찍으면 사진과 글이 나옵니다</li></ul>
+      <ul><li>기본에 더하여</li>
+        <li><b>짧은 해설</b> — 전시 소개 + 대표작 다섯 편</li>
+        <li>음성이 없는 작품은 사진과 글</li></ul>
     </div>
     <div class="pk">
       <div class="nm">고급</div><div class="tag">리플렛 · 전편 해설 · 포트폴리오</div>
       <div class="pr">500,000<em>원</em></div>
-      <ul><li>표준에서 <b>해설이 전편으로</b> — 짧은 해설 대신</li>
-        <li>리플렛 3단 접지</li><li>포트폴리오 PDF 가로·세로</li>
+      <ul><li>표준에서 <b>해설이 전편으로</b></li>
+        <li>리플렛 디자인</li><li>포트폴리오 디자인</li>
         <li>그 밖에는 표준과 같습니다</li></ul>
     </div>
   </div>
 </section>
 
 <section>
-  <span class="eye">Estimate</span>
-  <h2>필요한 것만 골라 보세요</h2>
-  <div class="intro">작품 수를 맞추고 필요한 것에 체크하면 금액이 바로 나옵니다. 풀면
-    그만큼 빠집니다. <b>홈페이지를 빼면 QR과 음성, 영문이 함께 잠깁니다</b> —
-    모두 홈페이지 위에서 돌기 때문입니다.</div>
+  <h2>필요한 것만 골라 보기</h2>
+  <div class="sub">작품 수를 맞추고 체크하면 금액이 바로 나옵니다.
+    <b>홈페이지를 빼면 QR과 음성, 영문이 함께 잠깁니다.</b></div>
 
   <div class="calc">
     <div class="panel">
       <div class="qty">
         <label for="q">작품 수</label>
-        <div class="hint">이름표가 붙는 수로 세어 주세요. 연작 한 세트는 몇
-          폭이든 1점입니다.</div>
+        <div class="hint">이름표가 붙는 수. 연작 한 세트는 몇 폭이든 1점입니다.</div>
         <div class="qtyrow">
           <input type="range" id="q" min="1" max="40" value="20" step="1"
                  aria-label="작품 수">
@@ -323,44 +267,43 @@ footer{margin-top:54px;padding:22px 0 40px;border-top:1px solid var(--line);
         <label class="opt fixed">
           <input type="checkbox" id="i_base" checked disabled>
           <span class="t"><b>작품 정보 정리 · 사진 보정</b>
-            <i>접수 양식 검수, 제목·한자·크기 대조, 작품 사진 보정 — 모든 작업에
-              들어갑니다</i></span>
-          <span class="v" id="v_base">50,000</span></label>
+            <i>모든 작업에 들어갑니다</i></span>
+          <span class="v">50,000</span></label>
       </div>
 
       <div class="grp">
         <span class="gl">전시장 — 인쇄용 PDF</span>
         <label class="opt"><input type="checkbox" id="i_cap" checked>
           <span class="t"><b>작품 이름표 디자인</b>
-            <i>95×45mm · 작품 수만큼 한 값 · 20점까지 · 재단선까지</i></span><span class="v" id="v_cap">45,000</span></label>
+            <i>95×45mm · 작품 수만큼 한 값</i></span><span class="v">45,000</span></label>
         <label class="opt"><input type="checkbox" id="i_sign" checked>
           <span class="t"><b>전시장 안내판 디자인</b>
-            <i>A2 · 전시 제목 · 작가의 글 · 작품 목록</i></span><span class="v">35,000</span></label>
+            <i>A2 · 제목 · 작가의 글 · 작품 목록</i></span><span class="v">35,000</span></label>
         <label class="opt"><input type="checkbox" id="i_prof" checked>
-          <span class="t"><b>작가 프로필 디자인</b><i>A4 · 이력 정리와 조판</i></span>
+          <span class="t"><b>작가 프로필 디자인</b><i>A4 · 이력 한 장</i></span>
           <span class="v">20,000</span></label>
         <label class="opt"><input type="checkbox" id="i_leaf">
-          <span class="t"><b>리플렛 디자인</b>
-            <i>3단 접지 · 양면 여섯 면 · 작가의 글과 작품 전부</i></span><span class="v">100,000</span></label>
+          <span class="t"><b>리플렛 디자인</b><i>3단 접지 · 양면 여섯 면</i></span>
+          <span class="v">100,000</span></label>
       </div>
 
       <div class="grp">
         <span class="gl">온라인 — 올리기만 하면 되는 파일</span>
         <label class="opt"><input type="checkbox" id="i_web" checked>
           <span class="t"><b>전시 홈페이지 제작</b>
-            <i>작품마다 한 쪽 · 이름표와 안내판의 QR이 여기로 옵니다</i></span>
-          <span class="v" id="v_web">120,000</span></label>
+            <i>작품마다 한 쪽 · 모든 QR이 여기로</i></span>
+          <span class="v">120,000</span></label>
         <label class="opt" id="o_kakao"><input type="checkbox" id="i_kakao" checked>
-          <span class="t"><b>카톡 공유 카드 제작</b>
+          <span class="t"><b>카톡 공유 카드</b>
             <i data-need="홈페이지가 있어야 합니다">주소를 보낼 때 뜨는 그림과 글</i></span>
           <span class="v">10,000</span></label>
         <label class="opt" id="o_qrcard"><input type="checkbox" id="i_qrcard" checked>
           <span class="t"><b>작가 안내 디자인</b>
-            <i data-need="홈페이지가 있어야 합니다">입구에 세울 한 장 · 큰 QR로 작가 이력 페이지</i></span>
+            <i data-need="홈페이지가 있어야 합니다">A4 · 입구에 세울 큰 QR</i></span>
           <span class="v">15,000</span></label>
         <label class="opt" id="o_en"><input type="checkbox" id="i_en">
           <span class="t"><b>영문 안내 번역 · 제작</b>
-            <i data-need="홈페이지가 있어야 합니다">작가노트 · 작품 정보 번역 + 입구에 세울 A4 한 장</i></span>
+            <i data-need="홈페이지가 있어야 합니다">영문 페이지 + 입구 안내 A4</i></span>
           <span class="v">100,000</span></label>
       </div>
 
@@ -369,11 +312,11 @@ footer{margin-top:54px;padding:22px 0 40px;border-top:1px solid var(--line);
         <label class="opt"><input type="radio" name="au" value="0" id="a0">
           <span class="t"><b>넣지 않음</b></span><span class="v">—</span></label>
         <label class="opt"><input type="radio" name="au" value="1" id="a1" checked>
-          <span class="t"><b>짧은 해설 제작</b>
-            <i data-need="홈페이지가 있어야 합니다">전시 소개 + 대표작 다섯 편 · 나머지 작품은 글로 읽습니다</i></span>
+          <span class="t"><b>짧은 해설</b>
+            <i data-need="홈페이지가 있어야 합니다">전시 소개 + 대표작 다섯 편</i></span>
           <span class="v">60,000</span></label>
         <label class="opt"><input type="radio" name="au" value="2" id="a2">
-          <span class="t"><b>전편 해설 제작</b>
+          <span class="t"><b>전편 해설</b>
             <i data-need="홈페이지가 있어야 합니다">전시 소개 + 작품 전부</i></span>
           <span class="v">130,000</span></label>
       </div>
@@ -382,11 +325,12 @@ footer{margin-top:54px;padding:22px 0 40px;border-top:1px solid var(--line);
         <span class="gl">작가 자료 — PDF</span>
         <label class="opt"><input type="checkbox" id="i_pf">
           <span class="t"><b>포트폴리오 디자인</b>
-            <i>PDF 가로·세로 두 가지 · 공모나 갤러리 제출용</i></span><span class="v">100,000</span></label>
+            <i>가로·세로 두 가지 · 공모나 갤러리 제출용</i></span>
+          <span class="v">100,000</span></label>
       </div>
     </div>
 
-    <div class="panel out">
+    <div class="out">
       <span class="ol">ESTIMATE</span>
       <dl id="sumlist"></dl>
       <div class="total">
@@ -394,143 +338,124 @@ footer{margin-top:54px;padding:22px 0 40px;border-top:1px solid var(--line);
         <span id="tnote">인쇄비 별도</span>
       </div>
       <div class="same" id="same"></div>
-      <a class="ask2" href="mailto:ysa3co@gmail.com?subject=전시 지원 문의">이 구성으로 문의하기</a>
+      <a class="ask2" href="mailto:ysa3co@gmail.com?subject=전시 지원 문의">이 구성으로 문의</a>
     </div>
   </div>
 
-  <div class="notes" style="margin-top:24px;grid-template-columns:1fr">
-    <p>20점까지는 기준가 그대로입니다. 21~35점은 사진 보정과 이름표,
-      홈페이지 쪽수가 늘어 금액이 더해지고, 해설을 전편으로 하시면 원고도 늘어
-      더 붙습니다. 10점 이하는 50,000원 빼드리고, 36점이 넘으면 따로 상담합니다.
-      많이 고르실수록 할인이 커집니다. 작품 정보를 한 번 정리하면 이름표와
-      홈페이지, 포트폴리오에 그대로 쓰여서입니다.</p>
-  </div>
-
   <div class="scroll">
   <table class="tbl">
-    <caption>그 밖의 값</caption>
     <tbody>
-      <tr class="g"><td colspan="3">전시장 구성</td></tr>
-      <tr><td class="n">이름표 · 안내판만</td><td>홈페이지 없이 종이만 필요하실 때 · QR은 들어가지 않습니다</td><td class="p">130,000원</td></tr>
-      <tr><td class="n">해설을 전편으로</td><td>짧은 해설에서 올릴 때</td><td class="p">+70,000원</td></tr><tr><td class="n">포트폴리오 한 가지만</td><td>가로나 세로 중 하나만 필요하실 때</td><td class="p">70,000원</td></tr>
-      <tr class="g"><td colspan="3">진행</td></tr>
-      <tr><td class="n">수정 추가</td><td>포함된 2회차를 넘는 수정 · 모아 보내신 한 묶음이 1회차</td><td class="p">회차당 30,000원</td></tr>
-      <tr><td class="n">급행 진행</td><td>접수 양식을 받은 날이 전시 2주 이내일 때</td><td class="p">50% 할증</td></tr>
+      <tr class="g"><td colspan="3">작품 수</td></tr>
+      <tr><td class="n">21~35점</td><td>전편 해설이면 +150,000원</td><td>+80,000원</td></tr>
+      <tr><td class="n">10점 이하</td><td>작은 전시는 빼드립니다</td><td>−50,000원</td></tr>
+      <tr><td class="n">36점 이상</td><td>구성이 달라집니다</td><td>별도 상담</td></tr>
+      <tr class="g"><td colspan="3">그 밖</td></tr>
+      <tr><td class="n">이름표 · 안내판만</td><td>QR은 들어가지 않습니다</td><td>130,000원</td></tr>
+      <tr><td class="n">포트폴리오 한 가지만</td><td>가로나 세로 중 하나</td><td>70,000원</td></tr>
+      <tr><td class="n">수정 추가</td><td>2회차까지 포함 · 모아 보내신 한 묶음이 1회차</td><td>회차당 30,000원</td></tr>
+      <tr><td class="n">급행 진행</td><td>접수가 전시 2주 이내</td><td>50% 할증</td></tr>
       <tr class="g"><td colspan="3">단체전</td></tr>
-      <tr><td class="n">전시 공통</td><td>안내판 · 리플렛 · 홈페이지 틀 · 전시 소개</td><td class="p">300,000원</td></tr>
-      <tr><td class="n">작가마다</td><td>이름표 · 홈페이지 쪽 · 프로필 · 사진 보정</td><td class="p">1인 80,000원</td></tr>
+      <tr><td class="n">전시 공통</td><td>안내판 · 리플렛 · 홈페이지 틀</td><td>300,000원</td></tr>
+      <tr><td class="n">작가마다</td><td>이름표 · 홈페이지 쪽 · 프로필</td><td>1인 80,000원</td></tr>
     </tbody>
   </table>
   </div>
 </section>
 
 <section>
-  <span class="eye">Printing &amp; Installation</span>
-  <h2>실물은 어떻게 하나</h2>
-  <div class="intro">위 금액에 <b>인쇄비는 없습니다.</b> 수량과 종이, 후가공이 전시마다
-    달라 미리 넣으면 어느 한쪽이 손해입니다. 세 가지 중에 고르십시오.</div>
+  <h2>인쇄는 따로입니다</h2>
+  <div class="sub">수량과 종이가 전시마다 달라 값에 넣지 않았습니다.
+    스무 점 기준 인쇄비는 10만~15만원입니다.</div>
   <div class="ways">
-    <div class="way"><div class="lbl">A</div><b>파일만 받기</b>
-      <p>인쇄용 PDF를 드리고, 인쇄는 직접 맡기십니다. 위 금액 그대로이고 추가
-        비용이 없습니다.</p>
-      <p>인쇄소를 정하기 어려우시면 어디에 어떻게 맡기면 되는지 알려 드립니다.
-        이것은 무료입니다.</p></div>
-    <div class="way"><div class="lbl">B</div><b>인쇄 대행</b>
-      <p>저희가 인쇄소에 넣고 받아 보내 드립니다. <b>인쇄비는 실비 그대로</b>
-        받고 대행비 <b>40,000원</b>을 더합니다. 배송비도 실비입니다.</p>
-      <p>스무 점 기준 인쇄비는 10만~15만원입니다.</p></div>
-    <div class="way"><div class="lbl">C</div><b>현장 세팅</b>
-      <p>인쇄에서 설치까지 맡습니다. 이름표를 폼보드에 붙여 재단하고, 안내판을
-        세우고, 전시장에서 작품 옆에 붙여 드립니다.</p>
-      <p><b>200,000원</b> + 인쇄 실비. 수도권 기준이고 그 밖은 교통비가
-        붙습니다.</p></div>
-  </div>
-  <div class="scroll">
-  <table class="tbl">
-    <caption>품목별로 필요한 것</caption>
-    <thead><tr><th>품목</th><th>인쇄</th><th>후가공 · 거치</th></tr></thead>
-    <tbody>
-      <tr><td class="n">작품 이름표</td><td>두꺼운 종이 + 재단</td><td class="p">폼보드 또는 아크릴 꽂이</td></tr>
-      <tr><td class="n">전시장 안내판</td><td>A2 출력</td><td class="p">폼보드 5T 부착</td></tr>
-      <tr><td class="n">작가 안내 · 입구 안내</td><td>A4 출력</td><td class="p">A4 아크릴 꽂이</td></tr>
-      <tr><td class="n">리플렛</td><td>스노우지 양면 · 200~500부</td><td class="p">3단 접지</td></tr>
-      <tr><td class="n">포트폴리오</td><td>컬러 인쇄 · 1~3부</td><td class="p">제본</td></tr>
-    </tbody>
-  </table>
+    <div class="way"><b>가 · 파일만 받기</b>
+      <p>PDF를 드리고 직접 맡기십니다. 추가 비용 없음. 어디에 맡기는지는 무료로
+        알려 드립니다.</p></div>
+    <div class="way"><b>나 · 인쇄 대행</b>
+      <p>저희가 넣고 받아 보내 드립니다. 인쇄비 실비 + 대행비
+        <b>40,000원</b>.</p></div>
+    <div class="way"><b>다 · 현장 세팅</b>
+      <p>폼보드 재단과 설치까지. <b>200,000원</b> + 인쇄 실비. 수도권 기준.</p></div>
   </div>
 </section>
 
 <section>
-  <span class="eye">How it works</span>
-  <h2>작가가 보낼 것은 사진과 작품 정보뿐입니다</h2>
-  <ol class="steps">
-    <li><b>작품 사진을 먼저 보내주세요</b>
-      <p>무료로 봐 드립니다. 인쇄에 쓰기 어려운 사진이 있으면 다시 찍어야 할
-        작품을 미리 알려 드립니다. 이 단계에서 그만두셔도 비용이 없습니다.</p></li>
-    <li><b>접수 양식을 채워 보내주세요</b>
-      <p>제목·한자·연도·재료·크기와 작가노트, 이력. 엑셀 양식을 드립니다.
-        전시 3주 전까지 접수를 권합니다.</p></li>
-    <li><b>초안을 보시고 고쳐 주세요</b>
-      <p>완성본 한 가지를 드립니다. 여러 시안 중 고르는 방식이 아니고, 받으신
-        뒤 2회차까지 고쳐 드립니다. 접수 후 작품명이나 크기가 바뀌면 인쇄물을
-        전부 다시 만들어야 하니 미리 확정해 주세요.</p></li>
-    <li><b>인쇄용 파일과 홈페이지를 받으십니다</b>
-      <p>인쇄소에 그대로 넘기면 되는 PDF와, 올리기만 하면 되는 홈페이지 파일을
-        드립니다. 홈페이지는 무료 주소로 만들어 유지비가 들지 않습니다.</p></li>
-  </ol>
+  <h2>진행</h2>
+  <div class="steps">
+    <div><b>하나 · 작품 사진</b>먼저 보내주십시오. 무료로 봅니다. 여기서
+      그만두셔도 비용이 없습니다.</div>
+    <div><b>둘 · 접수 양식</b>엑셀 양식을 드립니다. 전시 3주 전까지 권합니다.</div>
+    <div><b>셋 · 초안</b>완성본 한 가지를 드리고 2회차까지 고쳐 드립니다.</div>
+    <div><b>넷 · 전달</b>인쇄용 PDF와 홈페이지 파일. 보통 열흘 걸립니다.</div>
+  </div>
 </section>
 
 <section>
-  <span class="eye">Case</span>
   <h2>실제로 만든 전시</h2>
   <div class="case">
-    <div class="ttl">이유리 개인전 「休遊山水 — 마음, 쉬고 노닐다」
-      <em>인사아트센터 3층 제1특별관 · 2026. 10. 14 – 10. 19</em></div>
-    <dl>
-      <dt>인쇄물</dt><dd>작품 이름표 12종, 안내판 A2, 리플렛 3단 접지,
-        작가 안내 · 입구 영문 안내, 작가 프로필, 포트폴리오 가로·세로</dd>
-      <dt>온라인</dt><dd>작품마다 한 쪽씩 열두 쪽, 영문 안내 페이지,
-        카톡 공유 카드</dd>
-      <dt>음성</dt><dd>전시 소개와 작품 열두 점, 모두 열세 편</dd>
-    </dl>
-    <a class="go" href="https://leeyuri83.github.io">전시 홈페이지 보기</a>
+    <b>이유리 개인전 「休遊山水 — 마음, 쉬고 노닐다」</b>
+    인사아트센터 3층 제1특별관 · 2026. 10<br>
+    이름표 12종, 안내판, 리플렛, 포트폴리오, 작품마다 한 쪽씩 열두 쪽의
+    홈페이지, 영문 페이지, 음성 해설 열세 편.
+    <a href="https://leeyuri83.github.io">전시 홈페이지 보기</a>
   </div>
 </section>
 
 <section>
-  <span class="eye">Notes</span>
   <h2>미리 알려 드릴 것</h2>
-  <div class="notes">
-    <div><b>언제 내시나</b><p>접수 양식을 보내실 때 절반, 인쇄용 파일과
-      홈페이지를 드릴 때 나머지 절반을 계좌로 받습니다. 착수 전이면 전액
-      돌려드리고, 초안을 보내드리기 전이면 착수금까지만 받고 끝냅니다.</p></div>
-    <div><b>증빙</b><p>아직 사업자등록 전이라 세금계산서와 현금영수증을 드리지
-      못합니다. 그래서 금액에 부가세가 붙지 않습니다. 공모 정산 등으로 증빙이
-      꼭 필요하시면 접수 전에 말씀해 주세요.</p></div>
-    <div><b>홈페이지는 작가 것입니다</b><p>작가 이름의 무료 계정으로 만들어 계정
-      정보를 함께 드립니다. 전시가 끝나도 주소가 그대로 남고 유지비가 들지
-      않습니다. 나중에 작품을 더 넣는 작업은 점당 10,000원입니다.</p></div>
-    <div><b>프로필과 포트폴리오</b><p>작가 프로필은 전시장에 두고 관람객이
-      집어 가는 이력 한 장이고, 포트폴리오는 공모나 갤러리에 내는 PDF입니다.
-      이력 내용은 겹치지만 쓰는 자리가 다릅니다.</p></div>
-    <div><b>저작권</b><p>작품 사진의 권리는 작가에게 있습니다. 완성된 제작물도
-      작가의 것입니다. 사례로 보여드릴 때는 작가의 허락을 받습니다.</p></div>
-    <div><b>음성 해설</b><p>원고는 작가노트를 바탕으로 직접 씁니다. 읽는 목소리는
-      AI 음성이며, 홈페이지에 그 사실을 밝힙니다.</p></div>
-    <div><b>영문 안내</b><p>인사동·북촌처럼 외국인이 드나드는 자리가 아니면
-      쓸 일이 거의 없어 단품으로 두었습니다. 번역은 AI로 하고 사람이 검수하며,
-      원어민 감수는 포함하지 않습니다.</p></div>
-    <div><b>인쇄 품질</b><p>색은 화면과 인쇄물이 조금 다릅니다. 처음 거래하는
-      인쇄소라면 한 장 시험 인쇄를 권합니다.</p></div>
+  <div class="acc">
+    <details><summary>지급 · 증빙 · 취소</summary>
+      <div class="body">
+        <p>접수 양식을 보내실 때 <b>절반</b>, 파일을 드릴 때 <b>나머지 절반</b>을
+          계좌로 받습니다.</p>
+        <p>사업자등록 전이라 세금계산서와 현금영수증을 드리지 못합니다. 그래서
+          부가세도 붙지 않습니다. 공모 정산에 증빙이 필요하시면 접수 전에
+          말씀해 주십시오.</p>
+        <p>착수 전이면 전액 돌려드립니다. 초안 전이면 착수금까지만 받습니다.
+          초안을 받으신 뒤에는 어렵습니다.</p>
+      </div></details>
+    <details><summary>홈페이지는 누구 것인가</summary>
+      <div class="body">
+        <p>작가 이름의 무료 계정으로 만들고 계정 정보를 드립니다. 전시가 끝나도
+          주소가 남고 유지비가 없습니다. 나중에 작품을 더 넣는 작업은 점당
+          10,000원입니다.</p>
+      </div></details>
+    <details><summary>음성 해설과 영문 번역</summary>
+      <div class="body">
+        <p>원고는 작가노트를 보고 직접 씁니다. 목소리는 AI이며 홈페이지에
+          그렇게 밝힙니다.</p>
+        <p>영문은 외국인이 드나드는 자리가 아니면 쓸 일이 없어 단품으로
+          두었습니다. 번역은 AI로 하고 사람이 검수합니다. 원어민 감수는
+          없습니다.</p>
+      </div></details>
+    <details><summary>프로필과 포트폴리오는 뭐가 다른가</summary>
+      <div class="body">
+        <p>프로필은 전시장에 두는 이력 한 장, 포트폴리오는 공모나 갤러리에 내는
+          PDF입니다. 내용은 겹치지만 쓰는 자리가 다릅니다.</p>
+      </div></details>
+    <details><summary>시안은 몇 개 주시나요</summary>
+      <div class="body">
+        <p>완성본 한 가지를 드립니다. 시안 여러 개 중 고르는 방식이 아닙니다.
+          받으신 뒤 2회차까지 고쳐 드립니다.</p>
+      </div></details>
+    <details><summary>사진을 휴대폰으로 찍어도 되나요</summary>
+      <div class="body">
+        <p>보통은 됩니다. 접수 전에 무료로 봅니다. 작품이 크거나 유리 액자에
+          들어 있으면 다시 찍으시는 쪽이 낫습니다.</p>
+      </div></details>
+    <details><summary>저작권과 인쇄 품질</summary>
+      <div class="body">
+        <p>작품 사진도 완성된 제작물도 작가의 것입니다. 사례로 쓸 때는 허락을
+          받습니다.</p>
+        <p>색은 화면과 인쇄물이 다릅니다. 처음 거래하는 인쇄소면 한 장 시험
+          인쇄를 권합니다.</p>
+      </div></details>
   </div>
 </section>
 
 <div class="ask">
-  <span class="eye">Contact</span>
   <h2>전시 날짜와 작품 수만 알려 주세요</h2>
   <a class="mail" href="mailto:ysa3co@gmail.com">ysa3co@gmail.com</a>
-  <p>작품 사진을 먼저 보내주시면 무료로 봅니다. 전시 3주 전까지 연락
-    주시는 것이 좋습니다.</p>
+  <p>작품 사진을 먼저 보내주시면 무료로 봅니다.</p>
 </div>
 
 <footer>
@@ -545,13 +470,12 @@ footer{margin-top:54px;padding:22px 0 40px;border-top:1px solid var(--line);
   var P={base:50000,cap:45000,sign:35000,prof:20000,leaf:100000,web:120000,
          kakao:10000,qrcard:15000,en:100000,pf:100000,au1:60000,au2:130000};
   var NAME={base:'정보 정리 · 사진 보정',cap:'이름표 디자인',sign:'안내판 디자인',
-    prof:'프로필 디자인',leaf:'리플렛 디자인',web:'홈페이지 제작',kakao:'공유 카드 제작',
-    qrcard:'작가 안내 디자인',en:'영문 안내',
+    prof:'프로필 디자인',leaf:'리플렛 디자인',web:'홈페이지 제작',
+    kakao:'공유 카드',qrcard:'작가 안내 디자인',en:'영문 안내',
     pf:'포트폴리오 디자인',au1:'짧은 해설',au2:'전편 해설'};
   var $=function(id){return document.getElementById(id)};
   var won=function(n){return n.toLocaleString('ko-KR')};
 
-  // 소계 → 할인 (꺾은선 보간, 많이 고를수록 커짐)
   function disc(s){
     var pts=[[0,0],[200000,0],[295000,55000],[355000,65000],[625000,125000]];
     if(s>=625000) return Math.round(s*0.20/1000)*1000;
@@ -582,7 +506,6 @@ footer{margin-top:54px;padding:22px 0 40px;border-top:1px solid var(--line);
     lock('i_qrcard','o_qrcard',web);
     lock('i_en','o_en',web);
 
-    // 음성 — 홈페이지 없으면 잠금
     var au=0;
     [['a1',1],['a2',2]].forEach(function(p){
       var el=$(p[0]), o=el.closest('.opt'), i=o.querySelector('i');
@@ -603,8 +526,8 @@ footer{margin-top:54px;padding:22px 0 40px;border-top:1px solid var(--line);
 
     var over=false, qline=null;
     if(n>=36){ over=true; }
-    else if(n>=21){ var ex=(au===2)?150000:80000; sub+=ex; qline=['작품 '+n+'점 ('+'21점부터)',ex]; }
-    else if(n<=10){ sub-=50000; qline=['작품 '+n+'점 (10점 이하)',-50000]; }
+    else if(n>=21){ var ex=(au===2)?150000:80000; sub+=ex; qline=['작품 '+n+'점',ex]; }
+    else if(n<=10){ sub-=50000; qline=['작품 '+n+'점',-50000]; }
 
     var dl=$('sumlist'); dl.innerHTML='';
     function li(t,v,cls){
@@ -614,15 +537,14 @@ footer{margin-top:54px;padding:22px 0 40px;border-top:1px solid var(--line);
       dl.appendChild(dt); dl.appendChild(dd);
     }
 
+    rows.forEach(function(r){ li(r[0],r[1]); });
+
     if(over){
-      rows.forEach(function(r){ li(r[0],r[1]); });
       $('total').textContent='별도 상담';
-      $('tnote').textContent='작품이 36점을 넘으면 소품전에 가까워 구성이 달라집니다. 메일로 알려 주세요.';
+      $('tnote').textContent='작품이 36점을 넘으면 구성이 달라집니다. 메일로 알려 주세요.';
       $('same').textContent='';
       return;
     }
-
-    rows.forEach(function(r){ li(r[0],r[1]); });
     if(qline) li(qline[0],qline[1]);
 
     var d=Math.round(disc(sub));
@@ -632,7 +554,7 @@ footer{margin-top:54px;padding:22px 0 40px;border-top:1px solid var(--line);
     if(d>0) li('묶음 할인',-d,'cut');
 
     $('total').innerHTML=won(total)+'<em>원</em>';
-    $('tnote').textContent='인쇄용 파일(PDF)까지 · 인쇄비는 따로입니다';
+    $('tnote').textContent='인쇄용 파일까지 · 인쇄비 별도';
 
     var s='';
     if(total===240000) s='기본 패키지와 같은 구성입니다.';
