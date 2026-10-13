@@ -59,6 +59,11 @@ header .biz{font-size:12px;color:var(--ink3);text-align:right}
 .hero p{margin-top:16px;font-size:15.5px;line-height:1.9;color:var(--ink2);
   max-width:32em}
 .hero p b{font-weight:500;color:var(--ink)}
+.svc{margin-top:20px;display:flex;flex-wrap:wrap;gap:7px}
+.svc span{font-size:12.5px;line-height:1.4;color:var(--ink2);background:var(--card);
+  border:1px solid var(--line);border-radius:999px;padding:6px 13px}
+.hero p.from{margin-top:20px;font-size:13.5px;color:var(--ink3);line-height:1.7}
+.hero p.from b{font-size:15px;color:var(--ink)}
 
 section{padding:36px 0;border-top:1px solid var(--line)}
 h2{font-size:19px;line-height:1.4}
@@ -211,10 +216,18 @@ footer{margin-top:40px;padding:18px 0 36px;border-top:1px solid var(--line);
 </header>
 
 <div class="hero">
-  <h1>이름표부터 홈페이지와<br>음성 해설까지 한 군데서</h1>
-  <p>작품 옆 이름표의 QR을 찍으면 그 작품 페이지가 열리고 음성 해설이
-    나옵니다. 작품 정보는 <b>한 번만</b> 주시면 됩니다.<br>
-    작품 20점까지 <b>240,000원부터</b>. 디자인과 제작 값이며 인쇄는 따로입니다.</p>
+  <h1>전시회 준비 중이신가요?</h1>
+  <p>전시가 2주쯤 남으면 작품은 끝나 있는데 이름표를 워드로 만들고 계실
+    겁니다. 도록은 예산이 안 맞고, 작품을 설명해 줄 사람도 따로 없습니다.<br>
+    그 일을 맡아서 해드립니다. <b>작품 사진과 작품 정보만 보내주시면</b>
+    전시장에 필요한 것들을 한 군데서 만들어 드립니다.</p>
+  <div class="svc">
+    <span>작품 이름표</span><span>전시장 안내판</span><span>도슨트 음성 해설</span>
+    <span>전시 작품 홈페이지</span><span>리플렛</span><span>작가 프로필</span>
+    <span>포트폴리오</span><span>영문 안내</span>
+  </div>
+  <p class="from">작품 20점까지 <b>240,000원부터</b> · 디자인과 제작 값이며
+    인쇄는 따로입니다</p>
 </div>
 
 <section>
@@ -364,28 +377,33 @@ footer{margin-top:40px;padding:18px 0 36px;border-top:1px solid var(--line);
 
 <section>
   <h2>인쇄는 따로입니다</h2>
-  <div class="sub">수량과 종이가 전시마다 달라 값에 넣지 않았습니다.
-    스무 점 기준 인쇄비는 10만~15만원입니다.</div>
+  <div class="sub">인쇄 수량과 종이는 전시마다 달라서 값에 넣지 않았습니다.
+    스무 점 기준으로 인쇄비는 10만~15만원쯤 듭니다.</div>
   <div class="ways">
     <div class="way"><b>가 · 파일만 받기</b>
-      <p>PDF를 드리고 직접 맡기십니다. 추가 비용 없음. 어디에 맡기는지는 무료로
-        알려 드립니다.</p></div>
+      <p>인쇄용 PDF를 드리고 인쇄는 직접 맡기시면 됩니다. 추가 비용은 없고,
+        인쇄소를 정하기 어려우시면 어디에 어떻게 맡기면 되는지 알려
+        드립니다.</p></div>
     <div class="way"><b>나 · 인쇄 대행</b>
-      <p>저희가 넣고 받아 보내 드립니다. 인쇄비 실비 + 대행비
-        <b>40,000원</b>.</p></div>
+      <p>저희가 인쇄소에 넣고 받아서 보내 드립니다. 인쇄비는 실비 그대로 받고
+        대행비 <b>40,000원</b>을 더합니다.</p></div>
     <div class="way"><b>다 · 현장 세팅</b>
-      <p>폼보드 재단과 설치까지. <b>200,000원</b> + 인쇄 실비. 수도권 기준.</p></div>
+      <p>이름표를 폼보드에 붙여 재단하고 전시장에서 설치까지 해드립니다.
+        <b>200,000원</b>에 인쇄 실비가 더해지며 수도권 기준입니다.</p></div>
   </div>
 </section>
 
 <section>
   <h2>진행</h2>
   <div class="steps">
-    <div><b>하나 · 작품 사진</b>먼저 보내주십시오. 무료로 봅니다. 여기서
-      그만두셔도 비용이 없습니다.</div>
-    <div><b>둘 · 접수 양식</b>엑셀 양식을 드립니다. 전시 3주 전까지 권합니다.</div>
-    <div><b>셋 · 초안</b>완성본 한 가지를 드리고 2회차까지 고쳐 드립니다.</div>
-    <div><b>넷 · 전달</b>인쇄용 PDF와 홈페이지 파일. 보통 열흘 걸립니다.</div>
+    <div><b>하나 · 작품 사진</b>먼저 보내주시면 무료로 봐 드립니다. 여기서
+      그만두셔도 비용은 없습니다.</div>
+    <div><b>둘 · 접수 양식</b>엑셀 양식을 드립니다. 전시 3주 전까지
+      보내주시는 것이 좋습니다.</div>
+    <div><b>셋 · 초안</b>완성본 한 가지를 드리고, 받으신 뒤 2회차까지 고쳐
+      드립니다.</div>
+    <div><b>넷 · 전달</b>인쇄용 PDF와 홈페이지 파일을 드립니다. 접수부터
+      전달까지 보통 열흘 걸립니다.</div>
   </div>
 </section>
 
@@ -394,8 +412,9 @@ footer{margin-top:40px;padding:18px 0 36px;border-top:1px solid var(--line);
   <div class="case">
     <b>이유리 개인전 「休遊山水 — 마음, 쉬고 노닐다」</b>
     인사아트센터 3층 제1특별관 · 2026. 10<br>
-    이름표 12종, 안내판, 리플렛, 포트폴리오, 작품마다 한 쪽씩 열두 쪽의
-    홈페이지, 영문 페이지, 음성 해설 열세 편.
+    작품 이름표 열두 종과 안내판, 리플렛, 포트폴리오를 만들고, 작품마다 한
+    쪽씩 열두 쪽짜리 홈페이지에 영문 페이지와 음성 해설 열세 편을
+    얹었습니다.
     <a href="https://leeyuri83.github.io">전시 홈페이지 보기</a>
   </div>
 </section>
@@ -410,8 +429,8 @@ footer{margin-top:40px;padding:18px 0 36px;border-top:1px solid var(--line);
         <p>사업자등록 전이라 세금계산서와 현금영수증을 드리지 못합니다. 그래서
           부가세도 붙지 않습니다. 공모 정산에 증빙이 필요하시면 접수 전에
           말씀해 주십시오.</p>
-        <p>착수 전이면 전액 돌려드립니다. 초안 전이면 착수금까지만 받습니다.
-          초안을 받으신 뒤에는 어렵습니다.</p>
+        <p>착수 전이면 전액 돌려드리고, 초안을 보내드리기 전이면 착수금까지만
+          받습니다. 초안을 받으신 뒤에는 돌려드리기 어렵습니다.</p>
       </div></details>
     <details><summary>홈페이지는 누구 것인가</summary>
       <div class="body">
@@ -421,11 +440,11 @@ footer{margin-top:40px;padding:18px 0 36px;border-top:1px solid var(--line);
       </div></details>
     <details><summary>음성 해설과 영문 번역</summary>
       <div class="body">
-        <p>원고는 작가노트를 보고 직접 씁니다. 목소리는 AI이며 홈페이지에
-          그렇게 밝힙니다.</p>
-        <p>영문은 외국인이 드나드는 자리가 아니면 쓸 일이 없어 단품으로
-          두었습니다. 번역은 AI로 하고 사람이 검수합니다. 원어민 감수는
-          없습니다.</p>
+        <p>원고는 작가노트를 읽고 직접 씁니다. 읽는 목소리는 AI 음성이고,
+          홈페이지에 그 사실을 적어 둡니다.</p>
+        <p>영문은 외국인이 드나드는 자리가 아니면 쓸 일이 거의 없어 단품으로
+          두었습니다. 번역은 AI로 하고 사람이 검수하며, 원어민 감수까지는
+          하지 않습니다.</p>
       </div></details>
     <details><summary>프로필과 포트폴리오는 뭐가 다른가</summary>
       <div class="body">
@@ -434,20 +453,20 @@ footer{margin-top:40px;padding:18px 0 36px;border-top:1px solid var(--line);
       </div></details>
     <details><summary>시안은 몇 개 주시나요</summary>
       <div class="body">
-        <p>완성본 한 가지를 드립니다. 시안 여러 개 중 고르는 방식이 아닙니다.
+        <p>시안 여러 개 중에 고르는 방식이 아니라, 완성본 한 가지를 드리고
           받으신 뒤 2회차까지 고쳐 드립니다.</p>
       </div></details>
     <details><summary>사진을 휴대폰으로 찍어도 되나요</summary>
       <div class="body">
-        <p>보통은 됩니다. 접수 전에 무료로 봅니다. 작품이 크거나 유리 액자에
-          들어 있으면 다시 찍으시는 쪽이 낫습니다.</p>
+        <p>보통은 됩니다. 접수 전에 무료로 봐 드리고, 작품이 크거나 유리
+          액자에 들어 있으면 다시 찍으시는 쪽을 권해 드립니다.</p>
       </div></details>
     <details><summary>저작권과 인쇄 품질</summary>
       <div class="body">
-        <p>작품 사진도 완성된 제작물도 작가의 것입니다. 사례로 쓸 때는 허락을
-          받습니다.</p>
-        <p>색은 화면과 인쇄물이 다릅니다. 처음 거래하는 인쇄소면 한 장 시험
-          인쇄를 권합니다.</p>
+        <p>작품 사진도 완성된 제작물도 작가의 것입니다. 사례로 보여드릴 때는
+          미리 허락을 받습니다.</p>
+        <p>색은 화면과 인쇄물이 조금 다릅니다. 처음 거래하는 인쇄소라면 한 장
+          시험 인쇄를 해보시는 쪽이 안전합니다.</p>
       </div></details>
   </div>
 </section>
@@ -455,7 +474,7 @@ footer{margin-top:40px;padding:18px 0 36px;border-top:1px solid var(--line);
 <div class="ask">
   <h2>전시 날짜와 작품 수만 알려 주세요</h2>
   <a class="mail" href="mailto:ysa3co@gmail.com">ysa3co@gmail.com</a>
-  <p>작품 사진을 먼저 보내주시면 무료로 봅니다.</p>
+  <p>작품 사진을 먼저 보내주시면 무료로 봐 드립니다.</p>
 </div>
 
 <footer>
@@ -560,6 +579,7 @@ footer{margin-top:40px;padding:18px 0 36px;border-top:1px solid var(--line);
     if(total===240000) s='기본 패키지와 같은 구성입니다.';
     else if(total===290000) s='표준 패키지와 같은 구성입니다.';
     else if(total===500000) s='고급 패키지와 같은 구성입니다.';
+    else if(total===580000) s='고급 패키지 + 영문 안내입니다.';
     $('same').textContent=s;
   }
 
