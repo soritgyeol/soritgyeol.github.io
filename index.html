@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>소릿결 전시 지원</title>
+<meta name="description" content="전시장 이름표부터 전시 홈페이지와 음성 해설까지. 작가 한 사람의 전시를 한 번에 준비해 드립니다.">
+<meta property="og:title" content="소릿결 전시 지원">
+<meta property="og:description" content="이름표·안내판·리플렛·전시 홈페이지·음성 해설. 작품 12점 기준 150,000원부터.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<style>
+:root{
+  --paper:#FBFAF6;
+  --card:#FFFFFF;
+  --ink:#1C1C19;
+  --ink2:#4E4E46;
+  --ink3:#86867C;
+  --faint:#B4B3A9;
+  --line:#E6E4DA;
+  --line2:#F0EEE5;
+  --seal:#8C3B2E;
+  --shadow:0 1px 2px rgba(28,28,25,.04), 0 8px 24px rgba(28,28,25,.045);
+  --serif:"Noto Serif KR","Noto Serif CJK KR",serif;
+  --sans:"Noto Sans KR","Noto Sans CJK KR",system-ui,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#15150F;
+    --card:#1D1D17;
+    --ink:#F2F0E6;
+    --ink2:#C6C3B4;
+    --ink3:#8E8C7E;
+    --faint:#5E5C51;
+    --line:#2C2C23;
+    --line2:#24241C;
+    --seal:#C9705E;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.3);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#15150F; --card:#1D1D17; --ink:#F2F0E6; --ink2:#C6C3B4;
+  --ink3:#8E8C7E; --faint:#5E5C51; --line:#2C2C23; --line2:#24241C;
+  --seal:#C9705E; --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.3);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  background:var(--paper);color:var(--ink);font-family:var(--serif);
+  font-weight:400;line-height:1.75;word-break:keep-all;
+  padding-inline:20px;padding-block:0;
+}
+.wrap{max-width:720px;margin:0 auto}
+.eye{font-family:var(--mono);font-size:10px;letter-spacing:.26em;
+  color:var(--faint);text-transform:uppercase}
+h1,h2,h3{font-weight:500;letter-spacing:-.01em;text-wrap:balance}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid var(--seal);
+  outline-offset:3px;border-radius:2px}
+
+/* ── 머리 ── */
+header{padding:34px 0 0;display:flex;align-items:baseline;
+  justify-content:space-between;gap:16px}
+.mark{display:flex;align-items:baseline;gap:9px}
+.mark .nm{font-size:21px;font-weight:500;letter-spacing:.14em}
+.mark .sub{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;
+  color:var(--faint)}
+header .biz{font-size:12px;color:var(--ink3);letter-spacing:.02em;
+  text-align:right;line-height:1.6}
+
+/* ── 히어로 ── */
+.hero{padding:52px 0 44px;border-bottom:1px solid var(--line)}
+.hero h1{font-size:clamp(28px,7.4vw,42px);line-height:1.34;font-weight:500}
+.hero h1 em{font-style:normal;color:var(--ink3)}
+.hero .lead{margin-top:22px;font-size:16px;line-height:1.95;color:var(--ink2);
+  max-width:34em}
+.hero .lead b{font-weight:500;color:var(--ink)}
+.from{margin-top:28px;display:inline-flex;align-items:baseline;gap:8px;
+  padding:9px 15px;border:1px solid var(--line);border-radius:2px;
+  background:var(--card);box-shadow:var(--shadow)}
+.from span{font-size:12px;color:var(--ink3);letter-spacing:.04em}
+.from b{font-size:17px;font-weight:500;font-variant-numeric:tabular-nums}
+
+/* ── 섹션 ── */
+section{padding:46px 0;border-bottom:1px solid var(--line)}
+section > .eye{display:block;margin-bottom:14px}
+section h2{font-size:clamp(21px,5vw,26px);line-height:1.4}
+section .intro{margin-top:16px;font-size:15px;line-height:1.9;color:var(--ink2);
+  max-width:34em}
+section .intro b{font-weight:500;color:var(--ink)}
+
+/* ── 문제 ── */
+.why{display:grid;gap:1px;background:var(--line2);margin-top:28px;
+  border:1px solid var(--line2);border-radius:3px;overflow:hidden}
+@media(min-width:620px){.why{grid-template-columns:1fr 1fr}}
+.why div{background:var(--paper);padding:20px 19px}
+.why b{display:block;font-size:15px;font-weight:500;margin-bottom:7px}
+.why p{font-size:13.5px;line-height:1.8;color:var(--ink3)}
+
+/* ── 패키지 ── */
+.pks{margin-top:30px;display:grid;gap:14px}
+@media(min-width:700px){.pks{grid-template-columns:repeat(3,1fr);
+  align-items:start}}
+.pk{background:var(--card);border:1px solid var(--line);border-radius:3px;
+  padding:22px 20px 24px;box-shadow:var(--shadow)}
+.pk.hi{border-color:var(--ink3);border-width:1.5px}
+.pk .nm{font-size:17px;font-weight:500;letter-spacing:.06em}
+.pk .tag{font-size:11.5px;color:var(--ink3);letter-spacing:.06em;margin-top:5px}
+.pk .pr{margin-top:16px;font-size:26px;font-weight:500;
+  font-variant-numeric:tabular-nums;letter-spacing:-.015em;line-height:1}
+.pk .pr em{font-style:normal;font-size:13px;font-weight:400;color:var(--ink3);
+  margin-left:3px}
+.pk ul{list-style:none;margin-top:17px;padding-top:15px;
+  border-top:1px solid var(--line2)}
+.pk li{font-size:13.5px;line-height:1.72;color:var(--ink2);
+  padding-left:14px;position:relative;margin-bottom:7px}
+.pk li:last-child{margin-bottom:0}
+.pk li::before{content:"";position:absolute;left:0;top:.68em;width:5px;
+  height:5px;border-radius:50%;background:var(--faint)}
+.pk li.off{color:var(--faint)}
+.pk li.off::before{background:none;border:1px solid var(--faint)}
+
+/* ── 표 ── */
+.tbl{margin-top:26px;width:100%;border-collapse:collapse}
+.tbl caption{text-align:left;font-family:var(--mono);font-size:10px;
+  letter-spacing:.2em;color:var(--faint);padding-bottom:11px}
+.tbl th{text-align:left;font-family:var(--sans);font-size:10.5px;
+  font-weight:700;letter-spacing:.12em;color:var(--ink3);
+  padding:0 10px 9px 0;border-bottom:1px solid var(--line)}
+.tbl th:last-child,.tbl td:last-child{padding-right:0;text-align:right}
+.tbl td{font-size:14px;padding:11px 10px 11px 0;
+  border-bottom:1px solid var(--line2);vertical-align:top;color:var(--ink2)}
+.tbl td.n{color:var(--ink);font-weight:500;width:40%}
+.tbl td.p{white-space:nowrap;font-variant-numeric:tabular-nums;color:var(--ink)}
+.tbl tr.grp td{font-family:var(--sans);font-size:10.5px;font-weight:700;
+  letter-spacing:.12em;color:var(--ink3);padding:22px 0 7px;border-bottom:none;
+  text-align:left}
+.tbl tr:first-child.grp td{padding-top:4px}
+.tbl td.q{font-size:12.5px;color:var(--ink3)}
+.scroll{overflow-x:auto}
+
+/* ── 실물 ── */
+.ways{margin-top:28px;display:grid;gap:13px}
+@media(min-width:700px){.ways{grid-template-columns:1fr 1fr 1fr}}
+.way{background:var(--card);border:1px solid var(--line);border-radius:3px;
+  padding:20px 19px}
+.way .lbl{font-family:var(--mono);font-size:10px;letter-spacing:.2em;
+  color:var(--faint)}
+.way b{display:block;font-size:15.5px;font-weight:500;margin:7px 0 10px}
+.way p{font-size:13.5px;line-height:1.82;color:var(--ink3)}
+.way p + p{margin-top:9px}
+.way p b{display:inline;margin:0;font-size:inherit;color:var(--ink);
+  font-weight:500}
+
+/* ── 진행 ── */
+.steps{margin-top:28px;counter-reset:s;list-style:none}
+.steps li{counter-increment:s;padding:17px 0 17px 44px;position:relative;
+  border-bottom:1px solid var(--line2)}
+.steps li:last-child{border-bottom:none;padding-bottom:0}
+.steps li::before{content:counter(s,decimal-leading-zero);position:absolute;
+  left:0;top:19px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;
+  color:var(--faint)}
+.steps b{display:block;font-size:15.5px;font-weight:500;margin-bottom:5px}
+.steps p{font-size:13.5px;line-height:1.82;color:var(--ink3)}
+
+/* ── 사례 ── */
+.case{margin-top:26px;background:var(--card);border:1px solid var(--line);
+  border-radius:3px;padding:24px 22px;box-shadow:var(--shadow)}
+.case .ttl{font-size:19px;font-weight:500;line-height:1.5}
+.case .ttl em{font-style:normal;display:block;font-size:13px;color:var(--ink3);
+  letter-spacing:.04em;margin-top:6px}
+.case dl{margin-top:18px;padding-top:16px;border-top:1px solid var(--line2);
+  display:grid;grid-template-columns:auto 1fr;gap:8px 16px}
+.case dt{font-family:var(--sans);font-size:11px;font-weight:700;
+  letter-spacing:.1em;color:var(--ink3);padding-top:3px;white-space:nowrap}
+.case dd{font-size:13.5px;line-height:1.72;color:var(--ink2)}
+.case .go{display:inline-block;margin-top:20px;font-size:14px;
+  text-decoration:none;border-bottom:1px solid var(--faint);padding-bottom:2px}
+.case .go::after{content:" →";color:var(--ink3)}
+
+/* ── 참고 ── */
+.notes{margin-top:26px;display:grid;gap:20px 32px}
+@media(min-width:620px){.notes{grid-template-columns:1fr 1fr}}
+.notes b{display:block;font-size:14px;font-weight:500;margin-bottom:5px}
+.notes p{font-size:13px;line-height:1.8;color:var(--ink3)}
+
+/* ── 문의 ── */
+.ask{padding:50px 0 0;text-align:center}
+.ask .eye{margin-bottom:16px}
+.ask h2{font-size:clamp(21px,5vw,27px);line-height:1.5}
+.ask .mail{display:inline-block;margin-top:22px;font-size:19px;
+  font-family:var(--mono);letter-spacing:.02em;text-decoration:none;
+  border-bottom:1.5px solid var(--seal);padding-bottom:3px;word-break:break-all}
+.ask p{margin-top:20px;font-size:13.5px;line-height:1.85;color:var(--ink3);
+  max-width:28em;margin-inline:auto}
+footer{margin-top:54px;padding:22px 0 40px;border-top:1px solid var(--line);
+  display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:space-between;
+  font-size:11.5px;color:var(--faint);letter-spacing:.04em}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="mark">
+    <span class="nm">소릿결</span>
+    <span class="sub">SORITGYEOL</span>
+  </div>
+  <div class="biz">전시 지원<br>인쇄물 · 홈페이지 · 음성 해설</div>
+</header>
+
+<div class="hero">
+  <h1>작품은 다 걸렸는데,<br><em>이름표가 없습니다.</em></h1>
+  <div class="lead">
+    전시 2주 전. 작품은 끝났고 도록은 예산이 없고, 이름표는 워드로
+    만들어 붙입니다. <b>작가가 그림에 쓸 시간을 종이에 씁니다.</b><br>
+    이름표부터 전시 홈페이지와 음성 해설까지, 전시장에 필요한 것을
+    한 번에 만들어 드립니다. 작가는 작품 사진과 작품 정보만 보내면 됩니다.
+  </div>
+  <div class="from"><span>작품 12점 기준</span><b>150,000원</b><span>부터</span></div>
+</div>
+
+<section>
+  <span class="eye">Why</span>
+  <h2>전시가 끝나면 아무것도 남지 않습니다</h2>
+  <div class="intro">
+    엿새 동안 백 명이 보고 갑니다. 그중 작품 제목을 기억하는 사람은 몇 명일까요.
+    종이 한 장과 주소 하나가 그 엿새를 남게 만듭니다.
+  </div>
+  <div class="why">
+    <div><b>이름표가 전시의 얼굴입니다</b>
+      <p>관람객이 작품 다음으로 보는 것이 이름표입니다. 제목·한자·재료·크기를
+        제대로 앉히면 전시장 전체의 격이 달라집니다.</p></div>
+    <div><b>QR 하나로 설명이 끝납니다</b>
+      <p>이름표의 QR을 찍으면 그 작품 페이지가 열립니다. 작가의 글과 음성 해설이
+        이어집니다. 도슨트가 없는 전시의 해설입니다.</p></div>
+    <div><b>주소는 전시 뒤에도 남습니다</b>
+      <p>전시가 끝나도 홈페이지는 그대로입니다. 공모에 넣을 때, 갤러리에 보낼 때
+        주소 한 줄이면 됩니다.</p></div>
+    <div><b>외국인 관람객에게도 보입니다</b>
+      <p>인사동·북촌이라면 외국인이 들어옵니다. 영문 안내 한 쪽과 입구 안내
+        한 장으로 문턱이 낮아집니다.</p></div>
+  </div>
+</section>
+
+<section>
+  <span class="eye">Packages</span>
+  <h2>세 가지 중에 고르시면 됩니다</h2>
+  <div class="intro">
+    작품 12점 기준입니다. <b>아래 금액은 모두 인쇄용 파일(PDF)까지입니다.</b>
+    실제 인쇄와 설치는 아래 &ldquo;실물은 어떻게 하나&rdquo;를 봐 주세요.
+    부가세 별도.
+  </div>
+  <div class="pks">
+    <div class="pk">
+      <div class="nm">기본</div><div class="tag">종이만</div>
+      <div class="pr">150,000<em>원</em></div>
+      <ul>
+        <li>작품 이름표 95×45mm</li>
+        <li>전시장 안내판 A2</li>
+        <li>작가 프로필 A4</li>
+        <li>작품 사진 보정</li>
+        <li class="off">홈페이지 · QR 없음</li>
+      </ul>
+    </div>
+    <div class="pk">
+      <div class="nm">표준</div><div class="tag">종이 + 홈페이지</div>
+      <div class="pr">390,000<em>원</em></div>
+      <ul>
+        <li>기본에 더하여</li>
+        <li>전시 홈페이지 · 작품마다 한 쪽</li>
+        <li>이름표·안내판에 QR</li>
+        <li>리플렛 3단 접지</li>
+        <li>작가 안내 A4</li>
+        <li>카톡 공유 카드</li>
+      </ul>
+    </div>
+    <div class="pk hi">
+      <div class="nm">전체</div><div class="tag">음성 · 영문까지</div>
+      <div class="pr">690,000<em>원</em></div>
+      <ul>
+        <li>표준에 더하여</li>
+        <li>도슨트 음성 해설 · 작품마다</li>
+        <li>영문 안내 페이지</li>
+        <li>입구 영문 안내 A4</li>
+        <li>포트폴리오 PDF 가로·세로</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="scroll">
+  <table class="tbl">
+    <caption>품목과 수량</caption>
+    <thead><tr><th>품목</th><th>수량</th><th>기본</th><th>표준</th><th>전체</th></tr></thead>
+    <tbody>
+      <tr class="grp"><td colspan="5">전시장</td></tr>
+      <tr><td class="n">작품 이름표 95×45mm</td><td class="q">작품 수만큼</td><td>○</td><td>○ + QR</td><td class="p">○ + QR</td></tr>
+      <tr><td class="n">전시장 안내판 A2</td><td class="q">1장</td><td>○</td><td>○ + QR</td><td class="p">○ + QR</td></tr>
+      <tr><td class="n">작가 안내 A4</td><td class="q">1~2장</td><td>·</td><td>○</td><td class="p">○</td></tr>
+      <tr><td class="n">입구 영문 안내 A4</td><td class="q">2장</td><td>·</td><td>·</td><td class="p">○</td></tr>
+      <tr><td class="n">리플렛 3단 접지</td><td class="q">200~500부</td><td>·</td><td>○</td><td class="p">○</td></tr>
+      <tr class="grp"><td colspan="5">온라인</td></tr>
+      <tr><td class="n">전시 홈페이지</td><td class="q">작품마다 한 쪽</td><td>·</td><td>○</td><td class="p">○</td></tr>
+      <tr><td class="n">영문 안내 페이지</td><td class="q">한 쪽</td><td>·</td><td>·</td><td class="p">○</td></tr>
+      <tr><td class="n">카톡 공유 카드</td><td class="q">1개</td><td>·</td><td>○</td><td class="p">○</td></tr>
+      <tr class="grp"><td colspan="5">음성</td></tr>
+      <tr><td class="n">도슨트 해설 원고</td><td class="q">전시 소개 + 작품 수</td><td>·</td><td>·</td><td class="p">○</td></tr>
+      <tr><td class="n">음성 제작 · 홈페이지 연결</td><td class="q">같은 수</td><td>·</td><td>·</td><td class="p">○</td></tr>
+      <tr class="grp"><td colspan="5">작가 자료</td></tr>
+      <tr><td class="n">작가 프로필 A4</td><td class="q">1쪽</td><td>○</td><td>○</td><td class="p">○</td></tr>
+      <tr><td class="n">포트폴리오 PDF</td><td class="q">가로·세로 2종</td><td>·</td><td>·</td><td class="p">○</td></tr>
+      <tr><td class="n">작품 사진 보정</td><td class="q">작품 수만큼</td><td>○</td><td>○</td><td class="p">○</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="scroll">
+  <table class="tbl">
+    <caption>단품 · 추가</caption>
+    <tbody>
+      <tr><td class="n">작품별 음성 해설</td><td>원고 집필 + 음성 제작 · 표준 이상</td><td class="p">120,000원</td></tr>
+      <tr><td class="n">영문 안내 페이지</td><td>작가노트 · 작품 정보 번역 · 표준 이상</td><td class="p">150,000원</td></tr>
+      <tr><td class="n">포트폴리오 PDF</td><td>가로·세로 두 가지 · 16쪽 내외 · 단독 가능</td><td class="p">150,000원</td></tr>
+      <tr><td class="n">작품 추가</td><td>12점을 넘는 작품</td><td class="p">점당 10,000원</td></tr>
+      <tr><td class="n">수정 추가</td><td>포함된 2회를 넘는 수정</td><td class="p">건당 30,000원</td></tr>
+      <tr><td class="n">급행 진행</td><td>전시 2주 이내 접수</td><td class="p">30% 할증</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section>
+  <span class="eye">Printing &amp; Installation</span>
+  <h2>실물은 어떻게 하나</h2>
+  <div class="intro">
+    위 금액에는 <b>인쇄비가 들어 있지 않습니다.</b> 인쇄 수량과 종이, 후가공은
+    전시마다 달라서 미리 값에 넣으면 어느 한쪽이 손해를 봅니다. 그래서 세 가지
+    중에 고르시게 했습니다.
+  </div>
+  <div class="ways">
+    <div class="way"><div class="lbl">A</div><b>파일만 받기</b>
+      <p>인쇄용 PDF를 드리고, 인쇄는 직접 맡기십니다. 위 금액 그대로이고
+        추가 비용이 없습니다.</p>
+      <p>인쇄소를 정하기 어려우시면 어디에 어떻게 맡기면 되는지 알려 드립니다.
+        이것은 무료입니다.</p></div>
+    <div class="way"><div class="lbl">B</div><b>인쇄 대행</b>
+      <p>저희가 인쇄소에 넣고 받아서 보내 드립니다. <b>인쇄비는 실비 그대로</b>
+        받고, 대행비 <b>40,000원</b>을 더합니다. 배송비는 실비입니다.</p>
+      <p>작품 12점 기준으로 인쇄비는 대체로 8만~12만원 사이입니다.</p></div>
+    <div class="way"><div class="lbl">C</div><b>현장 세팅</b>
+      <p>인쇄에서 설치까지 맡습니다. 이름표를 폼보드에 붙여 재단하고, 안내판을
+        세우고, 전시장에서 작품 옆에 붙여 드립니다.</p>
+      <p><b>200,000원</b> + 인쇄 실비. 수도권 기준이며 그 밖의 지역은 교통비가
+        더해집니다.</p></div>
+  </div>
+
+  <div class="scroll">
+  <table class="tbl">
+    <caption>품목별로 필요한 것</caption>
+    <thead><tr><th>품목</th><th>수량</th><th>인쇄</th><th>후가공 · 거치</th></tr></thead>
+    <tbody>
+      <tr><td class="n">작품 이름표</td><td class="q">작품 수만큼</td><td>두꺼운 종이 + 재단</td><td class="p">폼보드 또는 아크릴 꽂이</td></tr>
+      <tr><td class="n">전시장 안내판</td><td class="q">1장</td><td>A2 출력</td><td class="p">폼보드 5T 부착</td></tr>
+      <tr><td class="n">작가 안내 · 입구 안내</td><td class="q">3~4장</td><td>A4 출력</td><td class="p">A4 아크릴 꽂이</td></tr>
+      <tr><td class="n">리플렛</td><td class="q">200~500부</td><td>스노우지 양면</td><td class="p">3단 접지</td></tr>
+      <tr><td class="n">포트폴리오</td><td class="q">1~3부</td><td>컬러 인쇄</td><td class="p">제본</td></tr>
+      <tr><td class="n">작가 프로필</td><td class="q">10~20장</td><td>A4 출력</td><td class="p">—</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="notes" style="margin-top:22px">
+    <p>수량은 작품 12점, 엿새 전시를 기준으로 한 어림치입니다. 리플렛만 부수
+      개념이고 나머지는 한두 장입니다. 이름표는 종이로만 두면 흐늘거립니다.
+      폼보드에 붙이거나 아크릴 명패꽂이를 쓰는 쪽을 권합니다.</p>
+  </div>
+</section>
+
+<section>
+  <span class="eye">How it works</span>
+  <h2>작가가 보낼 것은 사진과 작품 정보뿐입니다</h2>
+  <ol class="steps">
+    <li><b>작품 사진을 먼저 보내주세요</b>
+      <p>무료로 봐 드립니다. 인쇄에 쓰기 어려운 사진이 있으면 다시 찍어야 할
+        작품을 미리 알려 드립니다. 이 단계에서 그만두셔도 비용이 없습니다.</p></li>
+    <li><b>접수 양식을 채워 보내주세요</b>
+      <p>제목·한자·연도·재료·크기와 작가노트, 이력. 엑셀 양식을 드립니다.
+        전시 3주 전까지 접수를 권합니다.</p></li>
+    <li><b>초안을 보시고 고쳐 주세요</b>
+      <p>수정은 2회까지 포함입니다. 접수 후 작품명이나 크기가 바뀌면 인쇄물을
+        전부 다시 만들어야 하니 미리 확정해 주세요.</p></li>
+    <li><b>인쇄용 파일과 홈페이지를 받으십니다</b>
+      <p>인쇄소에 그대로 넘기면 되는 PDF와, 올리기만 하면 되는 홈페이지 파일을
+        드립니다. 홈페이지는 무료 주소로 만들어 유지비가 들지 않습니다.</p></li>
+  </ol>
+</section>
+
+<section>
+  <span class="eye">Case</span>
+  <h2>실제로 만든 전시</h2>
+  <div class="case">
+    <div class="ttl">이유리 개인전 「休遊山水 — 마음, 쉬고 노닐다」
+      <em>인사아트센터 3층 제1특별관 · 2026. 10. 14 – 10. 19</em></div>
+    <dl>
+      <dt>인쇄물</dt><dd>작품 이름표 12종, 안내판 A2, 리플렛 3단 접지,
+        작가 안내 · 입구 영문 안내, 작가 프로필, 포트폴리오 가로·세로</dd>
+      <dt>온라인</dt><dd>작품마다 한 쪽씩 열두 쪽, 영문 안내 페이지,
+        카톡 공유 카드</dd>
+      <dt>음성</dt><dd>전시 소개와 작품 열두 점, 모두 열세 편</dd>
+    </dl>
+    <a class="go" href="https://leeyuri83.github.io">전시 홈페이지 보기</a>
+  </div>
+</section>
+
+<section>
+  <span class="eye">Notes</span>
+  <h2>미리 알려 드릴 것</h2>
+  <div class="notes">
+    <div><b>저작권</b><p>작품 사진의 권리는 작가에게 있습니다. 완성된 제작물도
+      작가의 것입니다. 사례로 보여드릴 때는 작가의 허락을 받습니다.</p></div>
+    <div><b>음성 해설</b><p>원고는 작가노트를 바탕으로 직접 씁니다. 읽는
+      목소리는 AI 음성이며, 홈페이지에 그 사실을 밝힙니다.</p></div>
+    <div><b>단체전</b><p>작가가 여럿이면 작가당 단가로 계산합니다. 작품 수와
+      인원에 따라 달라지니 따로 알려 주세요.</p></div>
+    <div><b>인쇄 품질</b><p>색은 화면과 인쇄물이 조금 다릅니다. 처음 거래하는
+      인쇄소라면 한 장 시험 인쇄를 권합니다.</p></div>
+  </div>
+</section>
+
+<div class="ask">
+  <span class="eye">Contact</span>
+  <h2>전시 날짜와 작품 수만 알려 주세요</h2>
+  <a class="mail" href="mailto:ysa3co@gmail.com">ysa3co@gmail.com</a>
+  <p>작품 사진을 먼저 보내주시면 무료로 봐 드립니다.
+    전시 3주 전까지 연락 주시는 것이 가장 좋습니다.</p>
+</div>
+
+<footer>
+  <span>소릿결 · 전시 지원</span>
+  <span>작품 12점 기준 · 부가세 별도</span>
+</footer>
+
+</div>
+</body>
+</html>
