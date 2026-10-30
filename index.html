@@ -49,9 +49,12 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{
 header{padding:32px 0 0;display:flex;align-items:baseline;
   justify-content:space-between;gap:14px}
 .mark{display:flex;align-items:baseline;gap:9px}
-.mark .nm{font-size:20px;font-weight:500;letter-spacing:.14em}
-.mark .sub2{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;
-  color:var(--faint)}
+/* 워드마크 정본(scripts/brand.py): 「소·릿·결」 붉은 점 600, 영문은 고딕. 웹 머리는 가로 조합 */
+.mark .nm{font-family:"Noto Serif KR",serif;font-size:24px;font-weight:600;letter-spacing:0;line-height:1;white-space:nowrap}
+.mark .nm i{font-style:normal;font-weight:600;color:var(--seal);position:relative;top:-.02em}
+.mark .nm .d1{margin:0 .105em 0 .175em}.mark .nm .d2{margin:0 .158em 0 .123em}
+.mark .sub2{font-family:"Noto Sans KR",sans-serif;font-size:10px;font-weight:500;letter-spacing:.28em;
+  color:var(--ink3)}
 header .biz{font-size:12px;color:var(--ink3);text-align:right}
 
 .hero{padding:44px 0 36px}
@@ -210,7 +213,7 @@ footer{margin-top:40px;padding:18px 0 36px;border-top:1px solid var(--line);
 <div class="wrap">
 
 <header>
-  <div class="mark"><span class="nm">소릿결</span><span class="sub2">SORITGYEOL</span></div>
+  <div class="mark"><span class="nm">소<i class="d1">·</i>릿<i class="d2">·</i>결</span><span class="sub2">SORITGYEOL</span></div>
   <div class="biz">전시 지원</div>
 </header>
 
