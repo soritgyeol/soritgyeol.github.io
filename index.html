@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>소릿결 전시 지원</title>
-<meta name="description" content="작품 캡션부터 전시 홈페이지와 음성 해설까지. 작품 20점까지 240,000원부터.">
+<meta name="description" content="작품 캡션부터 작품 홈페이지와 음성 해설까지. 작품 20점까지 200,000원부터.">
 <meta property="og:title" content="소릿결 전시 지원">
-<meta property="og:description" content="캡션·서문 패널·홈페이지·음성 해설. 작품 20점까지 240,000원부터.">
+<meta property="og:description" content="작품 캡션·전시 인사말·작품 홈페이지·음성 해설. 작품 20점까지 200,000원부터.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -92,11 +92,8 @@ h2{font-size:19px;line-height:1.4}
 .pk li b{font-weight:500;color:var(--ink)}
 
 .calc{margin-top:22px;display:grid;gap:14px}
-@media(min-width:760px){.calc{grid-template-columns:1fr 238px;align-items:start}}
-@media(max-width:759px){
-  .calc{display:flex;flex-direction:column}
-  .out{order:-1;z-index:5}
-}
+@media(min-width:760px){.calc{grid-template-columns:1fr 238px;align-items:start}
+  .out{position:sticky;top:14px}}
 .panel{background:var(--card);border:1px solid var(--line);border-radius:3px;
   padding:18px 17px 20px;box-shadow:var(--shadow)}
 .qty label{display:block;font-size:13.5px;font-weight:500}
@@ -126,8 +123,12 @@ h2{font-size:19px;line-height:1.4}
 .opt.locked .t b,.opt.locked .v{color:var(--faint)}
 .opt.locked .t i{color:var(--seal)}
 .opt.fixed{cursor:default}
+.opt .v.inc{color:var(--seal)}
+.pk .nm small{font-family:var(--sans);font-size:10px;font-weight:700;letter-spacing:.08em;
+  color:var(--seal);margin-left:7px;vertical-align:2px}
+.calc .note{margin-top:10px;font-size:12px;line-height:1.6;color:var(--ink3)}
 
-.out{position:sticky;top:14px;background:var(--card);border:1px solid var(--line);
+.out{background:var(--card);border:1px solid var(--line);
   border-radius:3px;padding:17px 16px 19px;box-shadow:var(--shadow)}
 .out .ol{font-family:var(--mono);font-size:9.5px;letter-spacing:.22em;
   color:var(--faint)}
@@ -144,7 +145,6 @@ h2{font-size:19px;line-height:1.4}
   color:var(--ink3);margin-left:3px}
 .out .total span{display:block;margin-top:8px;font-size:11.5px;color:var(--ink3);
   line-height:1.55}
-.out .same{margin-top:10px;font-size:12px;line-height:1.55;color:var(--seal)}
 .out .ask2{display:block;margin-top:14px;text-align:center;font-size:13px;
   text-decoration:none;padding:9px;border:1px solid var(--line);
   border-radius:2px;background:var(--wash)}
@@ -206,7 +206,6 @@ footer{margin-top:40px;padding:18px 0 36px;border-top:1px solid var(--line);
   display:flex;flex-wrap:wrap;gap:5px 16px;justify-content:space-between;
   font-size:11.5px;color:var(--faint)}
 </style>
-</head>
 <body>
 <div class="wrap">
 
@@ -220,48 +219,48 @@ footer{margin-top:40px;padding:18px 0 36px;border-top:1px solid var(--line);
   <p>전시가 한 달쯤 남으면 작품은 거의 끝나 있는데 작품 캡션을 워드로 만들고
     계실 겁니다. 도록은 예산이 맞지 않고, 작품을 설명해 줄 사람도 없습니다.<br>
     그 일을 맡아서 해드립니다. <b>작품 사진과 작품 정보만 보내주시면</b>
-    전시장에 필요한 것을 한 번에 준비해 드립니다.</p>
+    전시장에 필요한 것을 한 번에 준비해 드리고, 관람객이 작품 캡션의 QR을 찍으면
+    그 작품의 쪽이 열리면서 음성 해설이 나옵니다.</p>
   <div class="svc">
-    <span>작품 캡션</span><span>전시 서문 패널</span><span>음성 해설</span>
-    <span>전시 작품 홈페이지</span><span>리플렛</span><span>작가 약력</span>
-    <span>포트폴리오</span><span>영문 안내</span>
+    <span>작품 캡션</span><span>작품 홈페이지</span><span>음성 해설</span>
+    <span>전시 인사말</span><span>작가 약력</span><span>카톡 공유 카드</span>
+    <span>영어 음성 해설</span><span>리플렛</span>
   </div>
-  <p class="from">작품 20점까지 <b>240,000원부터</b><br>
+  <p class="from">작품 20점까지 <b>200,000원부터</b><br>
     디자인부터 제작까지 해드리는 금액이며, <b>인쇄비는 별도</b>입니다</p>
 </div>
 
 <section>
   <h2>패키지</h2>
-  <div class="sub">세 가지 중에 고르시거나, 아래에서 필요한 것만 선택하실 수 있습니다.</div>
+  <div class="sub">작품 20점까지 같은 금액입니다. 개인전과 단체전 모두 이 표를 쓰고,
+    단체전은 작가 약력 대신 참여 작가 목록을 만듭니다.</div>
   <div class="pks">
     <div class="pk">
-      <div class="nm">기본</div><div class="tag">캡션 · 홈페이지 · QR</div>
-      <div class="pr">240,000<em>원</em></div>
-      <ul><li>작품 캡션 디자인 + QR</li><li>전시 서문 패널 디자인 + QR</li>
-        <li>전시 홈페이지 제작</li><li>작가 약력 · 작가 안내 디자인</li>
-        <li>카톡 공유 카드 · 사진 보정</li></ul>
+      <div class="nm">기본</div><div class="tag">QR을 찍으면 작품 쪽이 열립니다</div>
+      <div class="pr">200,000<em>원</em></div>
+      <ul><li>작품 캡션 + QR</li><li>작품 홈페이지 — 작품마다 한 쪽</li>
+        <li>전시 인사말 (A2 또는 A3)</li><li>작가 약력 · 작가 안내 (A4)</li>
+        <li>카톡 공유 카드</li><li>전시 소개 음성 한 편</li></ul>
     </div>
     <div class="pk hi">
-      <div class="nm">표준</div><div class="tag">QR을 찍으면 음성이 나옵니다</div>
-      <div class="pr">290,000<em>원</em></div>
+      <div class="nm">표준<small>권함</small></div><div class="tag">작품마다 음성 해설이 나옵니다</div>
+      <div class="pr">270,000<em>원</em></div>
       <ul><li>기본에 더하여</li>
-        <li><b>짧은 해설</b> — 전시 소개 + 대표작 다섯 편</li>
-        <li>음성이 없는 작품은 사진과 글이 나옵니다</li></ul>
+        <li><b>작품 음성 해설 전부</b> — 작품당 300자 이내, 약 1분</li></ul>
     </div>
     <div class="pk">
-      <div class="nm">고급</div><div class="tag">리플렛 · 전편 해설 · 포트폴리오</div>
-      <div class="pr">500,000<em>원</em></div>
-      <ul><li>표준에서 <b>해설이 전편으로</b></li>
-        <li>리플렛 디자인</li><li>포트폴리오 디자인</li>
-        <li>그 밖에는 표준과 같습니다</li></ul>
+      <div class="nm">고급</div><div class="tag">영어 음성과 리플렛까지</div>
+      <div class="pr">390,000<em>원</em></div>
+      <ul><li>표준에 더하여</li>
+        <li><b>영어 음성 해설 전부</b></li><li>리플렛 디자인 (3단 접지)</li></ul>
     </div>
   </div>
 </section>
 
 <section>
-  <h2>필요한 것만 선택하기</h2>
-  <div class="sub">작품 수를 맞추고 선택하시면 금액이 바로 나옵니다.
-    <b>홈페이지를 빼면 QR과 음성, 영문이 함께 잠깁니다.</b></div>
+  <h2>견적 계산</h2>
+  <div class="sub">작품 수와 등급을 고르시면 금액이 바로 나옵니다.
+    <b>21점부터는 1점마다 기본 5,000원, 표준과 고급은 10,000원이 더해집니다.</b></div>
 
   <div class="calc">
     <div class="panel">
@@ -276,71 +275,40 @@ footer{margin-top:40px;padding:18px 0 36px;border-top:1px solid var(--line);
       </div>
 
       <div class="grp">
-        <span class="gl">바탕</span>
-        <label class="opt fixed">
-          <input type="checkbox" id="i_base" checked disabled>
-          <span class="t"><b>작품 정보 정리 · 사진 보정</b>
-            <i>모든 작업에 포함됩니다</i></span>
-          <span class="v">50,000</span></label>
+        <span class="gl">등급</span>
+        <label class="opt"><input type="radio" name="tier" value="0" id="t0">
+          <span class="t"><b>기본</b><i>캡션 · 작품 홈페이지 · 전시 소개 음성 한 편</i></span>
+          <span class="v">200,000</span></label>
+        <label class="opt"><input type="radio" name="tier" value="1" id="t1" checked>
+          <span class="t"><b>표준</b><i>기본 + 작품 음성 해설 전부</i></span>
+          <span class="v">270,000</span></label>
+        <label class="opt"><input type="radio" name="tier" value="2" id="t2">
+          <span class="t"><b>고급</b><i>표준 + 영어 음성 해설 전부 + 리플렛</i></span>
+          <span class="v">390,000</span></label>
       </div>
 
       <div class="grp">
-        <span class="gl">전시장 — 인쇄용 PDF</span>
-        <label class="opt"><input type="checkbox" id="i_cap" checked>
-          <span class="t"><b>작품 캡션 디자인</b>
-            <i>95×45mm · 20점까지 동일 금액</i></span><span class="v">45,000</span></label>
-        <label class="opt"><input type="checkbox" id="i_sign" checked>
-          <span class="t"><b>전시 서문 패널 디자인</b>
-            <i>A2 또는 A3 · 제목 · 작가의 글 · 작품 목록</i></span><span class="v">35,000</span></label>
-        <label class="opt"><input type="checkbox" id="i_prof" checked>
-          <span class="t"><b>작가 약력 디자인</b><i>A4 · 이력 한 장</i></span>
-          <span class="v">20,000</span></label>
-        <label class="opt"><input type="checkbox" id="i_leaf">
-          <span class="t"><b>리플렛 디자인</b><i>3단 접지 · 양면 여섯 면</i></span>
-          <span class="v">100,000</span></label>
-      </div>
-
-      <div class="grp">
-        <span class="gl">온라인 — 올리기만 하면 되는 파일</span>
-        <label class="opt"><input type="checkbox" id="i_web" checked>
-          <span class="t"><b>전시 홈페이지 제작</b>
-            <i>작품마다 한 쪽 · 모든 QR이 여기로</i></span>
-          <span class="v">120,000</span></label>
-        <label class="opt" id="o_kakao"><input type="checkbox" id="i_kakao" checked>
-          <span class="t"><b>카톡 공유 카드</b>
-            <i data-need="홈페이지가 있어야 합니다">주소를 보낼 때 뜨는 그림과 글</i></span>
-          <span class="v">10,000</span></label>
-        <label class="opt" id="o_qrcard"><input type="checkbox" id="i_qrcard" checked>
-          <span class="t"><b>작가 안내 디자인</b>
-            <i data-need="홈페이지가 있어야 합니다">A4 · 입구에 세울 큰 QR</i></span>
-          <span class="v">15,000</span></label>
+        <span class="gl">선택</span>
         <label class="opt" id="o_en"><input type="checkbox" id="i_en">
-          <span class="t"><b>영문 안내 번역 · 제작</b>
-            <i data-need="홈페이지가 있어야 합니다">영문 페이지 + 입구 안내 A4</i></span>
-          <span class="v">100,000</span></label>
-      </div>
-
-      <div class="grp" id="g_audio">
-        <span class="gl">음성 해설 — mp3 · 홈페이지 연결까지</span>
-        <label class="opt"><input type="radio" name="au" value="0" id="a0">
-          <span class="t"><b>넣지 않음</b></span><span class="v">—</span></label>
-        <label class="opt"><input type="radio" name="au" value="1" id="a1" checked>
-          <span class="t"><b>짧은 해설</b>
-            <i data-need="홈페이지가 있어야 합니다">전시 소개 + 대표작 다섯 편</i></span>
-          <span class="v">60,000</span></label>
-        <label class="opt"><input type="radio" name="au" value="2" id="a2">
-          <span class="t"><b>전편 해설</b>
-            <i data-need="홈페이지가 있어야 합니다">전시 소개 + 작품 전부</i></span>
-          <span class="v">130,000</span></label>
+          <span class="t"><b>영어 음성 해설</b>
+            <i id="en_i">작품 전부와 전시 소개를 영어로</i></span>
+          <span class="v" id="en_v">60,000</span></label>
       </div>
 
       <div class="grp">
-        <span class="gl">작가 자료 — PDF</span>
-        <label class="opt"><input type="checkbox" id="i_pf">
-          <span class="t"><b>포트폴리오 디자인</b>
-            <i>가로·세로 두 가지 · 공모나 갤러리 제출용</i></span>
-          <span class="v">100,000</span></label>
+        <span class="gl">인쇄</span>
+        <label class="opt"><input type="radio" name="pr" value="0" id="p0" checked>
+          <span class="t"><b>파일만 받기</b><i>인쇄용 PDF를 받아 직접 맡기십니다</i></span>
+          <span class="v">추가 없음</span></label>
+        <label class="opt"><input type="radio" name="pr" value="1" id="p1">
+          <span class="t"><b>인쇄 대행</b><i>인쇄 실비에 대행비를 더합니다</i></span>
+          <span class="v">40,000</span></label>
+        <label class="opt"><input type="radio" name="pr" value="2" id="p2">
+          <span class="t"><b>현장 세팅</b><i>폼보드 재단과 설치 · 수도권 기준, 인쇄 실비 별도</i></span>
+          <span class="v">200,000</span></label>
       </div>
+      <div class="note">40점이 넘으면 메일로 알려 주세요. 포트폴리오 홈페이지와 브로슈어는
+        별도 상품(250,000원, 전시 고객은 할인)이라 여기에 넣지 않았습니다.</div>
     </div>
 
     <div class="out">
@@ -350,8 +318,7 @@ footer{margin-top:40px;padding:18px 0 36px;border-top:1px solid var(--line);
         <b id="total">—</b>
         <span id="tnote">인쇄비 별도</span>
       </div>
-      <div class="same" id="same"></div>
-      <a class="ask2" href="mailto:ysa2co@gmail.com?subject=전시 지원 문의">이 구성으로 문의</a>
+      <a class="ask2" id="ask2" href="mailto:ysa2co@gmail.com?subject=전시 지원 문의">이 구성으로 문의</a>
     </div>
   </div>
 
@@ -359,17 +326,16 @@ footer{margin-top:40px;padding:18px 0 36px;border-top:1px solid var(--line);
   <table class="tbl">
     <tbody>
       <tr class="g"><td colspan="3">작품 수</td></tr>
-      <tr><td class="n">21~35점</td><td>전편 해설이면 +150,000원</td><td>+80,000원</td></tr>
-      <tr><td class="n">10점 이하</td><td>소규모 전시 할인</td><td>−50,000원</td></tr>
-      <tr><td class="n">36점 이상</td><td>구성이 달라집니다</td><td>별도 상담</td></tr>
+      <tr><td class="n">20점까지</td><td>등급마다 같은 금액</td><td>추가 없음</td></tr>
+      <tr><td class="n">21점부터 기본</td><td>1점 늘 때마다</td><td>+5,000원</td></tr>
+      <tr><td class="n">21점부터 표준 · 고급</td><td>1점 늘 때마다</td><td>+10,000원</td></tr>
       <tr class="g"><td colspan="3">그 밖의 금액</td></tr>
-      <tr><td class="n">캡션 · 서문 패널만</td><td>QR은 포함되지 않습니다</td><td>130,000원</td></tr>
-      <tr><td class="n">포트폴리오 한 가지만</td><td>가로나 세로 중 하나</td><td>70,000원</td></tr>
+      <tr><td class="n">영어 음성 해설</td><td>표준에 더할 때 · 고급에는 포함</td><td>+60,000원</td></tr>
+      <tr><td class="n">음성 다시 만들기</td><td>대본을 확인하신 뒤 만듭니다</td><td>1회까지 추가 없음</td></tr>
       <tr><td class="n">수정 추가</td><td>2회차까지 포함 · 모아 보내신 한 묶음이 1회차</td><td>회차당 30,000원</td></tr>
       <tr><td class="n">급행 진행</td><td>접수일이 전시 2주 이내일 때</td><td>50% 할증</td></tr>
-      <tr class="g"><td colspan="3">단체전</td></tr>
-      <tr><td class="n">전시 공통</td><td>서문 패널 · 리플렛 · 홈페이지 틀</td><td>300,000원</td></tr>
-      <tr><td class="n">작가마다</td><td>캡션 · 홈페이지 쪽 · 약력</td><td>1인 80,000원</td></tr>
+      <tr class="g"><td colspan="3">별도 상품</td></tr>
+      <tr><td class="n">포트폴리오 홈페이지 + 브로슈어</td><td>공모나 갤러리에 내는 작가 자료 · 전시 고객은 할인</td><td>250,000원</td></tr>
     </tbody>
   </table>
   </div>
@@ -399,9 +365,9 @@ footer{margin-top:40px;padding:18px 0 36px;border-top:1px solid var(--line);
     <div><b>하나 · 작품 사진</b>먼저 보내주시면 무료로 봐 드립니다. 여기서
       그만두셔도 비용은 없습니다.</div>
     <div><b>둘 · 접수 양식</b>엑셀 양식을 드립니다. 전시 3주 전까지
-      보내주시는 것이 좋습니다.</div>
-    <div><b>셋 · 초안</b>완성본 한 가지를 드리고, 받으신 뒤 2회차까지 고쳐
-      드립니다.</div>
+      보내주시는 것이 좋고, 단체전은 주최 측에서 작가들의 양식을 모아 보내 주시면 됩니다.</div>
+    <div><b>셋 · 초안과 대본</b>완성본 한 가지와 음성 대본을 드리고, 받으신 뒤
+      2회차까지 고쳐 드립니다. 음성은 대본을 확인받은 다음에 만듭니다.</div>
     <div><b>넷 · 전달</b>인쇄용 PDF와 홈페이지 파일을 드립니다. 접수부터
       전달까지 보통 열흘 걸립니다.</div>
   </div>
@@ -412,9 +378,8 @@ footer{margin-top:40px;padding:18px 0 36px;border-top:1px solid var(--line);
   <div class="case">
     <b>이유리 개인전 「休遊山水 — 마음, 쉬고 노닐다」</b>
     인사아트센터 3층 제1특별관 · 2026. 10<br>
-    작품 캡션 열두 종과 전시 서문 패널, 리플렛, 포트폴리오를 만들고, 작품마다 한
-    쪽씩 열두 쪽짜리 홈페이지에 영문 페이지와 음성 해설 열세 편을
-    얹었습니다.
+    작품 캡션 열두 종과 전시 인사말, 리플렛을 만들고, 작품마다 한 쪽씩 열두
+    쪽짜리 홈페이지에 영문 페이지와 음성 해설 열세 편을 얹었습니다.
     <a href="https://leeyuri83.github.io">전시 홈페이지 보기</a>
   </div>
 </section>
@@ -426,30 +391,39 @@ footer{margin-top:40px;padding:18px 0 36px;border-top:1px solid var(--line);
       <div class="body">
         <p>접수 양식을 보내실 때 <b>절반</b>, 파일을 드릴 때 <b>나머지 절반</b>을
           계좌로 받습니다.</p>
-        <p>사업자등록 전이라 세금계산서와 현금영수증을 드리지 못합니다. 그래서
+        <p>사업자 등록 전이라 세금계산서와 현금영수증을 드리지 못하고, 그래서
           부가세도 붙지 않습니다. 공모 정산에 증빙이 필요하시면 접수 전에
           말씀해 주십시오.</p>
         <p>착수 전이면 전액 돌려드리고, 초안을 보내드리기 전이면 착수금까지만
           받습니다. 초안을 받으신 뒤에는 돌려드리기 어렵습니다.</p>
+      </div></details>
+    <details><summary>단체전도 같은 금액인가요</summary>
+      <div class="body">
+        <p>네, 개인전과 같은 표를 쓰고 작품 수도 같은 방식으로 셉니다. 작가 약력
+          대신 참여 작가 목록을 만들고, 주최 측에서 작가마다 받은 접수 양식을 모아
+          보내 주시면 됩니다.</p>
+      </div></details>
+    <details><summary>음성 해설은 어떻게 만드나요</summary>
+      <div class="body">
+        <p>원고는 작가노트를 읽고 직접 쓰고, 작품당 300자 이내로 1분쯤 듣게
+          됩니다. 작가께서 대본을 확인하신 뒤에 만들며, 다시 만드는 것은 한
+          번까지 추가 비용이 없습니다. 읽는 목소리는 AI 음성이고, 홈페이지에 그
+          사실을 적어 둡니다.</p>
+        <p>기본 등급에는 전시 소개 음성 한 편만 들어가고, 작품 쪽은 사진과 글로
+          보여 드립니다.</p>
+      </div></details>
+    <details><summary>영어 음성 해설은 꼭 필요한가요</summary>
+      <div class="body">
+        <p>외국인 관람객이 드나드는 자리가 아니면 쓸 일이 많지 않아 표준에서는
+          선택으로 두었습니다. 작품 음성 해설을 영어로 옮기는 것이라 기본 등급에는
+          더할 수 없습니다. 번역은 AI로 하고 사람이 검수하며, 원어민 감수까지는
+          하지 않습니다.</p>
       </div></details>
     <details><summary>홈페이지는 누구 것인가</summary>
       <div class="body">
         <p>작가 이름의 무료 계정으로 만들고 계정 정보를 드립니다. 전시가 끝나도
           주소가 남고 유지비가 없습니다. 나중에 작품을 더 넣는 작업은 점당
           10,000원입니다.</p>
-      </div></details>
-    <details><summary>음성 해설과 영문 번역</summary>
-      <div class="body">
-        <p>원고는 작가노트를 읽고 직접 씁니다. 읽는 목소리는 AI 음성이고,
-          홈페이지에 그 사실을 적어 둡니다.</p>
-        <p>영문은 외국인이 드나드는 자리가 아니면 쓸 일이 거의 없어 단품으로
-          두었습니다. 번역은 AI로 하고 사람이 검수하며, 원어민 감수까지는
-          하지 않습니다.</p>
-      </div></details>
-    <details><summary>약력과 포트폴리오는 뭐가 다른가</summary>
-      <div class="body">
-        <p>약력은 전시장에 두는 A4 한 장, 포트폴리오는 공모나 갤러리에 내는
-          PDF입니다. 내용은 겹치지만 쓰는 자리가 다릅니다.</p>
       </div></details>
     <details><summary>시안은 몇 개 주시나요</summary>
       <div class="body">
@@ -486,103 +460,57 @@ footer{margin-top:40px;padding:18px 0 36px;border-top:1px solid var(--line);
 
 <script>
 (function(){
-  var P={base:50000,cap:45000,sign:35000,prof:20000,leaf:100000,web:120000,
-         kakao:10000,qrcard:15000,en:100000,pf:100000,au1:60000,au2:130000};
-  var NAME={base:'정보 정리 · 사진 보정',cap:'캡션 디자인',sign:'서문 패널 디자인',
-    prof:'약력 디자인',leaf:'리플렛 디자인',web:'홈페이지 제작',
-    kakao:'공유 카드',qrcard:'작가 안내 디자인',en:'영문 안내',
-    pf:'포트폴리오 디자인',au1:'짧은 해설',au2:'전편 해설'};
+  var TIER=['기본','표준','고급'], BASE=[200000,270000,390000], PER=[5000,10000,10000];
+  var EN=60000, PRINT=[0,40000,200000], PNAME=['','인쇄 대행비','현장 세팅'];
   var $=function(id){return document.getElementById(id)};
   var won=function(n){return n.toLocaleString('ko-KR')};
-
-  function disc(s){
-    var pts=[[0,0],[200000,0],[295000,55000],[355000,65000],[625000,125000]];
-    if(s>=625000) return Math.round(s*0.20/1000)*1000;
-    for(var i=1;i<pts.length;i++){
-      if(s<=pts[i][0]){
-        var a=pts[i-1],b=pts[i];
-        return (b[0]===a[0])?a[1]:a[1]+(b[1]-a[1])*(s-a[0])/(b[0]-a[0]);
-      }
-    }
-    return 0;
-  }
-
-  function lock(boxId,optId,ok){
-    var b=$(boxId),o=$(optId),i=o.querySelector('i');
-    b.disabled=!ok;
-    o.classList.toggle('locked',!ok);
-    if(!ok){ b.checked=false;
-      if(!i.dataset.keep){i.dataset.keep=i.textContent;}
-      i.textContent=i.dataset.need;
-    } else if(i.dataset.keep){ i.textContent=i.dataset.keep; }
-  }
+  var pick=function(name){return +document.querySelector('input[name='+name+']:checked').value};
+  var enWant=false;
 
   function run(){
     var n=+$('q').value; $('qn').textContent=n;
-    var web=$('i_web').checked;
+    var t=pick('tier'), p=pick('pr');
+    var en=$('i_en'), o=$('o_en'), ei=$('en_i'), ev=$('en_v');
 
-    lock('i_kakao','o_kakao',web);
-    lock('i_qrcard','o_qrcard',web);
-    lock('i_en','o_en',web);
+    o.classList.remove('locked','fixed'); ev.classList.remove('inc');
+    if(t===0){
+      en.disabled=true; en.checked=false; o.classList.add('locked');
+      ei.textContent='작품 음성 해설이 없는 등급이라 더할 수 없습니다';
+      ev.textContent='—';
+    } else if(t===2){
+      en.disabled=true; en.checked=true; o.classList.add('fixed');
+      ei.textContent='고급에 들어 있습니다'; ev.textContent='포함'; ev.classList.add('inc');
+    } else {
+      en.disabled=false; en.checked=enWant;
+      ei.textContent='작품 전부와 전시 소개를 영어로'; ev.textContent=won(EN);
+    }
 
-    var au=0;
-    [['a1',1],['a2',2]].forEach(function(p){
-      var el=$(p[0]), o=el.closest('.opt'), i=o.querySelector('i');
-      el.disabled=!web; o.classList.toggle('locked',!web);
-      if(!web){ if(el.checked){$('a0').checked=true;}
-        if(!i.dataset.keep){i.dataset.keep=i.textContent;} i.textContent=i.dataset.need; }
-      else if(i.dataset.keep){ i.textContent=i.dataset.keep; }
-      if(el.checked && !el.disabled) au=p[1];
-    });
-
-    var rows=[],sub=0;
-    function add(k,v){ rows.push([NAME[k],v]); sub+=v; }
-    add('base',P.base);
-    ['cap','sign','prof','leaf','web','kakao','qrcard','en','pf']
-      .forEach(function(k){ var b=$('i_'+k); if(b.checked && !b.disabled) add(k,P[k]); });
-    if(au===1) add('au1',P.au1);
-    if(au===2) add('au2',P.au2);
-
-    var over=false, qline=null;
-    if(n>=36){ over=true; }
-    else if(n>=21){ var ex=(au===2)?150000:80000; sub+=ex; qline=['작품 '+n+'점',ex]; }
-    else if(n<=10){ sub-=50000; qline=['작품 '+n+'점',-50000]; }
+    var rows=[], total=0;
+    function add(a,v,shown){ rows.push([a,shown||won(v)]); total+=v; }
+    add(TIER[t]+' · 20점까지',BASE[t]);
+    if(n>20) add('작품 추가 '+(n-20)+'점 × '+won(PER[t]),(n-20)*PER[t]);
+    if(t===1 && en.checked) add('영어 음성 해설',EN);
+    if(t===2) add('영어 음성 해설',0,'포함');
+    if(p>0) add(PNAME[p],PRINT[p]);
 
     var dl=$('sumlist'); dl.innerHTML='';
-    function li(t,v,cls){
+    rows.forEach(function(r){
       var dt=document.createElement('dt'), dd=document.createElement('dd');
-      dt.textContent=t; dd.textContent=(v<0?'−':'')+won(Math.abs(v));
-      if(cls){dt.className=cls;dd.className=cls;}
+      dt.textContent=r[0]; dd.textContent=r[1];
       dl.appendChild(dt); dl.appendChild(dd);
-    }
-
-    rows.forEach(function(r){ li(r[0],r[1]); });
-
-    if(over){
-      $('total').textContent='별도 상담';
-      $('tnote').textContent='작품이 36점을 넘으면 구성이 달라집니다. 메일로 알려 주세요.';
-      $('same').textContent='';
-      return;
-    }
-    if(qline) li(qline[0],qline[1]);
-
-    var d=Math.round(disc(sub));
-    var total=Math.round((sub-d)/10000)*10000;
-    if(total<0) total=0;
-    d=sub-total;
-    if(d>0) li('묶음 할인',-d,'cut');
+    });
 
     $('total').innerHTML=won(total)+'<em>원</em>';
-    $('tnote').textContent='디자인 · 제작까지 · 인쇄비 별도';
-
-    var s='';
-    if(total===240000) s='기본 패키지와 같은 구성입니다.';
-    else if(total===290000) s='표준 패키지와 같은 구성입니다.';
-    else if(total===500000) s='고급 패키지와 같은 구성입니다.';
-    else if(total===580000) s='고급 패키지 + 영문 안내입니다.';
-    $('same').textContent=s;
+    $('tnote').textContent=p===0?'디자인 · 제작까지 · 인쇄비 별도'
+      :'인쇄 실비는 견적을 받아 별도로 알려 드립니다';
+    var subj='전시 지원 문의 ('+TIER[t]+' · 작품 '+n+'점'
+      +(t===1&&en.checked?' · 영어 음성':'')+')';
+    $('ask2').href='mailto:ysa2co@gmail.com?subject='+encodeURIComponent(subj);
   }
 
+  ['input','change'].forEach(function(ev){
+    $('i_en').addEventListener(ev,function(){ if(!this.disabled) enWant=this.checked; });
+  });
   document.querySelectorAll('#q, .opt input').forEach(function(el){
     el.addEventListener('input',run); el.addEventListener('change',run);
   });
