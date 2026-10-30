@@ -15,7 +15,7 @@
 :root{
   --paper:#FBFAF6; --card:#FFFFFF; --ink:#1C1C19; --ink2:#4E4E46;
   --ink3:#86867C; --faint:#B4B3A9; --line:#E6E4DA; --line2:#F0EEE5;
-  --seal:#8C3B2E; --wash:#F5F2E9;
+  --seal:#8C3B2E; --wash:#F5F2E9; --onseal:#FBFAF6;
   --shadow:0 1px 2px rgba(28,28,25,.04), 0 8px 24px rgba(28,28,25,.045);
   --serif:"Noto Serif KR","Noto Serif CJK KR",serif;
   --sans:"Noto Sans KR","Noto Sans CJK KR",system-ui,sans-serif;
@@ -25,7 +25,7 @@
   :root:not([data-theme="light"]){
     --paper:#15150F; --card:#1D1D17; --ink:#F2F0E6; --ink2:#C6C3B4;
     --ink3:#8E8C7E; --faint:#5E5C51; --line:#2C2C23; --line2:#24241C;
-    --seal:#C9705E; --wash:#201F18;
+    --seal:#C9705E; --wash:#201F18; --onseal:#17160F; --onseal:#17160F;
     --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.3);
   }
 }
@@ -200,7 +200,11 @@ details .body b{font-weight:500;color:var(--ink2)}
 .case a::after{content:" →";color:var(--ink3)}
 
 .ask{padding:40px 0 0;border-top:1px solid var(--line);text-align:center}
-.ask .mail{display:inline-block;margin-top:12px;font-size:18px;
+.ask .kakao{display:block;width:max-content;max-width:100%;margin:18px auto 0;padding:13px 28px;border-radius:999px;
+  background:var(--seal);color:var(--onseal);font-size:16px;font-weight:500;text-decoration:none}
+.ask .kakao:hover,.ask .kakao:focus-visible{opacity:.9;outline:2px solid var(--ink);outline-offset:2px}
+.ask .kid{display:block;margin-top:8px;font-size:12px;color:var(--ink3)}
+.ask .mail{display:inline-block;margin-top:16px;font-size:16px;
   font-family:var(--mono);text-decoration:none;
   border-bottom:1.5px solid var(--seal);padding-bottom:3px;word-break:break-all}
 .ask p{margin-top:14px;font-size:13px;line-height:1.75;color:var(--ink3);
@@ -450,6 +454,8 @@ footer{margin-top:40px;padding:18px 0 36px;border-top:1px solid var(--line);
 
 <div class="ask">
   <h2>전시 날짜와 작품 수만 알려 주세요</h2>
+  <a class="kakao" href="https://pf.kakao.com/_XrmWX/chat">카카오톡으로 상담하기</a>
+  <span class="kid">카카오톡 채널 @soritgyeol</span>
   <a class="mail" href="mailto:ysa2co@gmail.com">ysa2co@gmail.com</a>
   <p>작품 사진을 먼저 보내주시면 무료로 봐 드립니다.</p>
 </div>
