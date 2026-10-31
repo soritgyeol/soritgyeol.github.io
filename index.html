@@ -94,34 +94,51 @@ h2{font-size:19px;line-height:1.4}
   border-radius:50%;background:var(--faint)}
 .pk li b{font-weight:500;color:var(--ink)}
 
+/* 견적 내기 (2026-10-31 개편) — 입력 판 + 견적서 */
 .calc{margin-top:22px;display:grid;gap:14px}
-@media(min-width:760px){.calc{grid-template-columns:1fr 238px;align-items:start}
-  .out{position:sticky;top:14px}}
+@media(min-width:760px){.calc{grid-template-columns:1fr 300px;align-items:start}
+  .quote{position:sticky;top:14px}}
 .panel{background:var(--card);border:1px solid var(--line);border-radius:3px;
-  padding:18px 17px 20px;box-shadow:var(--shadow)}
-.qty label{display:block;font-size:13.5px;font-weight:500}
-.qty .hint{margin-top:3px;font-size:12px;line-height:1.6;color:var(--ink3)}
-.qtyrow{margin-top:12px;display:flex;align-items:center;gap:13px}
-.qtyrow input[type=range]{flex:1;accent-color:var(--seal);min-width:0}
-.qtybox{font-family:var(--mono);font-size:18px;font-variant-numeric:tabular-nums;
-  background:var(--wash);border:1px solid var(--line);border-radius:2px;
-  padding:4px 9px;min-width:58px;text-align:center}
-.qtybox span{font-size:11px;color:var(--ink3);margin-left:2px}
-
-.grp{margin-top:18px}
-.grp > .gl{font-family:var(--sans);font-size:10px;font-weight:700;
-  letter-spacing:.12em;color:var(--ink3);display:block;margin-bottom:8px}
-.opt{display:flex;align-items:flex-start;gap:10px;padding:8px 0;
-  border-top:1px solid var(--line2);cursor:pointer}
+  padding:6px 17px 20px;box-shadow:var(--shadow)}
+.step{display:flex;align-items:center;gap:9px;margin-top:20px;margin-bottom:9px}
+.step .sn{font-family:var(--sans);font-size:11px;font-weight:700;width:20px;height:20px;border-radius:50%;
+  display:inline-flex;align-items:center;justify-content:center;background:var(--ink);color:var(--paper);flex:0 0 auto}
+.step .sl{font-size:14.5px;font-weight:500}
+.step .sl em{font-style:normal;font-family:var(--sans);font-size:11px;color:var(--ink3);margin-left:6px;font-weight:400}
+.hint{font-size:12px;line-height:1.6;color:var(--ink3);margin-top:4px}
+.kind{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;background:var(--wash)}
+.kind label{cursor:pointer}
+.kind input{position:absolute;opacity:0;pointer-events:none}
+.kind span{display:block;font-family:var(--sans);font-size:13px;padding:5px 16px;border-radius:999px;color:var(--ink2)}
+.kind input:checked + span{background:var(--card);color:var(--ink);box-shadow:0 1px 2px rgba(28,28,25,.12);font-weight:500}
+.kind input:focus-visible + span{outline:2px solid var(--seal);outline-offset:1px}
+.fields{margin-top:10px;display:grid;gap:8px}
+@media(min-width:520px){.fields{grid-template-columns:1fr 1fr}.fields .fld:nth-child(2){grid-column:1 / -1;grid-row:1}}
+.fld{display:flex;flex-direction:column;gap:3px}
+.fld span{font-family:var(--sans);font-size:11.5px;color:var(--ink3)}
+.fld input{font:inherit;font-size:15px;color:var(--ink);background:var(--paper);border:1px solid var(--line);
+  border-radius:2px;padding:8px 10px;width:100%;min-width:0}
+.fld input:focus{outline:none;border-color:var(--ink3)}
+.fld input::placeholder{color:var(--faint)}
+.qtyrow{margin-top:10px;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.pm{font:inherit;font-family:var(--mono);font-size:20px;line-height:1;width:44px;height:44px;border-radius:2px;
+  border:1px solid var(--line);background:var(--wash);color:var(--ink);cursor:pointer}
+.pm:disabled{color:var(--faint);cursor:default}
+#qn{font-family:var(--mono);font-size:22px;font-variant-numeric:tabular-nums;text-align:center;width:72px;height:44px;
+  border:1px solid var(--line);border-radius:2px;background:var(--paper);color:var(--ink);-moz-appearance:textfield}
+#qn::-webkit-outer-spin-button,#qn::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.qtyrow .unit{font-size:13px;color:var(--ink3);margin-right:4px}
+.qtyrow input[type=range]{flex:1 1 100%;accent-color:var(--seal);min-width:0;margin-top:4px}
+.qwarn{margin-top:6px;font-size:12px;color:var(--seal);line-height:1.6}
+.grp{margin-top:0}
+.opt{display:flex;align-items:flex-start;gap:10px;padding:9px 0;border-top:1px solid var(--line2);cursor:pointer}
 .opt:first-of-type{border-top:none}
-.opt input{margin-top:4px;width:15px;height:15px;flex:0 0 auto;
-  accent-color:var(--seal)}
+.opt input{margin-top:4px;width:16px;height:16px;flex:0 0 auto;accent-color:var(--seal)}
 .opt .t{flex:1;min-width:0}
-.opt .t b{display:block;font-size:13.5px;font-weight:400;line-height:1.45}
-.opt .t i{display:block;font-style:normal;font-size:11.5px;color:var(--ink3);
-  line-height:1.5;margin-top:1px}
-.opt .v{font-size:13px;font-variant-numeric:tabular-nums;color:var(--ink2);
-  white-space:nowrap}
+.opt .t b{display:block;font-size:14px;font-weight:400;line-height:1.45}
+.opt .t b small{font-family:var(--sans);font-size:10px;font-weight:700;letter-spacing:.08em;color:var(--seal);margin-left:5px;vertical-align:1px}
+.opt .t i{display:block;font-style:normal;font-size:11.5px;color:var(--ink3);line-height:1.5;margin-top:1px}
+.opt .v{font-size:13px;font-variant-numeric:tabular-nums;color:var(--ink2);white-space:nowrap}
 .opt.locked{cursor:not-allowed}
 .opt.locked .t b,.opt.locked .v{color:var(--faint)}
 .opt.locked .t i{color:var(--seal)}
@@ -129,29 +146,71 @@ h2{font-size:19px;line-height:1.4}
 .opt .v.inc{color:var(--seal)}
 .pk .nm small{font-family:var(--sans);font-size:10px;font-weight:700;letter-spacing:.08em;
   color:var(--seal);margin-left:7px;vertical-align:2px}
-.calc .note{margin-top:10px;font-size:12px;line-height:1.6;color:var(--ink3)}
 
-.out{background:var(--card);border:1px solid var(--line);
-  border-radius:3px;padding:17px 16px 19px;box-shadow:var(--shadow)}
-.out .ol{font-family:var(--mono);font-size:9.5px;letter-spacing:.22em;
-  color:var(--faint)}
-.out dl{margin-top:12px;display:grid;grid-template-columns:1fr auto;
-  gap:6px 10px;align-items:baseline}
-.out dt{font-size:12.5px;color:var(--ink2)}
-.out dd{font-size:12.5px;color:var(--ink2);text-align:right;
-  font-variant-numeric:tabular-nums;white-space:nowrap}
-.out dt.cut,.out dd.cut{color:var(--seal)}
-.out .total{margin-top:13px;padding-top:12px;border-top:1px solid var(--line)}
-.out .total b{display:block;font-size:28px;font-weight:500;line-height:1;
-  font-variant-numeric:tabular-nums;letter-spacing:-.02em}
-.out .total b em{font-style:normal;font-size:13px;font-weight:400;
-  color:var(--ink3);margin-left:3px}
-.out .total span{display:block;margin-top:8px;font-size:11.5px;color:var(--ink3);
-  line-height:1.55}
-.out .ask2{display:block;margin-top:14px;text-align:center;font-size:13px;
-  text-decoration:none;padding:9px;border:1px solid var(--line);
-  border-radius:2px;background:var(--wash)}
+.quote{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--ink);border-radius:3px;
+  padding:18px 17px 16px;box-shadow:var(--shadow);scroll-margin-top:14px}
+.qh{display:flex;align-items:baseline;justify-content:space-between;gap:10px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+.qmark{font-size:17px;font-weight:600;line-height:1;white-space:nowrap}
+.qmark i{font-style:normal;color:var(--seal);margin:0 .12em}
+.qt{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.4em;color:var(--ink2);margin-right:-.4em}
+.meta{margin-top:10px;display:grid;grid-template-columns:auto 1fr;gap:3px 12px;font-size:12.5px}
+.meta dt{font-family:var(--sans);font-size:11.5px;color:var(--ink3)}
+.meta dd{color:var(--ink);overflow-wrap:anywhere}
+.lines{width:100%;margin-top:12px;border-collapse:collapse;font-size:12.5px}
+.lines th{font-family:var(--sans);font-size:10.5px;font-weight:500;color:var(--ink3);text-align:right;padding:0 0 5px;border-bottom:1px solid var(--line)}
+.lines th:first-child{text-align:left}
+.lines td{padding:7px 0;border-bottom:1px solid var(--line2);vertical-align:top;color:var(--ink2)}
+.lines td small{display:block;font-size:11px;color:var(--ink3);line-height:1.45;margin-top:1px}
+.lines td.n{text-align:right;white-space:nowrap;padding-left:8px;font-variant-numeric:tabular-nums;color:var(--ink3)}
+.lines td.m{text-align:right;white-space:nowrap;padding-left:10px;font-variant-numeric:tabular-nums;color:var(--ink)}
+.lines td.m.inc{color:var(--seal)}
+.total{display:flex;justify-content:space-between;align-items:baseline;margin-top:11px;padding-top:10px;border-top:1.5px solid var(--ink)}
+.total span{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.2em}
+.total b{font-size:27px;font-weight:500;line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.total b em{font-style:normal;font-size:13px;font-weight:400;color:var(--ink3);margin-left:3px}
+.pay{margin-top:6px;font-size:11.5px;color:var(--ink3);text-align:right;font-variant-numeric:tabular-nums;line-height:1.6}
+.inc{margin-top:14px;background:var(--wash);border-radius:2px;padding:10px 12px}
+.inc .il{font-family:var(--sans);font-size:10.5px;font-weight:700;letter-spacing:.12em;color:var(--ink3)}
+.inc ul{list-style:none;margin-top:5px}
+.inc li{font-size:12px;line-height:1.55;color:var(--ink2);padding-left:11px;position:relative;margin-top:3px}
+.inc li::before{content:"";position:absolute;left:0;top:.62em;width:4px;height:4px;border-radius:50%;background:var(--faint)}
+.terms{list-style:none;margin-top:11px}
+.terms li{font-size:11.5px;line-height:1.6;color:var(--ink3);padding-left:10px;position:relative}
+.terms li::before{content:"·";position:absolute;left:0}
+.acts{margin-top:14px;display:flex;flex-direction:column;gap:7px}
+.acts button,.acts a{font:inherit;font-family:var(--sans);font-size:13.5px;text-align:center;text-decoration:none;
+  padding:10px 8px;border-radius:2px;cursor:pointer;border:1px solid var(--line);background:var(--wash);color:var(--ink)}
+.acts .b1{background:var(--seal);border-color:var(--seal);color:var(--onseal);font-weight:500;font-size:14.5px;padding:12px 8px}
+.acts .b2s{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.copied{font-size:12px;color:var(--seal);line-height:1.55;text-align:center}
+.qf{margin-top:13px;padding-top:9px;border-top:1px solid var(--line2);font-family:var(--sans);font-size:10px;color:var(--faint);line-height:1.6}
+.ref{margin-top:18px;border-top:1px solid var(--line2)}
 
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:5;display:flex;justify-content:space-between;align-items:center;gap:12px;
+  padding:10px 20px calc(10px + env(safe-area-inset-bottom,0px));background:var(--card);border-top:1px solid var(--line);
+  box-shadow:0 -4px 16px rgba(28,28,25,.06);font-family:var(--sans);font-size:13px;color:var(--ink2);
+  transform:translateY(110%);transition:transform .2s}
+.bar.on{transform:none}
+.bar b{font-family:var(--serif);font-size:18px;font-weight:500;color:var(--ink);margin-left:6px;font-variant-numeric:tabular-nums}
+.bar a{background:var(--ink);color:var(--paper);text-decoration:none;padding:8px 14px;border-radius:2px;font-size:13px}
+@media(min-width:760px){.bar{display:none}}
+
+@media print{
+  @page{size:A4;margin:16mm 18mm}
+  :root{--paper:#fff;--card:#fff;--wash:#F5F2E9;--ink:#1C1C19;--ink2:#4E4E46;--ink3:#86867C;--faint:#B4B3A9;--line:#E6E4DA;--line2:#F0EEE5;--seal:#8C3B2E;--shadow:none}
+  body{padding:0;background:#fff}
+  body > .wrap > *:not(#est), #est > *:not(.calc), .calc > .panel, .bar, .acts{display:none!important}
+  #est{padding:0;border:none}
+  .calc{display:block;margin:0}
+  .quote{position:static;border:none;border-top:3px solid #1C1C19;box-shadow:none;padding:14px 0 0;max-width:none}
+  .qmark{font-size:24px}.qt{font-size:16px}
+  .meta{font-size:13.5px;margin-top:16px}.meta dt{font-size:12.5px}
+  .lines{font-size:13.5px;margin-top:18px}.lines td small{font-size:11.5px}
+  .total b{font-size:30px}
+  .inc li,.terms li{font-size:12.5px}
+  .qf{font-size:11px;margin-top:22px}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
 .tbl{margin-top:18px;width:100%;border-collapse:collapse}
 .tbl td{font-size:13.5px;padding:9px 10px 9px 0;
   border-bottom:1px solid var(--line2);vertical-align:top;color:var(--ink2)}
@@ -264,89 +323,131 @@ footer{margin-top:40px;padding:18px 0 36px;border-top:1px solid var(--line);
   </div>
 </section>
 
-<section>
-  <h2>견적 계산</h2>
-  <div class="sub">작품 수와 등급을 고르시면 금액이 바로 나옵니다.
-    <b>21점부터는 1점마다 기본 5,000원, 표준과 고급은 10,000원이 더해집니다.</b></div>
+<section id="est">
+  <h2>견적 내기</h2>
+  <div class="sub">작품 수와 등급, 필요한 선택 사항을 고르시면 견적서가 바로 만들어집니다.
+    전시 정보를 넣으시면 견적서에 함께 적히고, 저장하거나 카카오톡으로 보내실 수 있습니다.</div>
 
   <div class="calc">
     <div class="panel">
-      <div class="qty">
-        <label for="q">작품 수</label>
-        <div class="hint">캡션이 붙는 수로 세어 주세요. 연작 한 세트는 몇 폭이든 1점입니다.</div>
-        <div class="qtyrow">
-          <input type="range" id="q" min="1" max="40" value="20" step="1"
-                 aria-label="작품 수">
-          <div class="qtybox"><span id="qn">20</span><span>점</span></div>
-        </div>
+      <div class="step"><span class="sn">1</span><span class="sl">전시 정보 <em>선택 입력</em></span></div>
+      <div class="kind" role="radiogroup" aria-label="전시 형태">
+        <label><input type="radio" name="kind" value="0" checked><span>개인전</span></label>
+        <label><input type="radio" name="kind" value="1"><span>단체전</span></label>
+      </div>
+      <div class="fields">
+        <label class="fld"><span id="who_l">작가 이름</span>
+          <input type="text" id="who" maxlength="40" autocomplete="name" placeholder="예: 홍길동"></label>
+        <label class="fld"><span>전시 이름</span>
+          <input type="text" id="ttl" maxlength="60" placeholder="예: 봄, 모란이 피다"></label>
+        <label class="fld"><span>전시 시작일</span>
+          <input type="date" id="day"></label>
       </div>
 
+      <div class="step"><span class="sn">2</span><span class="sl">작품 수</span></div>
+      <div class="hint">캡션이 붙는 수로 세어 주세요. 연작 한 세트는 몇 폭이든 1점입니다.</div>
+      <div class="qtyrow">
+        <button type="button" class="pm" id="qm" aria-label="한 점 줄이기">−</button>
+        <input type="number" id="qn" inputmode="numeric" min="1" max="40" value="20" aria-label="작품 수">
+        <span class="unit">점</span>
+        <button type="button" class="pm" id="qp" aria-label="한 점 늘리기">+</button>
+        <input type="range" id="q" min="1" max="40" value="20" step="1" aria-label="작품 수 막대">
+      </div>
+      <div class="qwarn" id="qwarn" hidden>40점이 넘는 전시는 상담으로 금액을 정합니다. 견적서는 40점 기준으로 나옵니다.</div>
+
+      <div class="step"><span class="sn">3</span><span class="sl">등급</span></div>
       <div class="grp">
-        <span class="gl">등급</span>
         <label class="opt"><input type="radio" name="tier" value="0" id="t0">
-          <span class="t"><b>기본</b><i>캡션 · 작품 홈페이지 · 전시 소개 음성 한 편</i></span>
+          <span class="t"><b>기본</b><i>캡션 · 작품 홈페이지 · 인쇄물 · 전시 소개 음성 한 편</i></span>
           <span class="v">200,000</span></label>
         <label class="opt"><input type="radio" name="tier" value="1" id="t1" checked>
-          <span class="t"><b>표준</b><i>기본 + 작품 음성 해설 전부</i></span>
+          <span class="t"><b>표준 <small>권함</small></b><i>기본 + 작품 음성 해설 전부</i></span>
           <span class="v">270,000</span></label>
         <label class="opt"><input type="radio" name="tier" value="2" id="t2">
-          <span class="t"><b>고급</b><i>표준 + 영어 음성 해설 전부 + 리플렛</i></span>
+          <span class="t"><b>고급</b><i>표준 + 영어 음성 해설 전부 + 리플렛(3단 접지)</i></span>
           <span class="v">390,000</span></label>
       </div>
+      <div class="hint">20점까지 같은 금액이고, 21점부터 1점마다 기본 5,000원, 표준·고급 10,000원이 더해집니다.</div>
 
+      <div class="step"><span class="sn">4</span><span class="sl">선택 사항</span></div>
       <div class="grp">
-        <span class="gl">선택</span>
         <label class="opt" id="o_en"><input type="checkbox" id="i_en">
-          <span class="t"><b>영어 음성 해설</b>
-            <i id="en_i">작품 전부와 전시 소개를 영어로</i></span>
+          <span class="t"><b>영어 음성 해설</b><i id="en_i">작품 전부와 전시 소개를 영어로</i></span>
           <span class="v" id="en_v">60,000</span></label>
       </div>
 
+      <div class="step"><span class="sn">5</span><span class="sl">인쇄</span></div>
       <div class="grp">
-        <span class="gl">인쇄</span>
         <label class="opt"><input type="radio" name="pr" value="0" id="p0" checked>
-          <span class="t"><b>파일만 받기</b><i>인쇄용 PDF를 받아 직접 맡기십니다</i></span>
+          <span class="t"><b>파일만 받기</b><i>인쇄용 PDF를 받아 인쇄소에 직접 맡기는 방식</i></span>
           <span class="v">추가 없음</span></label>
         <label class="opt"><input type="radio" name="pr" value="1" id="p1">
-          <span class="t"><b>인쇄 대행</b><i>인쇄 실비에 대행비를 더합니다</i></span>
+          <span class="t"><b>인쇄 대행</b><i>저희가 인쇄소에 맡기고 받아 보내 드림 · 인쇄 실비 별도</i></span>
           <span class="v">40,000</span></label>
         <label class="opt"><input type="radio" name="pr" value="2" id="p2">
-          <span class="t"><b>현장 세팅</b><i>폼보드 재단과 설치 · 수도권 기준, 인쇄 실비 별도</i></span>
+          <span class="t"><b>현장 세팅</b><i>폼보드 재단과 설치 · 수도권 기준 · 인쇄 실비 별도</i></span>
           <span class="v">200,000</span></label>
       </div>
-      <div class="note">40점이 넘으면 메일로 알려 주세요. 포트폴리오 홈페이지와 브로슈어는
-        별도 상품(250,000원, 전시 고객은 할인)이라 여기에 넣지 않았습니다.</div>
     </div>
 
-    <div class="out">
-      <span class="ol">ESTIMATE</span>
-      <dl id="sumlist"></dl>
-      <div class="total">
-        <b id="total">—</b>
-        <span id="tnote">인쇄비 별도</span>
+    <div class="quote" id="quote" aria-live="polite">
+      <div class="qh">
+        <div class="qmark">소<i>·</i>릿<i>·</i>결</div>
+        <div class="qt">견적서</div>
       </div>
-      <a class="ask2" id="ask2" href="mailto:ysa2co@gmail.com?subject=전시 지원 문의">이 구성으로 문의</a>
+      <dl class="meta">
+        <dt>견적일</dt><dd id="m_date"></dd>
+        <dt id="m_who_l">받는 분</dt><dd id="m_who">—</dd>
+        <dt>전시</dt><dd id="m_ttl">—</dd>
+        <dt>구성</dt><dd id="m_kind"></dd>
+      </dl>
+      <table class="lines">
+        <thead><tr><th>항목</th><th>수량</th><th>금액</th></tr></thead>
+        <tbody id="lines"></tbody>
+      </table>
+      <div class="total">
+        <span>합계</span><b id="total">—</b>
+      </div>
+      <div class="pay" id="pay"></div>
+      <div class="inc">
+        <div class="il">포함 내용</div>
+        <ul id="incl"></ul>
+      </div>
+      <ul class="terms" id="terms"></ul>
+      <div class="acts">
+        <button type="button" class="b1" id="b_kakao">견적 복사하고 카카오톡 상담</button>
+        <div class="b2s">
+          <button type="button" id="b_print">견적서 저장 · 인쇄</button>
+          <a id="b_mail" href="mailto:ysa2co@gmail.com">메일로 보내기</a>
+        </div>
+        <div class="copied" id="copied" hidden>견적 내용을 복사했습니다. 카카오톡 상담 창에 붙여 넣어 주세요.</div>
+      </div>
+      <div class="qf">소릿결 · 카카오톡 @soritgyeol · ysa2co@gmail.com · soritgyeol.github.io</div>
     </div>
   </div>
 
-  <div class="scroll">
-  <table class="tbl">
-    <tbody>
-      <tr class="g"><td colspan="3">작품 수</td></tr>
-      <tr><td class="n">20점까지</td><td>등급마다 같은 금액</td><td>추가 없음</td></tr>
-      <tr><td class="n">21점부터 기본</td><td>1점 늘 때마다</td><td>+5,000원</td></tr>
-      <tr><td class="n">21점부터 표준 · 고급</td><td>1점 늘 때마다</td><td>+10,000원</td></tr>
-      <tr class="g"><td colspan="3">그 밖의 금액</td></tr>
-      <tr><td class="n">영어 음성 해설</td><td>표준에 더할 때 · 고급에는 포함</td><td>+60,000원</td></tr>
-      <tr><td class="n">음성 다시 만들기</td><td>대본을 확인하신 뒤 만듭니다</td><td>1회까지 추가 없음</td></tr>
-      <tr><td class="n">수정 추가</td><td>2회차까지 포함 · 모아 보내신 한 묶음이 1회차</td><td>회차당 30,000원</td></tr>
-      <tr><td class="n">급행 진행</td><td>접수일이 전시 2주 이내일 때</td><td>50% 할증</td></tr>
-      <tr class="g"><td colspan="3">별도 상품</td></tr>
-      <tr><td class="n">포트폴리오 홈페이지 + 브로슈어</td><td>공모나 갤러리에 내는 작가 자료 · 전시 고객은 할인</td><td>250,000원</td></tr>
-    </tbody>
-  </table>
-  </div>
+  <details class="ref">
+    <summary>금액 기준 전체 보기</summary>
+    <div class="scroll">
+    <table class="tbl">
+      <tbody>
+        <tr class="g"><td colspan="3">작품 수</td></tr>
+        <tr><td class="n">20점까지</td><td>등급마다 같은 금액</td><td>추가 없음</td></tr>
+        <tr><td class="n">21점부터 기본</td><td>1점 늘 때마다</td><td>+5,000원</td></tr>
+        <tr><td class="n">21점부터 표준 · 고급</td><td>1점 늘 때마다</td><td>+10,000원</td></tr>
+        <tr class="g"><td colspan="3">그 밖의 금액</td></tr>
+        <tr><td class="n">영어 음성 해설</td><td>표준에 더할 때 · 고급에는 포함</td><td>+60,000원</td></tr>
+        <tr><td class="n">음성 다시 만들기</td><td>대본을 확인하신 뒤 만듭니다</td><td>1회까지 추가 없음</td></tr>
+        <tr><td class="n">수정 추가</td><td>2회차까지 포함 · 모아 보내신 한 묶음이 1회차</td><td>회차당 30,000원</td></tr>
+        <tr><td class="n">급행 진행</td><td>접수일이 전시 2주 이내일 때</td><td>50% 할증</td></tr>
+        <tr class="g"><td colspan="3">별도 상품</td></tr>
+        <tr><td class="n">포트폴리오 홈페이지 + 브로슈어</td><td>공모나 갤러리에 내는 작가 자료 · 전시 고객은 할인</td><td>250,000원</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </details>
 </section>
+<div class="bar" id="bar"><span>합계 <b id="bar_t">—</b></span><a href="#quote">견적서 보기</a></div>
 
 <section>
   <h2>인쇄비는 별도입니다</h2>
@@ -469,61 +570,160 @@ footer{margin-top:40px;padding:18px 0 36px;border-top:1px solid var(--line);
 
 <script>
 (function(){
+  // 금액(2026-10-30 대표 결정, CLAUDE.md 3절). 바꾸면 안내서·가격표·카탈로그와 같이 고칠 것
   var TIER=['기본','표준','고급'], BASE=[200000,270000,390000], PER=[5000,10000,10000];
-  var EN=60000, PRINT=[0,40000,200000], PNAME=['','인쇄 대행비','현장 세팅'];
+  var EN=60000, RUSH=0.5, MAXN=40, KAKAO='https://pf.kakao.com/_XrmWX/chat', MAIL='ysa2co@gmail.com';
   var $=function(id){return document.getElementById(id)};
   var won=function(n){return n.toLocaleString('ko-KR')};
   var pick=function(name){return +document.querySelector('input[name='+name+']:checked').value};
-  var enWant=false;
+  var esc=function(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})};
+  var ymd=function(d){return d.getFullYear()+'. '+(d.getMonth()+1)+'. '+d.getDate()+'.'};
+  var enWant=false, last=null;
 
-  function run(){
-    var n=+$('q').value; $('qn').textContent=n;
-    var t=pick('tier'), p=pick('pr');
-    var en=$('i_en'), o=$('o_en'), ei=$('en_i'), ev=$('en_v');
-
-    o.classList.remove('locked','fixed'); ev.classList.remove('inc');
-    if(t===0){
-      en.disabled=true; en.checked=false; o.classList.add('locked');
-      ei.textContent='작품 음성 해설이 없는 등급이라 더할 수 없습니다';
-      ev.textContent='—';
-    } else if(t===2){
-      en.disabled=true; en.checked=true; o.classList.add('fixed');
-      ei.textContent='고급에 들어 있습니다'; ev.textContent='포함'; ev.classList.add('inc');
-    } else {
-      en.disabled=false; en.checked=enWant;
-      ei.textContent='작품 전부와 전시 소개를 영어로'; ev.textContent=won(EN);
-    }
-
-    var rows=[], total=0;
-    function add(a,v,shown){ rows.push([a,shown||won(v)]); total+=v; }
-    add(TIER[t]+' · 20점까지',BASE[t]);
-    if(n>20) add('작품 추가 '+(n-20)+'점 × '+won(PER[t]),(n-20)*PER[t]);
-    if(t===1 && en.checked) add('영어 음성 해설',EN);
-    if(t===2) add('영어 음성 해설',0,'포함');
-    if(p>0) add(PNAME[p],PRINT[p]);
-
-    var dl=$('sumlist'); dl.innerHTML='';
-    rows.forEach(function(r){
-      var dt=document.createElement('dt'), dd=document.createElement('dd');
-      dt.textContent=r[0]; dd.textContent=r[1];
-      dl.appendChild(dt); dl.appendChild(dd);
-    });
-
-    $('total').innerHTML=won(total)+'<em>원</em>';
-    $('tnote').textContent=p===0?'디자인 · 제작까지 · 인쇄비 별도'
-      :'인쇄 실비는 견적을 받아 별도로 알려 드립니다';
-    var subj='전시 지원 문의 ('+TIER[t]+' · 작품 '+n+'점'
-      +(t===1&&en.checked?' · 영어 음성':'')+')';
-    $('ask2').href='mailto:ysa2co@gmail.com?subject='+encodeURIComponent(subj);
+  function qty(){
+    var n=parseInt($('qn').value,10);
+    if(isNaN(n)||n<1) n=1;
+    return n;
+  }
+  function daysLeft(){
+    var v=$('day').value; if(!v) return null;
+    var p=v.split('-'), d=new Date(+p[0],+p[1]-1,+p[2]), t=new Date(); t.setHours(0,0,0,0);
+    return Math.round((d-t)/864e5);
   }
 
-  ['input','change'].forEach(function(ev){
-    $('i_en').addEventListener(ev,function(){ if(!this.disabled) enWant=this.checked; });
+  function calc(){
+    var raw=qty(), n=Math.min(raw,MAXN), t=pick('tier'), p=pick('pr'), k=pick('kind');
+    var en=(t===2)||(t===1&&enWant);
+    var L=[], prod=0, total=0;
+    function line(name,note,q,v,inc){ L.push({name:name,note:note,q:q,v:v,inc:inc}); total+=v; }
+    line(TIER[t]+' 패키지','작품 20점까지','1',BASE[t]); prod+=BASE[t];
+    if(n>20){ var x=(n-20)*PER[t]; line('작품 추가','21점부터 1점당 '+won(PER[t])+'원',(n-20)+'점',x); prod+=x; }
+    if(t===1&&en){ line('영어 음성 해설','작품 '+n+'편과 전시 소개','1',EN); prod+=EN; }
+    if(t===2) line('영어 음성 해설','작품 '+n+'편과 전시 소개 · 고급에 포함','1',0,true);
+    var dl=daysLeft(), rush=dl!==null&&dl>=0&&dl<14;
+    if(rush) line('급행 진행','전시 '+dl+'일 전 접수 · 제작 금액의 50%','',Math.round(prod*RUSH));
+    if(p===1) line('인쇄 대행','인쇄 실비 별도','1',40000);
+    if(p===2) line('현장 세팅','폼보드 재단과 설치 · 수도권 · 인쇄 실비 별도','1',200000);
+
+    var I=['작품 캡션 '+n+'점 (QR)','작품 홈페이지 — 작품마다 한 페이지',
+      '전시 인사말 (A2 또는 A3)', k===1?'참여 작가 목록':'작가 약력 · 작가 안내 (A4)',
+      '카톡 공유 카드','전시 소개 음성 1편'];
+    if(t>=1) I.push('작품 음성 해설 '+n+'편 (작품당 300자 이내, 약 1분)');
+    if(en) I.push('영어 음성 해설 '+n+'편과 전시 소개');
+    if(t===2) I.push('리플렛 디자인 (3단 접지)');
+    I.push('수정 2회차, 음성 다시 만들기 1회 포함');
+
+    var T=[p===0?'인쇄는 직접 맡기시며 인쇄비는 별도입니다(20점 기준 10만~15만 원쯤).'
+                :'인쇄 실비는 인쇄소 견적을 받아 별도로 알려 드립니다.',
+      '사업자 등록 전이라 부가세가 붙지 않고, 세금계산서와 현금영수증은 발행되지 않습니다.',
+      '수정은 3회차부터 회차당 30,000원입니다.',
+      '입력하신 내용 기준의 견적이며, 상담 후 확정합니다.'];
+    if(rush) T.splice(3,0,'전시까지 2주가 남지 않아 급행 할증을 넣었습니다. 접수일 기준으로 다시 확인합니다.');
+    if(raw>MAXN) T.unshift('40점이 넘는 전시는 상담으로 금액을 정합니다. 이 견적은 40점 기준입니다.');
+    return {raw:raw,n:n,t:t,p:p,k:k,en:en,L:L,I:I,T:T,total:total,rush:rush,dl:dl,
+      who:$('who').value.trim(),ttl:$('ttl').value.trim(),day:$('day').value};
+  }
+
+  function render(){
+    var n=qty(); if(+$('qn').value!==n && $('qn').value!=='') $('qn').value=n;
+    $('q').value=Math.min(n,MAXN); $('qm').disabled=n<=1; $('qp').disabled=n>=99;
+    $('qwarn').hidden=n<=MAXN;
+    var t=pick('tier'), en=$('i_en'), o=$('o_en');
+    o.classList.remove('locked','fixed'); $('en_v').classList.remove('inc');
+    if(t===0){ en.disabled=true; en.checked=false; o.classList.add('locked');
+      $('en_i').textContent='작품 음성 해설이 없는 등급이라 더할 수 없습니다'; $('en_v').textContent='—'; }
+    else if(t===2){ en.disabled=true; en.checked=true; o.classList.add('fixed');
+      $('en_i').textContent='고급에 들어 있습니다'; $('en_v').textContent='포함'; $('en_v').classList.add('inc'); }
+    else { en.disabled=false; en.checked=enWant;
+      $('en_i').textContent='작품 전부와 전시 소개를 영어로'; $('en_v').textContent=won(EN); }
+    var k=pick('kind'); $('who_l').textContent=k===1?'주최 · 단체 이름':'작가 이름';
+    $('who').placeholder=k===1?'예: ○○민화협회':'예: 홍길동';
+
+    var c=last=calc();
+    $('m_date').textContent=ymd(new Date());
+    $('m_who').textContent=c.who||'—';
+    $('m_ttl').textContent=(c.ttl||'—')+(c.day?' · '+ymd(new Date(c.day+'T00:00'))+' 시작':'');
+    $('m_kind').textContent=(c.k===1?'단체전':'개인전')+' · 작품 '+c.n+'점 · '+TIER[c.t];
+    $('lines').innerHTML=c.L.map(function(l){
+      return '<tr><td>'+esc(l.name)+(l.note?'<small>'+esc(l.note)+'</small>':'')+'</td><td class="n">'+esc(l.q)+'</td>'
+        +'<td class="m'+(l.inc?' inc':'')+'">'+(l.inc?'포함':won(l.v))+'</td></tr>';
+    }).join('');
+    $('total').innerHTML=won(c.total)+'<em>원</em>';
+    $('bar_t').textContent=won(c.total)+'원';
+    var half=Math.round(c.total/2);
+    $('pay').textContent='접수 때 '+won(half)+'원 · 파일 전달 때 '+won(c.total-half)+'원';
+    $('incl').innerHTML=c.I.map(function(s){return '<li>'+esc(s)+'</li>'}).join('');
+    $('terms').innerHTML=c.T.map(function(s){return '<li>'+esc(s)+'</li>'}).join('');
+    var subj='전시 지원 견적 ('+(c.k===1?'단체전':'개인전')+' · '+TIER[c.t]+' · 작품 '+c.n+'점)';
+    $('b_mail').href='mailto:'+MAIL+'?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(text(c));
+  }
+
+  function link(c){
+    var q='#e&n='+c.raw+'&t='+c.t+'&en='+(c.t===1&&c.en?1:0)+'&p='+c.p+'&k='+c.k
+      +(c.who?'&w='+encodeURIComponent(c.who):'')+(c.ttl?'&x='+encodeURIComponent(c.ttl):'')+(c.day?'&d='+c.day:'');
+    return 'https://soritgyeol.github.io/'+q;
+  }
+  function text(c){
+    var s='[소릿결 견적] '+ymd(new Date())+'\n';
+    if(c.who) s+='받는 분: '+c.who+'\n';
+    s+='전시: '+(c.ttl||'(이름 미정)')+' · '+(c.k===1?'단체전':'개인전')+' · 작품 '+c.n+'점'+(c.day?' · '+ymd(new Date(c.day+'T00:00'))+' 시작':'')+'\n\n';
+    c.L.forEach(function(l){ s+='- '+l.name+(l.q&&l.q!=='1'?' '+l.q:'')+': '+(l.inc?'포함':won(l.v)+'원')+'\n'; });
+    s+='합계: '+won(c.total)+'원 (인쇄 실비 별도, 부가세 없음)\n\n견적 다시 보기: '+link(c);
+    return s;
+  }
+
+  function load(){
+    if(location.hash.indexOf('#e&')!==0) return false;
+    var P={}; location.hash.slice(3).split('&').forEach(function(kv){var i=kv.indexOf('=');if(i>0)P[kv.slice(0,i)]=decodeURIComponent(kv.slice(i+1))});
+    if(P.n) $('qn').value=Math.max(1,Math.min(99,parseInt(P.n,10)||20));
+    if(/^[012]$/.test(P.t||'')) $('t'+P.t).checked=true;
+    if(/^[012]$/.test(P.p||'')) $('p'+P.p).checked=true;
+    if(/^[01]$/.test(P.k||'')) document.querySelector('input[name=kind][value="'+P.k+'"]').checked=true;
+    enWant=P.en==='1';
+    if(P.w) $('who').value=P.w.slice(0,40);
+    if(P.x) $('ttl').value=P.x.slice(0,60);
+    if(/^\d{4}-\d{2}-\d{2}$/.test(P.d||'')) $('day').value=P.d;
+    return true;
+  }
+
+  $('q').addEventListener('input',function(){ $('qn').value=this.value; render(); });
+  $('qn').addEventListener('input',render);
+  $('qn').addEventListener('blur',function(){ $('qn').value=qty(); render(); });
+  $('qm').addEventListener('click',function(){ $('qn').value=Math.max(1,qty()-1); render(); });
+  $('qp').addEventListener('click',function(){ $('qn').value=Math.min(99,qty()+1); render(); });
+  $('i_en').addEventListener('change',function(){ if(!this.disabled) enWant=this.checked; render(); });
+  document.querySelectorAll('input[name=tier],input[name=pr],input[name=kind]').forEach(function(el){ el.addEventListener('change',render); });
+  ['who','ttl','day'].forEach(function(id){ $(id).addEventListener('input',render); $(id).addEventListener('change',render); });
+
+  $('b_kakao').addEventListener('click',function(){
+    var s=text(last), w=window.open(KAKAO,'_blank'); if(w) try{ w.opener=null; }catch(e){}
+    var done=function(){ $('copied').hidden=false; };
+    if(navigator.clipboard&&navigator.clipboard.writeText) navigator.clipboard.writeText(s).then(done,function(){ fallback(s); done(); });
+    else { fallback(s); done(); }
+    if(!w) location.href=KAKAO;
   });
-  document.querySelectorAll('#q, .opt input').forEach(function(el){
-    el.addEventListener('input',run); el.addEventListener('change',run);
+  function fallback(s){
+    var ta=document.createElement('textarea'); ta.value=s; ta.setAttribute('readonly','');
+    ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta); ta.select();
+    try{ document.execCommand('copy'); }catch(e){} document.body.removeChild(ta);
+  }
+  $('b_print').addEventListener('click',function(){
+    var old=document.title, c=last;
+    document.title='소릿결_견적서'+(c.who?'_'+c.who:'')+'_'+new Date().toISOString().slice(0,10);
+    window.print(); setTimeout(function(){ document.title=old; },500);
   });
-  run();
+
+  // 휴대폰: 입력하는 동안 아래에 합계 막대, 견적서가 보이면 숨김
+  if('IntersectionObserver' in window){
+    var inEst=false, seeQ=false, bar=$('bar');
+    var upd=function(){ bar.classList.toggle('on',inEst&&!seeQ); };
+    new IntersectionObserver(function(e){ inEst=e[0].isIntersecting; upd(); }).observe(document.querySelector('#est .panel'));
+    new IntersectionObserver(function(e){ seeQ=e[0].isIntersecting; upd(); },{threshold:.15}).observe($('quote'));
+  }
+
+  var fromLink=load();
+  render();
+  if(fromLink) $('quote').scrollIntoView();
 })();
 </script>
 </body>
