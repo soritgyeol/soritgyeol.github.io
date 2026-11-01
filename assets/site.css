@@ -347,3 +347,35 @@ footer.foot nav a,.end .mail{display:inline-flex;align-items:center;min-height:4
 .gthumbs span{display:block;font-family:var(--sans);font-size:13px;margin-top:6px;line-height:1.4}
 .gthumbs small{display:block;color:var(--mute);font-size:12px}
 #gb .sample{margin-top:0}
+
+/* ── 2026-11-01 개편 검토에서 남긴 개선(색감·구획은 이 판 그대로) ──
+   흰 바탕 「화이트 큐브」안은 대표 주변 반응이 「밋밋하다, 기존이 낫다」여서 접음(css 보관: 세션 scratchpad) */
+html{scroll-padding-top:calc(76px + env(safe-area-inset-top,0px));scroll-padding-bottom:80px}
+body,button,input,select,textarea{font-feature-settings:"halt"}
+@media (min-width:861px){br.mbr{display:none}}
+/* 휴대폰 첫 화면: 재생 버튼 다음에 견적·상담 버튼 */
+@media (max-width:960px){
+  .listen{margin:16px auto 20px}
+  .hero .cta{order:5;margin-bottom:28px}
+  .hero p.lead{order:6}
+  .hero .from{order:7}
+}
+@media (max-width:860px){
+  .phead h1{font-size:clamp(27px,7.4vw,34px)}
+  .tier .amt{font-size:34px}
+}
+.promise li{padding-left:1.5em;text-indent:-1.5em}
+.promise li:before{margin-right:.6em}
+/* 사례 음성 견본(sample.js) — 첫 화면 재생 버튼과 같은 모양 */
+.gcase .sample{display:grid;gap:10px}
+.gcase .sample .play{width:100%}
+.pbar{height:24px;cursor:pointer;position:relative}
+.pbar::before{content:"";position:absolute;left:0;right:0;top:11px;height:3px;border-radius:2px;background:var(--wave)}
+.pbar i{position:absolute;left:0;top:11px;height:3px;border-radius:2px;width:0;background:var(--seal)}
+/* 소개: 사례 그림 띠 */
+.strip{list-style:none;margin:0 0 40px;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.strip li{aspect-ratio:1;background:var(--wall);border-radius:2px;overflow:hidden}
+.strip img{width:100%;height:100%;object-fit:cover}
+@media (max-width:600px){.strip{grid-template-columns:repeat(2,1fr)}}
+.gthumbs small,.seg{font-size:13px}
+.chain .arrow{color:var(--seal)}

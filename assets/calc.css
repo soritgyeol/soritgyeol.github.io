@@ -149,3 +149,7 @@
 #est .copied[hidden]{display:none}
 #est .copied p{margin:0;font-size:14px;color:var(--ink)}
 #est .copied a.b1{display:block}
+/* 개편 검토에서 남긴 개선 */
+#est .opt.locked .t b,#est .opt.locked .v{color:var(--mute)}
+#est .qf,#est .lines th,#est .lines td small,#est .inc .il,#est .opt .t b small,#est .tbl tr.g td{font-size:13px}
+@media print{#est .qf{font-size:11px}}

@@ -8,3 +8,5 @@
   document.addEventListener('keydown',e=>{if(e.key==='Escape'&&nv.classList.contains('open')){close();mb.focus()}});
   document.addEventListener('click',e=>{if(!e.target.closest('header'))close()});
 })();
+// 음성은 한 번에 하나만
+document.addEventListener('play',e=>document.querySelectorAll('audio').forEach(x=>x!==e.target&&x.pause()),true);
