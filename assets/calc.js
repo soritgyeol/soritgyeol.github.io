@@ -91,7 +91,7 @@
   function link(c){
     var q='#e&n='+c.raw+'&t='+c.t+'&en='+(c.t===1&&c.en?1:0)+'&p='+c.p+'&k='+c.k
       +(c.who?'&w='+encodeURIComponent(c.who):'')+(c.ttl?'&x='+encodeURIComponent(c.ttl):'')+(c.day?'&d='+c.day:'');
-    return 'https://soritgyeol.github.io/price.html'+q;
+    return 'https://soritgyeol.com/price.html'+q;
   }
   function text(c){
     var s='[소릿결 견적] '+ymd(new Date())+'\n';
