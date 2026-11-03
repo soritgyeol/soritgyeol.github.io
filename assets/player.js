@@ -5,14 +5,16 @@
   const wave=document.getElementById('wave');
   const bars=[mk(wave),mk(document.getElementById('wave2'))];
   const a=document.getElementById('aud'),btn=document.getElementById('play');
-  if(!a||!btn)return;
-  const ico=document.getElementById('ico'),tm=document.getElementById('time');
+  if(!a)return;
+  const ico=document.getElementById('ico')||document.createElementNS('http://www.w3.org/2000/svg','path'),tm=document.getElementById('time')||{};
+  const tg=()=>{a.paused?a.play():a.pause()};
+  document.querySelectorAll('[data-play]').forEach(el=>{const g=el.querySelector('.go');el.setAttribute('aria-pressed','false');el.addEventListener('click',tg);a.addEventListener('play',()=>{el.classList.add('on');el.setAttribute('aria-pressed','true');if(g)g.textContent='❚❚ 멈추기'});a.addEventListener('pause',()=>{el.classList.remove('on');el.setAttribute('aria-pressed','false');if(g)g.textContent='▶ 눌러서 듣기'})});
   const f=s=>{s=Math.round(s);return Math.floor(s/60)+':'+String(s%60).padStart(2,'0')};
   const paint=()=>{const d=a.duration||59,k=Math.round(a.currentTime/d*W.length),c=Math.round(a.currentTime);bars.forEach(bs=>bs.forEach((b,i)=>b.classList.toggle('on',i<k)));tm.textContent=f(a.currentTime)+' / '+f(d);if(wave){wave.setAttribute('aria-valuemax',Math.round(d));wave.setAttribute('aria-valuenow',c);wave.setAttribute('aria-valuetext',c+'초')}};
-  btn.addEventListener('click',()=>{a.paused?a.play():a.pause()});
+  if(btn)btn.addEventListener('click',tg);
   a.addEventListener('play',()=>{const g=window.goatcounter;if(!a.dataset.gc&&g&&g.count){a.dataset.gc=1;g.count({path:'/play/'+a.getAttribute('src').split('/').pop(),title:'음성 재생',event:true})}});
-  a.addEventListener('play',()=>{ico.setAttribute('d','M3 1.5h3v11H3zM8 1.5h3v11H8z');btn.setAttribute('aria-pressed','true')});
-  a.addEventListener('pause',()=>{ico.setAttribute('d','M3 1.5v11l9.5-5.5z');btn.setAttribute('aria-pressed','false')});
+  a.addEventListener('play',()=>{ico.setAttribute('d','M3 1.5h3v11H3zM8 1.5h3v11H8z');if(btn)btn.setAttribute('aria-pressed','true')});
+  a.addEventListener('pause',()=>{ico.setAttribute('d','M3 1.5v11l9.5-5.5z');if(btn)btn.setAttribute('aria-pressed','false')});
   a.addEventListener('timeupdate',paint);a.addEventListener('loadedmetadata',paint);
   const seek=x=>{if(a.duration){a.currentTime=x;paint()}else{a.preload='metadata';a.addEventListener('loadedmetadata',()=>{a.currentTime=x;paint()},{once:true});a.load()}};
   if(wave){

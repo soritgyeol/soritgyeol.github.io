@@ -1,7 +1,7 @@
 (function(){
   // 옛 site/index.html에서 그대로 옮김(2026-11-01). 금액(2026-10-30 대표 결정, CLAUDE.md 3절). 바꾸면 안내서·가격표·카탈로그와 같이 고칠 것
   var TIER=['기본','표준','고급'], BASE=[200000,270000,390000], PER=[5000,10000,10000];
-  var EN=60000, RUSH=0.5, MAXN=40, KAKAO='https://pf.kakao.com/_XrmWX/chat', MAIL='ysa2co@gmail.com';
+  var EN=60000, RUSH=0.5, MAXN=40, KAKAO='https://pf.kakao.com/_XrmWX/chat', MAIL='hello@soritgyeol.com';
   var $=function(id){return document.getElementById(id)};
   var won=function(n){return n.toLocaleString('ko-KR')};
   var pick=function(name){return +document.querySelector('input[name='+name+']:checked').value};
@@ -34,11 +34,11 @@
     if(p===1) line('인쇄 대행','인쇄 실비 별도','1',40000);
     if(p===2) line('현장 세팅','폼보드 재단과 설치 · 수도권 · 인쇄 실비 별도','1',200000);
 
-    var I=['작품 캡션 '+n+'점 (QR)','전시 홈페이지 — 작품마다 한 페이지',
-      '전시 인사말 (A2 또는 A3)', k===1?'참여 작가 목록':'작가 약력 · 작가 안내 (A4)',
-      '카톡 공유 카드','전시 소개 음성 1편'];
-    if(t>=1) I.push('작품 음성 해설 '+n+'편 (작품당 300자 이내, 약 1분)');
+    var I=[];
+    if(t>=1) I.push('작품 음성 해설 '+n+'편 (작품당 1분 안팎, 대본 300자 이내)');
     if(en) I.push('영어 음성 해설 '+n+'편과 전시 소개');
+    I.push('전시 소개 음성 1편','작품 캡션 '+n+'점 (QR)','전시 홈페이지 — 작품마다 한 페이지',
+      '전시 인사말 (A2 또는 A3)', k===1?'참여 작가 목록':'작가 약력 · 작가 안내 (A4)','카톡 공유 카드');
     if(t===2) I.push('리플렛 디자인 (3단 접지)');
     I.push('수정 2회차, 음성 다시 만들기 1회 포함');
 

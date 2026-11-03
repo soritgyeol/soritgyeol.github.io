@@ -379,3 +379,31 @@ body,button,input,select,textarea{font-feature-settings:"halt"}
 @media (max-width:600px){.strip{grid-template-columns:repeat(2,1fr)}}
 .gthumbs small,.seg{font-size:13px}
 .chain .arrow{color:var(--seal)}
+/* 2026-11-04 음성 해설 컨셉: 첫 화면은 플레이어가 주인공, 캡션은 보조 */
+.hero .caption{width:210px;padding:10px 11px 9px 12px;gap:8px;opacity:.97}
+.hero .caption .ti{font-size:13.5px}.hero .caption .who{font-size:8px}.hero .caption .hj{font-size:8.5px}.hero .caption .sp{font-size:7px}
+.hero .caption .r svg{width:48px;height:48px}.hero .caption .r small{font-size:7px}
+.hero .listen{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px 16px 12px;box-shadow:0 18px 40px -22px rgba(40,32,20,.35)}
+.hero .listen .play{border:0;background:none;padding:0;font-size:16px;font-weight:500}
+.hero .listen .play .k,.ex .listen .play .k{width:56px;height:56px}
+.hero .listen .play .k svg,.ex .listen .play .k svg{width:18px;height:18px}
+.tier .tg{font-family:var(--sans);font-size:14px;color:var(--seal);margin:2px 0 10px;font-weight:500}
+button.sound{font:inherit;color:inherit;text-align:left;cursor:pointer;width:100%}
+button.sound .wave{display:flex}
+button.sound .go{color:var(--seal);font-weight:600}
+button.sound.on .go{color:var(--mute)}
+button.sound:hover{border-color:var(--seal)}
+@media (max-width:960px){
+  .hero .caption{width:170px;right:2%}
+  .hero .wallart{padding-bottom:40px}
+}
+/* 제작 사례(휴대폰): 제목 → 재생 → 그림 → 사실 순서 */
+@media (max-width:960px){
+  #hw .ex{display:flex;flex-direction:column;gap:0}
+  #hw .ex>div:last-child{display:contents}
+  #hw .ex .lab{order:1}#hw .ex h2{order:2}#hw .ex .who{order:3}#hw .ex .listen{order:4}
+  #hw .ex .cover{order:5;margin-bottom:24px}
+  #hw .ex .facts{order:6}#hw .ex .made{order:7}#hw .ex .cta{order:8}
+}
+.tier.k .tg{color:var(--bandseal)}
+button.sound.on .go{color:var(--seal)}
