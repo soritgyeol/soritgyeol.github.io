@@ -153,3 +153,17 @@
 #est .opt.locked .t b,#est .opt.locked .v{color:var(--mute)}
 #est .qf,#est .lines th,#est .lines td small,#est .inc .il,#est .opt .t b small,#est .tbl tr.g td{font-size:13px}
 @media print{#est .qf{font-size:11px}}
+/* 2026-11-04 고른 값 표시 · 작품 수 구간 · 전달 예정 · 등급 견본 듣기 */
+#est .step .sv{margin-left:auto;font-family:var(--sans);font-size:14px;font-weight:600;color:var(--seal)}
+#est .eta{font-family:var(--sans);font-size:14px;line-height:1.6;color:var(--ink);background:var(--wall);border-radius:10px;padding:10px 14px;margin-top:12px}
+#est .zone{flex:1 1 100%;display:grid;grid-template-columns:2fr 3fr;gap:4px;font-family:var(--sans);font-size:13px;color:var(--mute);margin-top:-2px}
+#est .zone span{border-top:3px solid var(--line);padding-top:5px}
+#est .zone span.on{border-color:var(--seal);color:var(--ink);font-weight:600}
+#est .zone .z2{text-align:right}
+#est .demo{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:12px}
+#est .demo .dl{font-family:var(--sans);font-size:14px;font-weight:600;color:var(--ink);flex:1 1 100%}
+#est .demo .dp{display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-size:14px;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:99px;padding:5px 14px 5px 5px;cursor:pointer;min-height:44px}
+#est .demo .dp .k{width:32px;height:32px;border-radius:50%;background:var(--sealbg);color:var(--onseal);display:grid;place-items:center;font-size:11px}
+#est .demo .dp small{color:var(--mute);font-size:13px;margin-left:2px;font-variant-numeric:tabular-nums}
+#est .demo .dp[aria-pressed="true"]{border-color:var(--ink)}
+@media print{#est .demo,#est .eta,#est .zone{display:none}}

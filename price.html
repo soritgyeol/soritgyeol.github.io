@@ -72,19 +72,21 @@
         <label class="fld"><span>전시 시작일</span>
           <input type="date" id="day"></label>
       </div>
+      <div class="eta" id="eta" aria-live="polite"></div>
 
-      <div class="step"><span class="sn">2</span><span class="sl">작품 수</span></div>
-      <div class="hint">20점까지는 몇 점이든 같은 금액입니다. 캡션이 붙는 수로 세고, 연작 한 세트는 몇 폭이든 1점입니다.</div>
+      <div class="step"><span class="sn">2</span><span class="sl">작품 수</span><span class="sv" id="sv2"></span></div>
+      <div class="hint">캡션이 붙는 수로 세고, 연작 한 세트는 몇 폭이든 1점입니다.</div>
       <div class="qtyrow">
         <button type="button" class="pm" id="qm" aria-label="한 점 줄이기">−</button>
         <input type="number" id="qn" inputmode="numeric" min="1" max="40" value="20" aria-label="작품 수">
         <span class="unit">점</span>
         <button type="button" class="pm" id="qp" aria-label="한 점 늘리기">+</button>
         <input type="range" id="q" min="1" max="40" value="20" step="1" aria-label="작품 수 막대">
+        <div class="zone" aria-hidden="true"><span class="z1" id="z1">20점까지</span><span class="z2" id="z2">21점부터 1점씩 더함</span></div>
       </div>
       <div class="qwarn" id="qwarn" hidden>40점이 넘는 전시는 상담으로 금액을 정합니다. 견적서는 40점 기준으로 나옵니다.</div>
 
-      <div class="step"><span class="sn">3</span><span class="sl" id="s3">등급</span></div>
+      <div class="step"><span class="sn">3</span><span class="sl" id="s3">등급</span><span class="sv" id="sv3"></span></div>
       <div class="grp" role="radiogroup" aria-labelledby="s3">
         <label class="opt"><input type="radio" name="tier" value="0" id="t0">
           <span class="t"><b>기본</b><i>전시 소개 음성 1편 · 캡션 · 전시 홈페이지 · 인사말·약력 디자인</i></span>
@@ -96,16 +98,23 @@
           <span class="t"><b>고급</b><i>표준 + 영어 음성 해설 전부 + 리플렛 디자인(3단 접지)</i></span>
           <span class="v">390,000</span></label>
       </div>
-      <div class="hint">20점까지 같은 금액이고, 21점부터 1점마다 기본 5,000원, 표준·고급 10,000원이 더해집니다.</div>
+      <div class="demo" role="group" aria-label="등급별 음성 견본">
+        <span class="dl">견본 듣기</span>
+        <button type="button" class="dp" data-src="audio/hw00.mp3" aria-pressed="false"><span class="k" aria-hidden="true">▶</span>전시 소개<small>0:57</small></button>
+        <button type="button" class="dp" data-src="audio/hw01.mp3" aria-pressed="false"><span class="k" aria-hidden="true">▶</span>작품 해설<small>0:59</small></button>
+        <button type="button" class="dp" data-src="audio/hw01_en.mp3" aria-pressed="false"><span class="k" aria-hidden="true">▶</span>영어 해설<small>0:56</small></button>
+        <audio id="demo_a" preload="none"></audio>
+      </div>
+      <div class="hint">「화접지희」 전시에서 만든 음성입니다. 전시 소개는 모든 등급에, 작품 해설은 표준부터 들어가고, 영어 해설은 고급에 들어 있으며 표준에 더할 수 있습니다.</div>
 
-      <div class="step"><span class="sn">4</span><span class="sl" id="s4">선택 사항</span></div>
+      <div class="step"><span class="sn">4</span><span class="sl" id="s4">선택 사항</span><span class="sv" id="sv4"></span></div>
       <div class="grp" role="group" aria-labelledby="s4">
         <label class="opt" id="o_en"><input type="checkbox" id="i_en">
           <span class="t"><b>영어 음성 해설</b><i id="en_i">작품 전부와 전시 소개를 영어로</i></span>
           <span class="v" id="en_v">60,000</span></label>
       </div>
 
-      <div class="step"><span class="sn">5</span><span class="sl" id="s5">인쇄</span></div>
+      <div class="step"><span class="sn">5</span><span class="sl" id="s5">인쇄</span><span class="sv" id="sv5"></span></div>
       <div class="grp" role="radiogroup" aria-labelledby="s5">
         <label class="opt"><input type="radio" name="pr" value="0" id="p0" checked>
           <span class="t"><b>파일만 받기</b><i>인쇄용 PDF를 받아 인쇄소에 직접 맡기는 방식</i></span>

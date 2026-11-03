@@ -69,6 +69,12 @@
     $('who').placeholder=k===1?'예: ○○민화협회':'예: 홍길동';
 
     var c=last=calc();
+    // 고른 값을 단계 제목 옆에(오프린트미 주문 화면 참고, 2026-11-04)
+    $('sv2').textContent=c.raw+'점'; $('sv3').textContent=TIER[c.t];
+    $('sv4').textContent=c.t===2?'영어 포함':(c.t===1&&c.en?'영어 음성':'없음');
+    $('sv5').textContent=['파일만','인쇄 대행','현장 세팅'][c.p];
+    $('z1').classList.toggle('on',c.raw<=20); $('z2').classList.toggle('on',c.raw>20); $('z2').textContent='21점부터 1점당 '+won(PER[c.t])+'원';
+    var et=eta(c); if($('eta').innerHTML!==et) $('eta').innerHTML=et;
     $('m_date').textContent=ymd(new Date());
     $('m_who').textContent=c.who||'—';
     $('m_ttl').textContent=(c.ttl||'—')+(c.day?' · '+ymd(new Date(c.day+'T00:00'))+' 시작':'');
@@ -86,6 +92,19 @@
     $('terms').innerHTML=c.T.map(function(s){return '<li>'+esc(s)+'</li>'}).join('');
     var subj='전시 음성 해설 견적 ('+(c.k===1?'단체전':'개인전')+' · '+TIER[c.t]+' · 작품 '+c.n+'점)';
     $('b_mail').href='mailto:'+MAIL+'?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(text(c));
+  }
+
+  // 전달 예정일 어림: 접수일 + 열흘(주말 포함). 약속이 아니라 어림이라 「전후」로 씀
+  function eta(c){
+    var d=new Date(); d.setDate(d.getDate()+10);
+    var md=(d.getMonth()+1)+'월 '+d.getDate()+'일';
+    var s='오늘 접수하시면 보통 '+md+' 전후에 전달하고, 정확한 일정은 접수 때 정합니다. 대본 확인이 늦어지면 그만큼 늦어집니다.';
+    if(c.dl===null) return s;
+    if(c.dl<0) return '전시 시작일이 오늘보다 앞입니다. 날짜를 확인해 주세요.';
+    if(c.dl===0) return '전시가 오늘 시작합니다. 맡길 수 있는지 먼저 카카오톡으로 물어봐 주세요.';
+    if(c.rush) return '전시까지 '+c.dl+'일 남아 급행으로 진행하며, 견적서에 급행 할증을 넣었습니다. 가능한 일정은 상담 때 먼저 확인합니다.';
+    if(c.dl<21) return '전시까지 '+c.dl+'일 남았습니다. 인쇄까지 생각하면 빠듯해서 상담 때 일정을 먼저 맞춥니다.';
+    return '전시까지 '+c.dl+'일 남았습니다. '+s;
   }
 
   function link(c){
@@ -154,6 +173,20 @@
     new IntersectionObserver(function(e){ inEst=e[0].isIntersecting; upd(); }).observe(document.querySelector('#est .panel'));
     new IntersectionObserver(function(e){ seeQ=e[0].isIntersecting; upd(); },{threshold:.15}).observe($('quote'));
   }
+
+  // 등급별 음성 견본: 한 번에 하나, 다시 누르면 멈춤
+  var da=$('demo_a'), dbs=document.querySelectorAll('.demo .dp');
+  dbs.forEach(function(b){ b.addEventListener('click',function(){
+    var src=b.getAttribute('data-src');
+    if(da.getAttribute('src')===src&&!da.paused){ da.pause(); return; }
+    if(da.getAttribute('src')!==src){ da.setAttribute('src',src); da.dataset.gc=''; }
+    da.play();
+  }); });
+  var mark=function(){ dbs.forEach(function(b){ var on=!da.paused&&da.getAttribute('src')===b.getAttribute('data-src');
+    b.setAttribute('aria-pressed',on?'true':'false'); b.querySelector('.k').textContent=on?'❚❚':'▶'; }); };
+  da.addEventListener('play',function(){ mark(); var g=window.goatcounter;
+    if(!da.dataset.gc&&g&&g.count){ da.dataset.gc=1; g.count({path:'/play/est/'+da.getAttribute('src').split('/').pop(),title:'견적 화면 견본 재생',event:true}); } });
+  da.addEventListener('pause',mark); da.addEventListener('ended',mark);
 
   window.addEventListener('hashchange',function(){ if(load()){ render(); $('quote').scrollIntoView(); } });
   var fromLink=load();
