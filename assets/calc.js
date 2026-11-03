@@ -84,7 +84,7 @@
     clearTimeout(render.t); render.t=setTimeout(function(){ $('sr_total').textContent='합계 '+won(c.total)+'원'; },700);
     $('incl').innerHTML=c.I.map(function(s){return '<li>'+esc(s)+'</li>'}).join('');
     $('terms').innerHTML=c.T.map(function(s){return '<li>'+esc(s)+'</li>'}).join('');
-    var subj='전시 지원 견적 ('+(c.k===1?'단체전':'개인전')+' · '+TIER[c.t]+' · 작품 '+c.n+'점)';
+    var subj='전시 음성 해설 견적 ('+(c.k===1?'단체전':'개인전')+' · '+TIER[c.t]+' · 작품 '+c.n+'점)';
     $('b_mail').href='mailto:'+MAIL+'?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(text(c));
   }
 
