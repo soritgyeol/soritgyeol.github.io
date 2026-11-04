@@ -31,8 +31,8 @@
 <section class="phead">
   <div class="in">
     <p class="lab">가격·견적</p>
-    <h1>등급만 고르시면 금액이 정해집니다</h1>
-    <p>작품 20점까지는 등급마다 금액이 하나로 정해져 있고, 21점부터 1점마다 더해집니다. 개인전과 단체전 모두 같은 표를 쓰며, 인쇄비는 별도입니다.</p>
+    <h1>작품 20점까지 같은 금액</h1>
+    <p>개인전과 단체전 모두 같은 금액표를 씁니다. 21점부터는 1점마다 더해지고, 인쇄비는 별도입니다.</p>
     <div class="cta" style="margin-top:32px"><a class="btn fill" href="#est">내 전시로 견적 내기</a></div>
   </div>
 </section>
@@ -44,19 +44,19 @@
     <ul class="tiers">
       <li class="tier"><h3 class="nm">기본</h3><p class="tg">캡션·인쇄물과 전시 소개 음성 1편</p><div class="amt">200,000<span>원</span></div>
         <div class="what"><span class="it">작품 캡션(QR) ·</span> <span class="it">전시 홈페이지(작품마다 한 페이지) ·</span> <span class="it">전시 인사말 ·</span> <span class="it">작가 약력과 작가 안내 ·</span> <span class="it">카톡 공유 카드</span></div></li>
-      <li class="tier k"><h3 class="nm">표준 <small>권함</small></h3><p class="tg">작품마다 음성 해설</p><div class="amt">270,000<span>원</span></div>
-        <div class="what"><span class="it">기본 구성에 더해</span> <b class="it">작품 음성 해설 전부 ·</b> <span class="it">작품당 1분 안팎(대본 300자 이내)</span></div></li>
+      <li class="tier k"><h3 class="nm">표준 <small>추천</small></h3><p class="tg">작품마다 음성 해설</p><div class="amt">270,000<span>원</span></div>
+        <div class="what"><span class="it">기본 구성에 더해</span> <b class="it">작품 음성 해설 전부 ·</b> <span class="it">작품당 1분 안팎</span></div></li>
       <li class="tier"><h3 class="nm">고급</h3><p class="tg">한국어·영어 음성 해설과 리플렛</p><div class="amt">390,000<span>원</span></div>
         <div class="what"><span class="it">표준 구성에 더해</span> <b class="it">영어 음성 해설 전부 ·</b> <span class="it">리플렛 디자인(3단 접지)</span></div></li>
     </ul>
-    <ul class="promise" aria-label="약속"><li>접수 때 절반, 파일 전달 때 절반</li><li>착수 전에 그만두시면 전액 환불</li><li>음성은 대본 확인 뒤 제작, 다시 만들기 1회 포함</li><li>사업자등록 전이라 부가세 없음, 세금계산서·현금영수증 발행 안 됨</li><li>카카오톡 문의는 하루 안에 답변</li></ul>
-    <div class="pnote"><p>작품 21점부터는 1점당 기본 5,000원, 표준·고급 10,000원이 더해집니다.</p><a class="btn" href="#est">내 전시로 견적 내기</a></div>
+    <ul class="promise" aria-label="약속"><li>접수 때 절반, 파일 전달 때 절반</li><li>착수 전 취소하면 전액 환불</li><li>대본 확인 뒤 음성 제작, 다시 만들기 1회 포함</li><li>사업자등록 전이라 부가세 없음, 세금계산서·현금영수증 발행 불가</li></ul>
+    <div class="pnote"><p>작품 21점부터 1점당 기본 5,000원, 표준·고급 10,000원이 더해집니다.</p><a class="btn" href="#est">내 전시로 견적 내기</a></div>
   </div>
 </section>
 
 <section class="s" id="est">
   <div class="in">
-    <div class="sh"><div><p class="lab">견적 내기</p><h2>작품 수와 등급을 고르면 견적서가 나옵니다</h2></div><p>전시 정보를 넣으시면 견적서에 함께 적히고, 저장하거나 카카오톡으로 보내실 수 있습니다.</p></div>
+    <div class="sh"><div><p class="lab">견적 내기</p><h2>작품 수와 등급을 고르면 견적서가 나옵니다</h2></div><p>전시 정보를 넣으면 견적서에 함께 적힙니다. 저장하거나 카카오톡으로 보내실 수 있습니다.</p></div>
   <div class="calc">
     <div class="panel">
       <div class="step"><span class="sn">1</span><span class="sl">전시 정보 <em>선택 입력</em></span></div>
@@ -75,7 +75,7 @@
       <div class="eta" id="eta" aria-live="polite"></div>
 
       <div class="step"><span class="sn">2</span><span class="sl">작품 수</span><span class="sv" id="sv2"></span></div>
-      <div class="hint">캡션이 붙는 수로 세고, 연작 한 세트는 몇 폭이든 1점입니다.</div>
+      <div class="hint">캡션이 붙는 수로 셉니다. 연작 한 세트는 몇 폭이든 1점입니다.</div>
       <div class="qtyrow">
         <button type="button" class="pm" id="qm" aria-label="한 점 줄이기">−</button>
         <input type="number" id="qn" inputmode="numeric" min="1" max="40" value="20" aria-label="작품 수">
@@ -84,7 +84,7 @@
         <input type="range" id="q" min="1" max="40" value="20" step="1" aria-label="작품 수 막대">
         <div class="zone" aria-hidden="true"><span class="z1" id="z1">20점까지</span><span class="z2" id="z2">21점부터 1점씩 더함</span></div>
       </div>
-      <div class="qwarn" id="qwarn" hidden>40점이 넘는 전시는 상담으로 금액을 정합니다. 견적서는 40점 기준으로 나옵니다.</div>
+      <div class="qwarn" id="qwarn" hidden>40점이 넘는 전시는 상담으로 금액을 정합니다. 아래 견적서는 40점까지 계산한 금액입니다.</div>
 
       <div class="step"><span class="sn">3</span><span class="sl" id="s3">등급</span><span class="sv" id="sv3"></span></div>
       <div class="grp" role="radiogroup" aria-labelledby="s3">
@@ -92,7 +92,7 @@
           <span class="t"><b>기본</b><i>전시 소개 음성 1편 · 캡션 · 전시 홈페이지 · 인사말·약력 디자인</i></span>
           <span class="v">200,000</span></label>
         <label class="opt"><input type="radio" name="tier" value="1" id="t1" checked>
-          <span class="t"><b>표준 <small>권함</small></b><i>기본 + 작품마다 음성 해설</i></span>
+          <span class="t"><b>표준 <small>추천</small></b><i>기본 + 작품마다 음성 해설</i></span>
           <span class="v">270,000</span></label>
         <label class="opt"><input type="radio" name="tier" value="2" id="t2">
           <span class="t"><b>고급</b><i>표준 + 영어 음성 해설 전부 + 리플렛 디자인(3단 접지)</i></span>
@@ -105,7 +105,7 @@
         <button type="button" class="dp" data-src="audio/hw01_en.mp3" aria-pressed="false"><span class="k" aria-hidden="true">▶</span>영어 해설<small>0:56</small></button>
         <audio id="demo_a" preload="none"></audio>
       </div>
-      <div class="hint">「화접지희」 전시에서 만든 음성입니다. 전시 소개는 모든 등급에, 작품 해설은 표준부터 들어가고, 영어 해설은 고급에 들어 있으며 표준에 더할 수 있습니다.</div>
+      <div class="hint">「화접지희」 전시의 음성입니다. 전시 소개는 모든 등급, 작품 해설은 표준부터 들어갑니다. 영어 해설은 고급에 포함되고 표준에는 더할 수 있습니다.</div>
 
       <div class="step"><span class="sn">4</span><span class="sl" id="s4">선택 사항</span><span class="sv" id="sv4"></span></div>
       <div class="grp" role="group" aria-labelledby="s4">
@@ -117,13 +117,13 @@
       <div class="step"><span class="sn">5</span><span class="sl" id="s5">인쇄</span><span class="sv" id="sv5"></span></div>
       <div class="grp" role="radiogroup" aria-labelledby="s5">
         <label class="opt"><input type="radio" name="pr" value="0" id="p0" checked>
-          <span class="t"><b>파일만 받기</b><i>인쇄용 PDF를 받아 인쇄소에 직접 맡기는 방식</i></span>
+          <span class="t"><b>파일만 받기</b><i>인쇄용 PDF를 받아 인쇄소에 직접 맡김</i></span>
           <span class="v">추가 없음</span></label>
         <label class="opt"><input type="radio" name="pr" value="1" id="p1">
-          <span class="t"><b>인쇄 대행</b><i>저희가 인쇄소에 맡기고 받아 보내 드림 · 인쇄 실비 별도</i></span>
+          <span class="t"><b>인쇄 대행</b><i>인쇄소 주문부터 배송까지 · 인쇄 실비 별도</i></span>
           <span class="v">40,000</span></label>
         <label class="opt"><input type="radio" name="pr" value="2" id="p2">
-          <span class="t"><b>현장 세팅</b><i>폼보드 재단과 설치 · 수도권 밖은 교통비 추가 · 인쇄 실비 별도</i></span>
+          <span class="t"><b>현장 세팅</b><i>폼보드 재단과 전시장 설치 · 수도권 밖은 교통비 추가 · 인쇄 실비 별도</i></span>
           <span class="v">200,000</span></label>
       </div>
     </div>
@@ -175,11 +175,11 @@
         <tr><td class="n">21점부터 표준 · 고급</td><td>1점 늘 때마다</td><td>+10,000원</td></tr>
         <tr class="g"><td colspan="3">그 밖의 금액</td></tr>
         <tr><td class="n">영어 음성 해설</td><td>표준에 더할 때 · 고급에는 포함</td><td>+60,000원</td></tr>
-        <tr><td class="n">음성 다시 만들기</td><td>대본 확인 뒤 제작</td><td>1회까지 추가 없음</td></tr>
-        <tr><td class="n">수정 추가</td><td>2회차까지 포함 · 모아 보낸 한 묶음이 1회차</td><td>회차당 30,000원</td></tr>
-        <tr><td class="n">급행 진행</td><td>접수일이 전시 2주 이내일 때</td><td>50% 할증</td></tr>
+        <tr><td class="n">음성 다시 만들기</td><td>대본 확인 뒤 제작</td><td>1회 포함</td></tr>
+        <tr><td class="n">수정 추가</td><td>2회차까지 포함 · 한 번에 모아 보낸 고칠 점이 1회차</td><td>회차당 30,000원</td></tr>
+        <tr><td class="n">급행</td><td>전시까지 2주가 남지 않았을 때 · 제작 금액 기준(인쇄 대행·현장 세팅 제외)</td><td>50% 할증</td></tr>
         <tr class="g"><td colspan="3">별도 상품</td></tr>
-        <tr><td class="n">포트폴리오 홈페이지 + 브로슈어</td><td>공모나 갤러리에 내는 작가 자료 · 전시 고객은 할인</td><td>250,000원</td></tr>
+        <tr><td class="n">포트폴리오 홈페이지 + 브로슈어</td><td>공모·갤러리 제출용 작가 자료 · 전시 고객 할인</td><td>250,000원</td></tr>
       </tbody>
     </table>
     </div>
@@ -190,24 +190,24 @@
 
 <section class="s" id="print" style="background:var(--wall);border-block:1px solid var(--line)">
   <div class="in">
-    <div class="sh"><div><p class="lab">인쇄</p><h2>인쇄 실비는 얼마쯤 드나요</h2></div><p>인쇄 방식은 견적 내기 5단계에서 고르시면 됩니다. 파일만 받으시면 인쇄소에 폼보드 부착과 재단까지 맡기시고, 전시장 벽에는 직접 붙이시면 됩니다.</p></div>
+    <div class="sh"><div><p class="lab">인쇄</p><h2>인쇄 실비 예상</h2></div><p>파일만 받으시면 폼보드 부착과 재단까지 인쇄소에 맡기고, 전시장 벽에는 직접 붙이시면 됩니다.</p></div>
     <div class="est-cost">
-      <p>작품 20점 개인전을 기준으로 어림한 금액이고, 인쇄소와 종이에 따라 달라집니다.</p>
+      <p>작품 20점 개인전 기준의 예상 금액입니다. 인쇄소와 종이에 따라 달라집니다.</p>
       <table>
         <tr><td>작품 캡션 20장 (폼보드에 붙여 재단)</td><td>1만~2만 원</td></tr>
         <tr><td>전시 인사말 A2 (폼보드)</td><td>2만~3만 원</td></tr>
         <tr><td>작가 약력·작가 안내 A4</td><td>1만 원 안팎</td></tr>
         <tr><td>택배</td><td>5천~1만 원</td></tr>
-        <tr class="sum"><td>모두 더하면</td><td>5만~7만 원쯤</td></tr>
-        <tr><td>캡션용 아크릴 꽂이를 쓰면</td><td>4만~6만 원 더</td></tr>
-        <tr><td>고급의 3단 리플렛 100부</td><td>5만~12만 원 더</td></tr>
+        <tr class="sum"><td>합계</td><td>5만~7만 원 안팎</td></tr>
+        <tr><td>캡션 아크릴 꽂이를 쓸 때</td><td>4만~6만 원 추가</td></tr>
+        <tr><td>3단 리플렛 100부 (고급)</td><td>5만~12만 원 추가</td></tr>
       </table>
     </div>
   </div>
 </section>
 <section class="end" id="contact">
   <div class="in">
-    <div><h2>전시 날짜와<br>작품&nbsp;수를 알려 주세요</h2><p>카카오톡이나 메일로 보내 주시면 하루 안에 견적과 가능한 일정을 알려 드립니다.</p></div>
+    <div><h2>전시 날짜와<br>작품&nbsp;수를 알려 주세요</h2><p>카카오톡이나 메일로 보내 주시면 하루 안에 견적과 가능한 일정을 답해 드립니다.</p></div>
     <div class="acts">
       <a class="btn fill" href="https://pf.kakao.com/_XrmWX/chat">카카오톡 상담</a>
       <a class="mail" href="mailto:hello@soritgyeol.com">hello@soritgyeol.com</a>

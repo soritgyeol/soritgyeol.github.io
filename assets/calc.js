@@ -25,29 +25,29 @@
     var en=(t===2)||(t===1&&enWant);
     var L=[], prod=0, total=0;
     function line(name,note,q,v,inc){ L.push({name:name,note:note,q:q,v:v,inc:inc}); total+=v; }
-    line(TIER[t]+' 패키지','작품 20점까지','1',BASE[t]); prod+=BASE[t];
+    line(TIER[t]+' 등급','작품 20점까지','1',BASE[t]); prod+=BASE[t];
     if(n>20){ var x=(n-20)*PER[t]; line('작품 추가','21점부터 1점당 '+won(PER[t])+'원',(n-20)+'점',x); prod+=x; }
     if(t===1&&en){ line('영어 음성 해설','작품 '+n+'편과 전시 소개','1',EN); prod+=EN; }
     if(t===2) line('영어 음성 해설','작품 '+n+'편과 전시 소개 · 고급에 포함','1',0,true);
     var dl=daysLeft(), rush=dl!==null&&dl>=0&&dl<14;
-    if(rush) line('급행 진행','전시 '+dl+'일 전 접수 · 제작 금액의 50%','',Math.round(prod*RUSH));
+    if(rush) line('급행','전시 '+dl+'일 전 접수 · 제작 금액의 50%','',Math.round(prod*RUSH));
     if(p===1) line('인쇄 대행','인쇄 실비 별도','1',40000);
     if(p===2) line('현장 세팅','폼보드 재단과 설치 · 수도권 · 인쇄 실비 별도','1',200000);
 
     var I=[];
-    if(t>=1) I.push('작품 음성 해설 '+n+'편 (작품당 1분 안팎, 대본 300자 이내)');
+    if(t>=1) I.push('작품 음성 해설 '+n+'편 (작품당 1분 안팎)');
     if(en) I.push('영어 음성 해설 '+n+'편과 전시 소개');
     I.push('전시 소개 음성 1편','작품 캡션 '+n+'점 (QR)','전시 홈페이지 — 작품마다 한 페이지',
       '전시 인사말 (A2 또는 A3)', k===1?'참여 작가 목록':'작가 약력 · 작가 안내 (A4)','카톡 공유 카드');
     if(t===2) I.push('리플렛 디자인 (3단 접지)');
     I.push('수정 2회차, 음성 다시 만들기 1회 포함');
 
-    var T=[p===0?'인쇄는 직접 맡기시며 인쇄비는 별도입니다(20점 기준 어림잡아 5만~7만 원).'
+    var T=[p===0?'인쇄비는 별도입니다(작품 20점 기준 5만~7만 원 안팎).'
                 :'인쇄 실비는 인쇄소 견적을 받아 별도로 알려 드립니다.',
-      '사업자등록 전이라 부가세가 붙지 않고, 세금계산서와 현금영수증은 발행되지 않습니다.',
+      '사업자등록 전이라 부가세가 붙지 않고, 세금계산서와 현금영수증은 발행하지 못합니다.',
       '수정은 3회차부터 회차당 30,000원입니다.',
-      '입력하신 내용 기준의 견적이며, 상담 후 확정합니다.'];
-    if(rush) T.splice(3,0,'전시까지 2주가 남지 않아 급행 할증을 넣었습니다. 접수일 기준으로 다시 확인합니다.');
+      '입력하신 내용으로 낸 견적이며, 상담 뒤 확정합니다.'];
+    if(rush) T.splice(3,0,'전시까지 2주가 남지 않아 급행 할증(인쇄 대행·현장 세팅 제외)을 넣었습니다. 할증 여부는 접수일 기준으로 다시 확인합니다.');
     if(raw>MAXN) T.unshift('40점이 넘는 전시는 상담으로 금액을 정합니다. 이 견적은 40점 기준입니다.');
     return {raw:raw,n:n,t:t,p:p,k:k,en:en,L:L,I:I,T:T,total:total,rush:rush,dl:dl,
       who:$('who').value.trim(),ttl:$('ttl').value.trim(),day:$('day').value};
@@ -60,7 +60,7 @@
     var t=pick('tier'), en=$('i_en'), o=$('o_en');
     o.classList.remove('locked','fixed'); $('en_v').classList.remove('inc');
     if(t===0){ en.disabled=true; en.checked=false; o.classList.add('locked');
-      $('en_i').textContent='작품 음성 해설이 없는 등급'; $('en_v').textContent='—'; }
+      $('en_i').textContent='작품 음성 해설이 있는 표준부터 가능'; $('en_v').textContent='—'; }
     else if(t===2){ en.disabled=true; en.checked=true; o.classList.add('fixed');
       $('en_i').textContent='고급에 포함'; $('en_v').textContent='포함'; $('en_v').classList.add('inc'); }
     else { en.disabled=false; en.checked=enWant;
@@ -98,12 +98,12 @@
   function eta(c){
     var d=new Date(); d.setDate(d.getDate()+10);
     var md=(d.getMonth()+1)+'월 '+d.getDate()+'일';
-    var s='오늘 접수하시면 보통 '+md+' 전후에 전달하고, 정확한 일정은 접수 때 정합니다. 대본 확인이 늦어지면 그만큼 늦어집니다.';
+    var s='오늘 접수하시면 '+md+' 전후에 받으실 수 있습니다. 정확한 일정은 접수 때 정하고, 대본 확인 날짜에 따라 달라집니다.';
     if(c.dl===null) return s;
     if(c.dl<0) return '전시 시작일이 오늘보다 앞입니다. 날짜를 확인해 주세요.';
-    if(c.dl===0) return '전시가 오늘 시작합니다. 맡길 수 있는지 먼저 카카오톡으로 물어봐 주세요.';
-    if(c.rush) return '전시까지 '+c.dl+'일 남아 급행으로 진행하며, 견적서에 급행 할증을 넣었습니다. 가능한 일정은 상담 때 먼저 확인합니다.';
-    if(c.dl<21) return '전시까지 '+c.dl+'일 남았습니다. 인쇄까지 생각하면 빠듯해서 상담 때 일정을 먼저 맞춥니다.';
+    if(c.dl===0) return '전시가 오늘 시작합니다. 가능한지 먼저 카카오톡으로 물어봐 주세요.';
+    if(c.rush) return '전시까지 '+c.dl+'일 남아 견적서에 급행 할증을 넣었습니다. 가능한 일정은 상담 때 먼저 확인합니다.';
+    if(c.dl<21) return '전시까지 '+c.dl+'일 남았습니다. 인쇄 기간까지 생각하면 빠듯하니, 상담 때 일정부터 맞춥니다.';
     return '전시까지 '+c.dl+'일 남았습니다. '+s;
   }
 
