@@ -167,3 +167,7 @@
 #est .demo .dp small{color:var(--mute);font-size:13px;margin-left:2px;font-variant-numeric:tabular-nums}
 #est .demo .dp[aria-pressed="true"]{border-color:var(--ink)}
 @media print{#est .demo,#est .eta,#est .zone{display:none}}
+/* 리플렛 선택(2026-11-07) — 안 함·파일만·인쇄 부수를 한 칸에서 */
+#est #o_lq{align-items:center;flex-wrap:wrap;cursor:default}
+#est #o_lq select{font:inherit;font-family:var(--sans);font-size:15px;padding:8px 10px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink);max-width:100%}
+#est #o_lq.locked select{opacity:.5}
