@@ -3,7 +3,7 @@
   // 인쇄 금액은 인쇄 업체 단가(2026-11-07 조사)에 20%를 붙인 것 — 고객에게는 업체·마진을 밝히지 않는다
   var TIER=['기본','표준','고급'], BASE=[200000,270000,350000], PER=[5000,10000,10000];
   var PRINT=50000, LEAFQ=[0,0,100,200,300], LEAFP=[0,50000,95000,132000,164000];   // 리플렛: 안 함 · 파일만 · 디자인+인쇄 100/200/300부
-  var RUSH=0.5, MAXN=40, KAKAO='https://pf.kakao.com/_XrmWX/chat', MAIL='hello@soritgyeol.com';
+  var MAXN=40, KAKAO='https://pf.kakao.com/_XrmWX/chat', MAIL='hello@soritgyeol.com';
   var $=function(id){return document.getElementById(id)};
   var won=function(n){return n.toLocaleString('ko-KR')};
   var pick=function(name){return +document.querySelector('input[name='+name+']:checked').value};
@@ -27,29 +27,27 @@
     var en=t===2;
     var L=[], prod=0, total=0;
     function line(name,note,q,v,inc){ L.push({name:name,note:note,q:q,v:v,inc:inc}); total+=v; }
-    line(TIER[t]+' 등급','작품 20점까지','1',BASE[t]); prod+=BASE[t];
+    line(TIER[t]+' 등급','작품 20점 기준','1',BASE[t]); prod+=BASE[t];
     if(n>20){ var x=(n-20)*PER[t]; line('작품 추가','21점부터 1점당 '+won(PER[t])+'원',(n-20)+'점',x); prod+=x; }
     if(en) line('영어 음성 해설','작품 '+n+'편과 전시 소개 · 고급에 포함','1',0,true);
-    var dl=daysLeft(), rush=dl!==null&&dl>=0&&dl<14;
-    if(rush) line('급행','전시 '+dl+'일 전 접수 · 제작 금액의 50%','',Math.round(prod*RUSH));
+    var dl=daysLeft();
     if(lq===1) line('리플렛','A4 접지 · 디자인 파일','1',LEAFP[1]);
     if(lq>1) line('리플렛','A4 접지 · 디자인과 인쇄, 접어서 배송',LEAFQ[lq]+'부',LEAFP[lq]);
-    if(p===1) line('인쇄해서 받기','작품 캡션 '+n+'장(폼보드) · 작가 안내 · 배송','1',PRINT);
+    if(p===1) line('인쇄해서 받기','작품 캡션 '+n+'장(폼보드) · 작가 약력 · 배송','1',PRINT);
 
     var I=[];
     I.push('전시 소개 음성 해설 1편 (한국어)');
     if(t>=1) I.push('작품 음성 해설 '+n+'편 (한국어, 작품당 1분 이내)');
-    if(en) I.push('영어 음성 해설 — 전시 소개와 작품 '+n+'편 (한국어와 같은 내용)');
-    I.push('작품 캡션 '+n+'점 (QR)','전시 홈페이지 — 작품마다 한 페이지, 전시가 끝난 뒤 1년까지',
-      '전시 인사말 · 작가 약력 · 작가 안내 (인쇄용 PDF)','카톡 공유 카드');
+    if(en) I.push('영어 음성 해설 — 한국어 음성 해설과 같은 내용');
+    I.push('작품 캡션 '+n+'점 (QR, 인쇄용 PDF)','전시 홈페이지 — 작품마다 1페이지, 전시가 끝난 뒤 1년까지 유지',
+      '전시 인사말 — 전시장 입구에 비치하는 전시 소개말 (인쇄용 PDF)','작가 약력 (개인전, 인쇄용 PDF)','카톡 초대 링크');
     if(lf) I.push('리플렛 (A4 접지) '+(lq>1?'인쇄 '+LEAFQ[lq]+'부':'디자인 파일'));
-    I.push(p===1?'작품 캡션과 작가 안내를 인쇄해서 보내 드림':'인쇄용 PDF 파일로 전달','수정 2회 포함');
+    I.push(p===1?'작품 캡션과 작가 약력을 인쇄해서 보내 드림':'인쇄용 PDF 파일로 전달','수정 2회 포함');
 
-    var T=['입금을 확인한 뒤 제작을 시작하고, 시작하기 전에는 전액 돌려 드립니다.',
+    var T=['상담과 견적은 비용이 들지 않습니다.','입금을 확인한 뒤 제작을 시작하고, 시작하기 전에는 전액 돌려 드립니다.',
       '입력하신 내용으로 낸 견적이며, 상담 뒤 확정합니다.'];
-    if(rush) T.splice(1,0,'전시까지 2주가 남지 않아 급행 할증(리플렛·인쇄 제외)을 넣었습니다. 할증 여부는 접수일 기준으로 다시 확인합니다.');
     if(raw>MAXN) T.unshift('40점이 넘는 전시는 상담으로 금액을 정합니다. 이 견적은 40점 기준입니다.');
-    return {raw:raw,n:n,t:t,p:p,lf:lf,lq:lq,en:en,L:L,I:I,T:T,total:total,rush:rush,dl:dl,
+    return {raw:raw,n:n,t:t,p:p,lf:lf,lq:lq,en:en,L:L,I:I,T:T,total:total,dl:dl,
       who:$('who').value.trim(),ttl:$('ttl').value.trim(),day:$('day').value};
   }
 
@@ -91,7 +89,7 @@
     if(c.dl===null) return s;
     if(c.dl<0) return '전시 시작일이 오늘보다 앞입니다. 날짜를 확인해 주세요.';
     if(c.dl===0) return '전시가 오늘 시작합니다. 가능한지 먼저 카카오톡으로 물어봐 주세요.';
-    if(c.rush) return '전시까지 '+c.dl+'일 남아 견적서에 급행 할증을 넣었습니다. 가능한 일정은 상담 때 먼저 확인합니다.';
+    if(c.dl<14) return '전시까지 '+c.dl+'일 남았습니다. 일정이 빠듯하니 가능한지 먼저 카카오톡으로 물어봐 주세요.';
     if(c.dl<21) return '전시까지 '+c.dl+'일 남았습니다. 인쇄 기간까지 생각하면 빠듯하니, 상담 때 일정부터 맞춥니다.';
     return '전시까지 '+c.dl+'일 남았습니다. '+s;
   }
