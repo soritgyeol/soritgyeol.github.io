@@ -171,3 +171,19 @@
 #est #o_lq{align-items:center;flex-wrap:wrap;cursor:default}
 #est #o_lq select{font:inherit;font-family:var(--sans);font-size:15px;padding:8px 10px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink);max-width:100%}
 #est #o_lq.locked select{opacity:.5}
+/* 휴대폰(600px 이하): 금액 기준 표를 줄마다 「이름 ……… 금액 / 설명」으로 쌓음 — 3칸 표가 눌려 한 단어씩 줄이 바뀌고 금액이 잘리던 것(11-08 점검) */
+@media(max-width:600px){
+#est .scroll{overflow-x:visible}
+#est .tbl,#est .tbl tbody{display:block}
+#est .tbl tr{display:grid;grid-template-columns:1fr auto;column-gap:12px;border-bottom:1px solid var(--line2);padding:10px 0}
+#est .tbl tr.g{border-bottom:none;padding:16px 0 2px}
+#est .tbl td{display:block;border-bottom:none;padding:0}
+#est .tbl td.n{width:auto;grid-column:1;grid-row:1}
+#est .tbl td:last-child{grid-column:2;grid-row:1;white-space:normal;text-align:right;max-width:48vw}
+#est .tbl td:nth-child(2):not(:last-child){grid-column:1 / -1;grid-row:2;color:var(--mute);font-size:13.5px;margin-top:3px}
+#est .tbl tr.g td{grid-column:1 / -1;padding:0}
+/* 리플렛: 설명이 좁은 칸에 갇혀 7줄로 늘어지던 것 — 선택 칸을 설명 아래 전체 폭으로 */
+#est #o_lq{flex-wrap:wrap}
+#est #o_lq .t{flex:1 1 100%}
+#est #o_lq select{width:100%;margin-top:8px}
+}
