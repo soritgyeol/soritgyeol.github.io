@@ -122,7 +122,7 @@ footer.foot nav a{text-decoration:none;padding:6px 0}
 .play .k{flex:none;width:40px;height:40px;border-radius:50%;background:var(--sealbg);display:grid;place-items:center}
 .play .k svg{width:14px;height:14px;fill:var(--onseal)}
 .play .t{display:grid;line-height:1.35}
-.play .t small{color:var(--mute);font-size:12px;font-variant-numeric:tabular-nums}
+.play .t small{color:var(--mute);font-size:13px;font-variant-numeric:tabular-nums}
 .wave{display:flex;align-items:center;gap:2px;height:34px;cursor:pointer;border-radius:4px}
 .wave i{flex:1;background:var(--wave);border-radius:2px;min-height:2px;transition:background .15s}
 .wave i.on{background:var(--seal)}
@@ -152,7 +152,7 @@ footer.foot nav a{text-decoration:none;padding:6px 0}
 .phone img{width:100%;height:340px;object-fit:cover;object-position:top}
 .sound{width:100%;max-width:300px;display:grid;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
 .sound .row{display:flex;justify-content:space-between;gap:10px;font-family:var(--sans);font-size:13px;color:var(--mute)}
-.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;overflow:hidden;font-family:var(--sans);font-size:12px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;overflow:hidden;font-family:var(--sans);font-size:13px}
 .seg span{padding:3px 10px}.seg span:first-child{background:var(--ink);color:var(--paper)}
 @media (max-width:960px){
   .chain{grid-template-columns:1fr;gap:12px}
@@ -322,7 +322,7 @@ footer.foot nav a,.end .mail{display:inline-flex;align-items:center;min-height:4
 /* 제작 사례: 단체전 두 건 */
 .jump{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
 .jump a{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 14px;border:1px solid var(--line);border-radius:22px;font-family:var(--sans);font-size:14px;color:var(--ink);text-decoration:none;background:var(--card)}
-.jump small{color:var(--mute);font-size:12px}
+.jump small{color:var(--mute);font-size:13px}
 .cases{display:grid;grid-template-columns:1fr 1fr;gap:28px}
 .gcase{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:28px;display:flex;flex-direction:column}
 .gcase .gpic{height:260px;display:flex;align-items:center;justify-content:center;background:var(--wall);border-radius:4px;margin-bottom:22px;overflow:hidden}
@@ -345,7 +345,7 @@ footer.foot nav a,.end .mail{display:inline-flex;align-items:center;min-height:4
 .gthumbs a{display:block;text-decoration:none;color:var(--ink)}
 .gthumbs img{width:100%;height:130px;object-fit:cover;border-radius:3px;background:var(--wall)}
 .gthumbs span{display:block;font-family:var(--sans);font-size:13px;margin-top:6px;line-height:1.4}
-.gthumbs small{display:block;color:var(--mute);font-size:12px}
+.gthumbs small{display:block;color:var(--mute);font-size:13px}
 #gb .sample{margin-top:0}
 
 /* ── 2026-11-01 개편 검토에서 남긴 개선(색감·구획은 이 판 그대로) ──
@@ -420,3 +420,24 @@ button.sound.on .go{color:var(--seal)}
 #ly .gthumbs{max-width:460px;margin-top:18px}
 #ly .cover img{background:var(--wall)}
 .gthumbs img{display:block}
+/* ── 11-08 남은 손질 ── */
+.hero .grp{font-family:var(--sans);font-size:14px;color:var(--mute);margin:10px 0 0;line-height:1.7}
+.hero .grp a{color:var(--seal);text-underline-offset:3px;white-space:nowrap}
+@media (max-width:960px){.hero .grp{order:8}}
+@media (max-width:380px){
+  .hero .in{padding-block:20px 44px}
+  .hero h1{margin-bottom:12px}
+  .frame{width:66%}
+  .wallart{padding-bottom:40px}
+  .hero .listen{margin:12px auto 16px}
+}
+#ly{border-top:1px solid var(--line)}
+article[id]{scroll-margin-top:72px}
+#est{scroll-margin-top:-40px}
+.sample.fq{background:var(--wash);border-radius:6px;padding:14px 16px;max-width:460px;margin-top:14px}
+.sample.fq p{margin:0 0 8px;font-family:var(--sans);font-size:14px;font-weight:500}
+.sample.fq small{color:var(--mute);font-weight:400;margin-left:4px}
+.sample.fq audio{width:100%;height:44px;display:block}
+footer.foot nav{gap:4px 10px}
+footer.foot nav a{padding-inline:6px}
+@media (min-width:861px){nav.gnb{gap:18px}nav.gnb a{padding-inline:4px}}
