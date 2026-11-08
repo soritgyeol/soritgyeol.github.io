@@ -407,3 +407,8 @@ button.sound:hover{border-color:var(--seal)}
 }
 .tier.k .tg{color:var(--bandseal)}
 button.sound.on .go{color:var(--seal)}
+.steps .dl{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.steps .dl a{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border:1px solid var(--seal);border-radius:6px;font-family:var(--sans);font-size:14px;color:var(--seal);text-decoration:none}
+.steps .dl a:before{content:"↓";margin-right:6px}
+.steps .dl a:hover{background:var(--seal);color:var(--onseal)}
+.steps .dlnote{margin-top:6px;font-family:var(--sans);font-size:13px;color:var(--mute)}
