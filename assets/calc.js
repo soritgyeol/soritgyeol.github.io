@@ -33,19 +33,19 @@
     var dl=daysLeft();
     if(lq===1) line('리플렛','A4 접지 · 디자인 파일','1',LEAFP[1]);
     if(lq>1) line('리플렛','A4 접지 · 디자인과 인쇄, 접어서 배송',LEAFQ[lq]+'부',LEAFP[lq]);
-    if(p===1) line('인쇄해서 받기','작품 캡션 '+n+'장(폼보드) · 작가 약력 · 배송','1',PRINT);
+    if(p===1) line('캡션·약력 인쇄','작품 캡션 '+n+'장(폼보드) · 작가 약력 · 배송 포함','1',PRINT);
 
+    // 품목 이름과 한 줄 설명은 scripts/items.py가 정본 — build_site.py가 이름이 맞는지 확인한다
     var I=[];
-    I.push('전시 소개 음성 해설 1편 (한국어)');
-    if(t>=1) I.push('작품 음성 해설 '+n+'편 (한국어, 작품당 1분 이내)');
+    if(t>=1) I.push('작품 음성 해설 '+n+'편 — 작품당 1분 이내');
     if(en) I.push('영어 음성 해설 — 한국어 음성 해설과 같은 내용');
-    I.push('작품 캡션 '+n+'점 (QR, 인쇄용 PDF)','전시 홈페이지(온라인 전시) — 작품마다 1페이지, 전시가 끝난 뒤 1년까지 유지',
-      '전시 인사말 — 전시장 입구에 비치하는 전시 소개말 (인쇄용 PDF)','작가 약력 (개인전, 인쇄용 PDF)','카톡 초대 링크');
-    if(lf) I.push('리플렛 (A4 접지) '+(lq>1?'인쇄 '+LEAFQ[lq]+'부':'디자인 파일'));
-    I.push(p===1?'작품 캡션과 작가 약력을 인쇄해서 보내 드림':'인쇄용 PDF 파일로 전달','대본과 디자인 수정 2회 포함');
+    I.push('전시 소개 음성 1편 — 전시 홈페이지 첫 화면','작품 캡션 '+n+'장 — QR, 인쇄용 PDF','전시 홈페이지 — 작품마다 한 페이지, 전시가 끝난 뒤 1년까지 열림',
+      '전시 인사말 — 전시장 입구에 거는 인사말, 인쇄용 PDF','작가 약력 — 인쇄용 PDF (단체전은 참여 작가 목록)','카톡 초대 카드');
+    if(lf) I.push('리플렛 — A4 접지, '+(lq>1?'인쇄 '+LEAFQ[lq]+'부':'디자인 파일'));
+    I.push(p===1?'캡션·약력 인쇄와 배송':'인쇄용 PDF로 받기','대본과 시안 수정 2회 포함');
 
     var T=['상담과 견적은 비용이 들지 않습니다.','입금을 확인한 뒤 제작을 시작하고, 시작하기 전에는 전액 돌려 드립니다.',
-      '입력하신 내용으로 낸 견적이며, 상담 뒤 확정합니다.'];
+      '입력하신 내용으로 계산한 견적이며, 상담 뒤 확정합니다.'];
     if(raw>MAXN) T.unshift('40점이 넘는 전시는 상담으로 금액을 정합니다. 이 견적은 40점 기준입니다.');
     return {raw:raw,n:n,t:t,p:p,lf:lf,lq:lq,en:en,L:L,I:I,T:T,total:total,dl:dl,
       who:$('who').value.trim(),ttl:$('ttl').value.trim(),day:$('day').value};
@@ -60,7 +60,7 @@
     // 고른 값을 단계 제목 옆에(오프린트미 주문 화면 참고, 2026-11-04)
     $('sv2').textContent=c.raw+'점'; $('sv3').textContent=TIER[c.t];
     $('sv4').textContent=c.lq>1?LEAFQ[c.lq]+'부':(c.lq===1?'파일만':'없음');
-    $('sv5').textContent=['파일만','인쇄해서 받기'][c.p];
+    $('sv5').textContent=['파일로','인쇄'][c.p];
     $('z1').classList.toggle('on',c.raw<=20); $('z2').classList.toggle('on',c.raw>20); $('z2').textContent='21점부터 1점당 '+won(PER[c.t])+'원';
     var et=eta(c); if($('eta').innerHTML!==et) $('eta').innerHTML=et;
     $('m_date').textContent=ymd(new Date());
