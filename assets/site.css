@@ -288,6 +288,24 @@ dl.facts dd{margin:0}
 .faq .body p{margin:0 0 12px}
 .faq .body b{color:var(--ink);font-weight:600}
 
+/* ── 보내 주실 자료(서비스 · 진행) ── */
+.need{margin-top:40px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);max-width:52em}
+.need summary{list-style:none;cursor:pointer;padding:20px 0;font-size:19px;font-weight:600;display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:44px}
+.need summary::-webkit-details-marker{display:none}
+.need summary::after{content:"+";font-family:var(--sans);font-weight:400;color:var(--mute);font-size:24px;line-height:1;flex:none}
+.need[open] summary::after{content:"−"}
+.need .body{padding:0 0 24px}
+.need h4{font-family:var(--sans);font-size:15px;font-weight:600;color:var(--seal);margin:22px 0 6px}
+.need h4:first-child{margin-top:4px}
+.need .nn{font-size:15px;color:var(--mute);margin:0 0 6px}
+.need dl{display:grid;grid-template-columns:11em 1fr;margin:0;font-size:16px;line-height:1.55}
+.need dt,.need dd{margin:0;padding:8px 0;border-bottom:1px dotted var(--line)}
+.need dt{font-family:var(--sans);font-weight:500;font-size:15px;padding-right:12px}
+.need dd{color:var(--ink2)}
+.need .grp{margin:20px 0 0;padding:14px 16px;background:var(--wall);font-size:15px;line-height:1.6}
+.need .grp b{font-family:var(--sans);font-weight:600}
+@media (max-width:600px){.need dl{grid-template-columns:1fr}.need dt{border-bottom:0;padding-bottom:0}.need dd{padding-top:2px}}
+
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 
 /* ── 2차 검토 반영(2026-11-01) ── */
